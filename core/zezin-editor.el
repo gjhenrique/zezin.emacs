@@ -1,7 +1,6 @@
-(global-set-key (kbd "M-b") #'evil-switch-to-windows-last-buffer)
-(global-set-key (kbd "M-f k") #'kill-this-buffer)
-
+; core packages
 (use-package popwin)
+(use-package ag)
 
 (use-package projectile
   :init
@@ -9,16 +8,20 @@
 	projectile-cache-file (concat zezin-cache-dir "projectile.cache")
 	projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld"))
   :config
-  (progn
-    (projectile-global-mode)
-    (use-package helm-projectile
-      :bind (("M-p M-d" . helm-projectile-find-dir)
-	     ("M-p M-h" . helm-projectile)
-	     ("M-p M-f" . helm-projectile-find-file)
-	     ("M-p M-p" . helm-projectile-switch-project)
-	     ("M-p M-b" . helm-projectile-switch-to-buffer)
-	     ("M-p M-h" . helm-projectile)))))
+  (projectile-global-mode))
 
+(use-package helm-projectile
+  :bind (("M-p M-d" . helm-projectile-find-dir)
+	 ("M-p M-h" . helm-projectile)
+	 ("M-p M-f" . helm-projectile-find-file)
+	 ("M-p M-p" . helm-projectile-switch-project)
+	 ("M-p M-b" . helm-projectile-switch-to-buffer)
+	 ("M-p M-h" . helm-projectile)))
+
+
+; editor related stuff
+(global-set-key (kbd "M-b") #'evil-switch-to-windows-last-buffer)
+(global-set-key (kbd "M-f k") #'kill-this-buffer)
 (use-package undo-tree
   :init
   (progn

@@ -16,10 +16,14 @@
 (global-set-key (kbd "M-e") nil)
 (global-set-key (kbd "M-w") nil)
 (global-set-key (kbd "M-f") nil)
+(global-set-key (kbd "M-s") nil)
 
 (use-package exec-path-from-shell
   :config (when (memq window-system '(mac ns x))
             (exec-path-from-shell-initialize)))
+
+(use-package auto-package-update)
+(use-package pcre2el)
 
 (provide 'zezin-global-conf)
 ;;; zezin-global-conf.el ends here

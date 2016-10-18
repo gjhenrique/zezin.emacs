@@ -4,6 +4,7 @@
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
+(setq package-user-dir (expand-file-name "elpa" zezin-dir))
 
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
@@ -29,20 +30,22 @@
 ; evil-nerd-commenter
 ; evil-matchit
 
-; ace-window - better window manipulation
-; avy - hints for jump in certain point
-; beacon - highlight
-; bm
-; dash? - functional library
-; dicover-my-major?
-; diff-hl?
-; expand-region
-; helm-swoop
-; golden-ratio
-; perspective
-; prodigy
-; relative-line-numbers
-; recentf
-; which-key
-; remember-mode?
-; yasnippet
+;; ace-window - better window manipulation
+;; agressive-indent-mode
+;; avy - hints for jump in certain point
+;; beacon - highlight
+;; bm
+;; dash? - functional library
+;; dicover-my-major?
+;; diff-hl?
+;; expand-region
+;; helm-swoop
+;; golden-ratio
+;; perspective
+;; prodigy
+;; relative-line-numbers
+;; recentf
+;; skewer
+;; which-key
+;; remember-mode?
+;; yasnippet
