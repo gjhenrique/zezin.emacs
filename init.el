@@ -18,6 +18,7 @@
 (require 'zezin-helm)
 (require 'zezin-editor)
 (require 'zezin-window)
+(require 'zezin-git)
 
 (require 'zezin-emacs-lisp)
 
