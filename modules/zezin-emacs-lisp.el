@@ -5,8 +5,9 @@
   (progn
     (add-hook #'emacs-lisp-mode-hook #'elisp-slime-nav-mode)
     (add-hook #'ielm-mode-hook #'elisp-slime-nav-mode))
-  :bind (("M-g" . elisp-slime-nav-find-elisp-thing-at-point)
-         ("M-h" . elisp-slime-nav-describe-elisp-thing-at-point)))
+  :bind (:map elisp-slime-nav-mode-map
+	 ("M-g" . elisp-slime-nav-find-elisp-thing-at-point)
+	 ("M-h" . elisp-slime-nav-describe-elisp-thing-at-point)))
 
 (use-package eldoc
   :init

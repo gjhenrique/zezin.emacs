@@ -18,10 +18,10 @@
 	 ("M-p M-b" . helm-projectile-switch-to-buffer)
 	 ("M-p M-h" . helm-projectile)))
 
-
 ; editor related stuff
 (global-set-key (kbd "M-b") #'evil-switch-to-windows-last-buffer)
 (global-set-key (kbd "M-f k") #'kill-this-buffer)
+
 (use-package undo-tree
   :init
   (progn
@@ -51,9 +51,7 @@
 
 (use-package flycheck
   :init
-  (add-hook 'prog-mode-hook #'flycheck-mode)
-  :config
-  (global-flycheck-mode 1))
+  (add-hook 'prog-mode-hook #'flycheck-mode))
 
 (use-package company
   :init
