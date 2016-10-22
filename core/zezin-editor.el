@@ -70,5 +70,17 @@
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
+(use-package engine-mode
+  :bind
+  (("M-s M-g" . engine/search-google)
+   ("M-s M-h" . engine/search-github))
+  :config
+  (progn
+    (engine-mode t)
+    (defengine github
+      "https://github.com/search?ref=simplesearch&q=%s")
+    (defengine google
+      "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")))
+
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here
