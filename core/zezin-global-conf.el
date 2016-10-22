@@ -17,6 +17,7 @@
 (global-set-key (kbd "M-w") nil)
 (global-set-key (kbd "M-f") nil)
 (global-set-key (kbd "M-s") nil)
+(global-set-key (kbd "M-j") nil)
 
 (use-package exec-path-from-shell
   :config (when (memq window-system '(mac ns x))
