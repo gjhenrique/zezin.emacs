@@ -5,7 +5,7 @@
 
 (use-package evil-anzu
   :config
-  (global-anzu-mode t)) 
+  (global-anzu-mode t))
 
 (use-package evil-matchit)
 

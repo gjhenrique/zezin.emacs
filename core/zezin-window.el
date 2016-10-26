@@ -5,14 +5,14 @@
 (use-package ace-window
   :init
   (setq aw-keys '(?f ?j ?d ?k ?g ?h ?s ?l ?a))
-  :bind ("M-w a" . ace-window)) 
+  :bind (("M-w a" . ace-window)))
 
 (use-package golden-ratio
   :init
   (setq golden-ratio-adjust-factor 1
 	golden-ratio-wide-adjust-factor 1)
   :config
-  (progn 
+  (progn
     (golden-ratio-mode)
     (dolist (f '(ace-window
 		 ace-delete-window

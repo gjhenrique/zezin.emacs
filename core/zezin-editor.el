@@ -78,7 +78,9 @@
     (defengine github
       "https://github.com/search?ref=simplesearch&q=%s")
     (defengine google
-      "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")))
+      "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")
+    (defengine stackoverflow
+      "http://stackoverflow.com/search?q=%s")))
 
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here

@@ -2,11 +2,11 @@
 
 (defvar zezin-dir (file-name-directory load-file-name))
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir) )
-(unless (file-exists-p zezin-cache-dir)
-    (make-directory zezin-cache-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
-(setq package-user-dir (expand-file-name "elpa" zezin-dir))
+
+(unless (file-exists-p zezin-cache-dir)
+    (make-directory zezin-cache-dir))
 
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
@@ -26,6 +26,8 @@
 (set-frame-font "Source Code Pro 12")
 (load-theme 'base16-oceanicnext t)
 
+; This should not be here, but if this function was below the advice, it did not load =/
+(advice-add 'use-package :filter-args #'zezin-use-package-advice)
 ; interesting packages
 
 ; evil

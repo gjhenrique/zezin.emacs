@@ -1,4 +1,6 @@
 (require 'package)
+
+(setq package-user-dir (expand-file-name "elpa" zezin-dir))
 (setq package-enable-at-startup nil)
 (setq use-package-always-ensure t)
 
