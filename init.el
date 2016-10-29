@@ -25,12 +25,6 @@
 (set-frame-font "Source Code Pro 12")
 (load-theme 'base16-oceanicnext t)
 
-; evil
-; evil-anzu
-; evil-nerd-commenter
-; evil-matchit
-; evil-escape
-
 ;; ace-window - better window manipulation
 ;; agressive-indent-mode
 ;; avy - hints for jump in certain point
@@ -52,4 +46,5 @@
 ;; remember-mode?
 ;; yasnippet
 
+;; modeline
 ;; flycheck-tooltip

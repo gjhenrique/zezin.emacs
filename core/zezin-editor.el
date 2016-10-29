@@ -1,8 +1,17 @@
-; core packages
 (use-package popwin)
 (use-package ag)
+(use-package recentf
+  :init
+  (progn
+    (add-hook 'find-file-hook (lambda () (unless recentf-mode
+					   (recentf-mode)
+					   (recentf-track-opened-file))))
+    (setq recentf-save-file (concat zezin-cache-dir "recentf")
+	  recentf-max-saved-items 1000)))
 
-(use-package recentf)
+(use-package aggressive-indent
+  :config
+  (global-aggressive-indent-mode 1))
 
 (use-package projectile
   :init
@@ -20,6 +29,19 @@
 	 ("g" . helm-projectile-switch-to-buffer)
 	 ("h" . helm-projectile)))
 
+(use-package avy
+  :init
+  (setq avy-all-windows 'all-frames)
+  :bind (:editor ("j" . evil-avy-goto-char)
+		 ("l" . evil-avy-goto-line)
+		 ("k" . evil-avy-goto-url))
+  :config
+  ;; spacemacs
+  (defun zezinavy-goto-url ()
+    "Use avy to go to an URL in the buffer."
+    (interactive)
+    (avy--generic-jump "https?://" nil 'pre)))
+
 (global-set-key
  (zezin-prefix-select-key :buffer "a")
  #'kill-this-buffer)
@@ -36,6 +58,8 @@
 (use-package which-key
   :config
   (which-key-mode))
+
+;; (use-package agressive-inde
 
 (use-package expand-region
   :bind(("M-w" . er/expand-region)))
@@ -73,7 +97,7 @@
 (use-package engine-mode
   :bind
   (:search ("k" . engine/search-google)
-	   ("l" . engine/search-stackoverflow))
+	   ("l" . engine/search-github))
   :config
   (progn
     (engine-mode t)
