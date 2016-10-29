@@ -2,6 +2,8 @@
 (use-package popwin)
 (use-package ag)
 
+(use-package recentf)
+
 (use-package projectile
   :init
   (setq projectile-sort-order 'recentf
@@ -11,16 +13,16 @@
   (projectile-global-mode))
 
 (use-package helm-projectile
-  :bind (("M-p M-d" . helm-projectile-find-dir)
-	 ("M-p M-h" . helm-projectile)
-	 ("M-p M-f" . helm-projectile-find-file)
-	 ("M-p M-p" . helm-projectile-switch-project)
-	 ("M-p M-b" . helm-projectile-switch-to-buffer)
-	 ("M-p M-h" . helm-projectile)))
+  :bind (:projectile
+         ("d" . helm-projectile-find-dir)
+	 ("f" . helm-projectile-find-file)
+	 ("j" . helm-projectile-switch-project)
+	 ("g" . helm-projectile-switch-to-buffer)
+	 ("h" . helm-projectile)))
 
-; editor related stuff
-(global-set-key (kbd "M-b") #'evil-switch-to-windows-last-buffer)
-(global-set-key (kbd "M-f k") #'kill-this-buffer)
+(global-set-key
+ (zezin-prefix-select-key :buffer "a")
+ #'kill-this-buffer)
 
 (use-package undo-tree
   :init
@@ -29,14 +31,14 @@
 	  undo-tree-visualizer-diff t))
   :config
   (global-undo-tree-mode)
-  :bind (("M-e u" . undo-tree-visualize)))
+  :bind (:editor ("u" . undo-tree-visualize)))
 
 (use-package which-key
   :config
   (which-key-mode))
 
 (use-package expand-region
-  :bind(("M-e M-w" . er/expand-region)))
+  :bind(("M-w" . er/expand-region)))
 
 (use-package smartparens
   :init
@@ -70,8 +72,8 @@
 
 (use-package engine-mode
   :bind
-  (("M-s M-g" . engine/search-google)
-   ("M-s M-h" . engine/search-github))
+  (:search ("k" . engine/search-google)
+	   ("l" . engine/search-stackoverflow))
   :config
   (progn
     (engine-mode t)
@@ -80,7 +82,7 @@
     (defengine google
       "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")
     (defengine stackoverflow
-      "http://stackoverflow.com/search?q=%s")))
+      "http://stackoverflow.com/search?q=%s"))) 
 
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here

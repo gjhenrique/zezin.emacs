@@ -5,7 +5,7 @@
 (use-package ace-window
   :init
   (setq aw-keys '(?f ?j ?d ?k ?g ?h ?s ?l ?a))
-  :bind (("M-w a" . ace-window)))
+  :bind (:window ("f" . ace-window)))
 
 (use-package golden-ratio
   :init
@@ -85,15 +85,15 @@
   (windmove-right)
   (golden-ratio))
 
-(global-set-key (kbd "M-w b") #'zezin-alternate-buffer-another-window)
-(global-set-key (kbd "M-w l") #'evil-window-right)
-(global-set-key (kbd "M-w h") #'evil-window-left)
-(global-set-key (kbd "M-w j") #'evil-window-down)
-(global-set-key (kbd "M-w k") #'evil-window-up)
-(global-set-key (kbd "M-w d") #'evil-window-delete)
-(global-set-key (kbd "M-w m") #'zezin-toggle-maximize-buffer)
-(global-set-key (kbd "M-w v") #'split-window-right-and-focus) 
-(global-set-key (kbd "M-w s") #'split-window-below-and-focus)
+(global-set-key (zezin-prefix-select-key :window "k") #'zezin-alternate-buffer-another-window)
+(global-set-key (zezin-prefix-select-key :window "l") #'evil-window-right)
+(global-set-key (zezin-prefix-select-key :window "h") #'evil-window-left)
+(global-set-key (zezin-prefix-select-key :window "j") #'evil-window-down)
+(global-set-key (zezin-prefix-select-key :window "k") #'evil-window-up)
+(global-set-key (zezin-prefix-select-key :window "d") #'evil-window-delete)
+(global-set-key (zezin-prefix-select-key :window "g") #'zezin-toggle-maximize-buffer)
+(global-set-key (zezin-prefix-select-key :window "s") #'split-window-right-and-focus)
+(global-set-key (zezin-prefix-select-key :window "a") #'split-window-below-and-focus)
 
 (provide 'zezin-window)
 ;;; zezin-window.el ends here

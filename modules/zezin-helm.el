@@ -7,7 +7,6 @@
 	  helm-split-window-in-side-p t
 	  helm-always-two-windows t
 	  helm-echo-input-in-header-line t)
-
     ; hiding minibuffer
     (defun helm-hide-minibuffer-maybe ()
       (when (with-helm-buffer helm-echo-input-in-header-line)
@@ -25,22 +24,14 @@
     (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1))))
   :config
   (helm-mode 1)
-  :bind (("M-f M-f" . helm-find-files)
-	 ("M-x" . helm-M-x)
-	 ("M-f b" . helm-mini)
-	 :map helm-map
-	 ("<tab>" . helm-execute-persistent-action)
-	 ("C-j" . helm-next-line)
-	 ("C-k" . helm-previous-line)
-	 ("C-h" . helm-find-files-up-one-level)))
-
-(use-package helm-projectile
-  :bind (("M-p M-d" . helm-projectile-find-dir)
-	 ("M-p M-h" . helm-projectile)
-	 ("M-p M-f" . helm-projectile-find-file)
-	 ("M-p M-p" . helm-projectile-switch-project)
-	 ("M-p M-b" . helm-projectile-switch-to-buffer)
-	 ("M-p M-h" . helm-projectile)))
+  :bind ((:buffer "f" . helm-find-files)
+         ("M-x" . helm-M-x)
+         (:buffer "j" . helm-mini)
+         :map helm-map
+         ("<tab>" . helm-execute-persistent-action)
+         ("C-j" . helm-next-line)
+         ("C-k" . helm-previous-line)
+         ("C-h" . helm-find-files-up-one-level)))
 
 ; searching
 (use-package helm-ag
@@ -72,12 +63,12 @@
     (defun helm-do-ag-region-or-symbol ()
       (interactive)
       (zezin-helm-do-ag-region-or-symbol 'helm-do-ag)))
-  :bind (("M-s M-a" . helm-projectile-ag)
-	 ("M-s M-s" . helm-projectile-region-or-symbol)
-	 ("M-s M-d" . helm-do-ag-current-directory)
-	 ("M-s M-f" . helm-do-ag-current-directory-region-or-symbol)
-	 ("M-s M-g" . helm-do-ag)
-	 ("M-s M-r" . helm-do-ag-region-or-symbol)))
+  :bind (:search ("j" . helm-projectile-ag)
+                 ("s" . helm-projectile-region-or-symbol)
+                 ("d" . helm-do-ag-current-directory)
+                 ("f" . helm-do-ag-current-directory-region-or-symbol)
+                 ("g" . helm-do-ag)
+                 ("h" . helm-do-ag-region-or-symbol)))
 
 (provide 'zezin-helm)
 ;;; zezin-helm.el ends here

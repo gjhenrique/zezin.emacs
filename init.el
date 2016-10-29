@@ -16,7 +16,6 @@
 (require 'zezin-evil)
 (require 'zezin-editor)
 (require 'zezin-helm)
-(require 'zezin-editor)
 (require 'zezin-window)
 (require 'zezin-git)
 
@@ -25,10 +24,6 @@
 (find-file "/home/guilherme/Projects/zezin/init.el")
 (set-frame-font "Source Code Pro 12")
 (load-theme 'base16-oceanicnext t)
-
-; This should not be here, but if this function was below the advice, it did not load =/
-(advice-add 'use-package :filter-args #'zezin-use-package-advice)
-; interesting packages
 
 ; evil
 ; evil-anzu

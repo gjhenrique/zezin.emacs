@@ -1,5 +1,5 @@
 (use-package magit
-  :bind (("M-j M-s" . magit-status))) 
+  :bind (:git ("f" . magit-status)))
 
 (use-package evil-magit
   :after magit) 
