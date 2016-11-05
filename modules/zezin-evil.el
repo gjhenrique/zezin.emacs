@@ -13,9 +13,7 @@
   :config
   (evil-escape-mode))
 
-(use-package evil-nerd-commenter
-  :bind (:editor ("s" . evilnc-comment-or-uncomment-lines)
-		 ("a" . evilnc-comment-or-uncomment-paragraphs))) 
+(use-package evil-nerd-commenter)
 
 (provide 'zezin-evil)
 ;;; zezin-evil.el ends here

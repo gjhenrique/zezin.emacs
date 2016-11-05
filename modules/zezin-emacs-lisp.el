@@ -4,10 +4,7 @@
   :init
   (progn
     (add-hook #'emacs-lisp-mode-hook #'elisp-slime-nav-mode)
-    (add-hook #'ielm-mode-hook #'elisp-slime-nav-mode))
-  :bind (:map elisp-slime-nav-mode-map
-	      (:language "f" . elisp-slime-nav-find-elisp-thing-at-point)
-	      (:language "j" . elisp-slime-nav-describe-elisp-thing-at-point)))
+    (add-hook #'ielm-mode-hook #'elisp-slime-nav-mode)))
 
 (use-package eldoc
   :init

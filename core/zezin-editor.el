@@ -21,30 +21,17 @@
   :config
   (projectile-global-mode))
 
-(use-package helm-projectile
-  :bind (:projectile
-         ("d" . helm-projectile-find-dir)
-	 ("f" . helm-projectile-find-file)
-	 ("j" . helm-projectile-switch-project)
-	 ("g" . helm-projectile-switch-to-buffer)
-	 ("h" . helm-projectile)))
+(use-package helm-projectile)
 
 (use-package avy
   :init
   (setq avy-all-windows 'all-frames)
-  :bind (:editor ("j" . evil-avy-goto-char)
-		 ("l" . evil-avy-goto-line)
-		 ("k" . evil-avy-goto-url))
   :config
   ;; spacemacs
-  (defun zezinavy-goto-url ()
+  (defun zezin-avy-goto-url ()
     "Use avy to go to an URL in the buffer."
     (interactive)
     (avy--generic-jump "https?://" nil 'pre)))
-
-(global-set-key
- (zezin-prefix-select-key :buffer "a")
- #'kill-this-buffer)
 
 (use-package undo-tree
   :init
@@ -52,17 +39,13 @@
     (setq undo-tree-visualizer-timestamps t
 	  undo-tree-visualizer-diff t))
   :config
-  (global-undo-tree-mode)
-  :bind (:editor ("u" . undo-tree-visualize)))
+  (global-undo-tree-mode))
 
 (use-package which-key
   :config
   (which-key-mode))
 
-;; (use-package agressive-inde
-
-(use-package expand-region
-  :bind(("M-w" . er/expand-region)))
+(use-package expand-region)
 
 (use-package smartparens
   :init
@@ -85,19 +68,13 @@
     (setq company-idle-delay 0.5
 	  company-tooltip-limit 10
 	  company-minimum-prefix-length 2)
-    (global-company-mode))
-  :bind (:map company-active-map
-	      ("<tab>" . company-complete-common-or-cycle)
-	      ("<backtab>" . company-select-previous)))
+    (global-company-mode)))
 
 (use-package rainbow-delimiters
   :init
   (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
 
 (use-package engine-mode
-  :bind
-  (:search ("k" . engine/search-google)
-	   ("l" . engine/search-github))
   :config
   (progn
     (engine-mode t)
@@ -106,7 +83,7 @@
     (defengine google
       "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")
     (defengine stackoverflow
-      "http://stackoverflow.com/search?q=%s"))) 
+      "http://stackoverflow.com/search?q=%s")))
 
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here

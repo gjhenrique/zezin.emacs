@@ -23,15 +23,7 @@
 					    (popwin-mode -1)))
     (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1))))
   :config
-  (helm-mode 1)
-  :bind ((:buffer "f" . helm-find-files)
-         ("M-x" . helm-M-x)
-         (:buffer "j" . helm-mini)
-         :map helm-map
-         ("<tab>" . helm-execute-persistent-action)
-         ("C-j" . helm-next-line)
-         ("C-k" . helm-previous-line)
-         ("C-h" . helm-find-files-up-one-level)))
+  (helm-mode 1))
 
 ; searching
 (use-package helm-ag
@@ -63,13 +55,7 @@
        #'helm-do-ag-current-directory))
     (defun helm-do-ag-region-or-symbol ()
       (interactive)
-      (zezin-helm-do-ag-region-or-symbol 'helm-do-ag)))
-  :bind (:search ("j" . helm-projectile-ag)
-                 ("s" . helm-projectile-region-or-symbol)
-                 ("d" . helm-do-ag-current-directory)
-                 ("f" . helm-do-ag-current-directory-region-or-symbol)
-                 ("g" . helm-do-ag)
-                 ("h" . helm-do-ag-region-or-symbol)))
+      (zezin-helm-do-ag-region-or-symbol 'helm-do-ag))))
 
 (provide 'zezin-helm)
 ;;; zezin-helm.el ends here

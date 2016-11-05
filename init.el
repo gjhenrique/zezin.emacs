@@ -19,7 +19,10 @@
 (require 'zezin-window)
 (require 'zezin-git)
 
+(require 'zezin-org)
 (require 'zezin-emacs-lisp)
+
+(require 'zezin-keybindings)
 
 (find-file "/home/guilherme/Projects/zezin/init.el")
 (set-frame-font "Source Code Pro 12")
@@ -34,14 +37,18 @@
 ;; dicover-my-major?
 ;; diff-hl?
 ;; expand-region
+;; evil-smartparens
+;; flyspell
 ;; helm-swoop
 ;; golden-ratio
+;; git-gutter
 ;; google-translate
 ;; perspective
 ;; prodigy
 ;; relative-line-numbers
 ;; recentf
 ;; skewer
+;; smooth-scrolling
 ;; which-key
 ;; remember-mode?
 ;; yasnippet

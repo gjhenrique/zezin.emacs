@@ -4,8 +4,7 @@
 
 (use-package ace-window
   :init
-  (setq aw-keys '(?f ?j ?d ?k ?g ?h ?s ?l ?a))
-  :bind (:window ("f" . ace-window)))
+  (setq aw-keys '(?f ?j ?d ?k ?g ?h ?s ?l ?a)))
 
 (use-package golden-ratio
   :init
@@ -84,16 +83,6 @@
   (split-window-right)
   (windmove-right)
   (golden-ratio))
-
-(global-set-key (zezin-prefix-select-key :window "k") #'zezin-alternate-buffer-another-window)
-(global-set-key (zezin-prefix-select-key :window "l") #'evil-window-right)
-(global-set-key (zezin-prefix-select-key :window "h") #'evil-window-left)
-(global-set-key (zezin-prefix-select-key :window "j") #'evil-window-down)
-(global-set-key (zezin-prefix-select-key :window "k") #'evil-window-up)
-(global-set-key (zezin-prefix-select-key :window "d") #'evil-window-delete)
-(global-set-key (zezin-prefix-select-key :window "g") #'zezin-toggle-maximize-buffer)
-(global-set-key (zezin-prefix-select-key :window "s") #'split-window-right-and-focus)
-(global-set-key (zezin-prefix-select-key :window "a") #'split-window-below-and-focus)
 
 (provide 'zezin-window)
 ;;; zezin-window.el ends here
