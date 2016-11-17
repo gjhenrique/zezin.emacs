@@ -1,4 +1,6 @@
 (use-package evil
+  :init
+  (setq evil-want-C-u-scroll t)
   :config
   (evil-mode 1)
   :bind (("C-i" . evil-jump-forward)))
@@ -6,6 +8,10 @@
 (use-package evil-anzu
   :config
   (global-anzu-mode t))
+
+(use-package evil-mc
+  :config
+  (evil-mc-mode 1))
 
 (use-package evil-matchit)
 

@@ -59,7 +59,8 @@
 
 (zezin-add-keybinding :buffer
                       '(("f" helm-find-files)
-                        ("j" helm-mini)))
+                        ("j" helm-mini)
+			("d" switch-to-previous-buffer)))
 
 (zezin-add-keybinding :git
                       '(("f" magit-status)))
@@ -83,26 +84,12 @@
 			("j" elisp-slime-nav-describe-elisp-thing-at-point))
 		      :keymap 'elisp-slime-nav-mode-map)
 
-(defhydra hydra-vi (:pre (set-cursor-color "#40e0d0")
-			 :post (progn
-				 (set-cursor-color "#ffffff")
-				 (message
-				  "Thank you, come again.")))
-  "vi"
-  ("l" forward-char)
-  ("h" backward-char)
-  ("j" next-line)
-  ("k" previous-line)
-  ("q" nil "quit"))
-;; key-chord
-
-(defhydra hydra-launcher (:color blue)
-  "Launch"
-  ("h" man "man")
-  ("r" (browse-url "http://www.reddit.com/r/emacs/") "reddit")
-  ("w" (browse-url "http://www.emacswiki.org/") "emacswiki")
-  ("s" shell "shell")
-  ("q" nil "cancel"))
+(use-package key-chord
+  :config
+  (setq key-chord-two-keys-delay 0.4)
+  (use-package key-seq
+    :config
+    (key-seq-define-global "sj" #'switch-to-previous-buffer)))
 
 (provide 'zezin-keybindings)
 ;;; zezin-keybindings.el ends here

@@ -6,7 +6,7 @@
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 
 (unless (file-exists-p zezin-cache-dir)
-    (make-directory zezin-cache-dir))
+  (make-directory zezin-cache-dir))
 
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
@@ -43,6 +43,7 @@
 ;; golden-ratio
 ;; git-gutter
 ;; google-translate
+;; origami
 ;; perspective
 ;; prodigy
 ;; relative-line-numbers

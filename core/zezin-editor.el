@@ -47,6 +47,10 @@
 
 (use-package expand-region)
 
+(use-package smooth-scrolling
+  :config
+  (smooth-scrolling-mode 1))
+
 (use-package smartparens
   :init
   (add-hook 'prog-mode-hook #'smartparens-mode))
@@ -84,6 +88,27 @@
       "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")
     (defengine stackoverflow
       "http://stackoverflow.com/search?q=%s")))
+
+(use-package smart-mode-line
+  :init
+  (setq sml/no-confirm-load-theme t
+	sml/theme 'respectful
+	rm-whitelist '(""))
+  :config
+  (sml/setup))
+
+;; custom modifications
+(dolist (hook '(text-mode-hook
+		org-mode-hook
+		markdown-mode))
+  (add-hook hook 'turn-on-flyspell))
+
+;; http://emacsredux.com/blog/2013/04/28/switch-to-previous-buffer/
+(defun switch-to-previous-buffer ()
+  "Switch to previously open buffer.
+Repeated invocations toggle between the two most recently open buffers."
+  (interactive)
+  (switch-to-buffer (other-buffer (current-buffer) 1)))
 
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here
