@@ -27,32 +27,3 @@
 (find-file "/home/guilherme/Projects/zezin/init.el")
 (set-frame-font "Source Code Pro 12")
 (load-theme 'base16-oceanicnext t)
-
-;; ace-window - better window manipulation
-;; agressive-indent-mode
-;; avy - hints for jump in certain point
-;; beacon - highlight
-;; bm
-;; dash? - functional library
-;; dicover-my-major?
-;; diff-hl?
-;; expand-region
-;; evil-smartparens
-;; flyspell
-;; helm-swoop
-;; golden-ratio
-;; git-gutter
-;; google-translate
-;; origami
-;; perspective
-;; prodigy
-;; relative-line-numbers
-;; recentf
-;; skewer
-;; smooth-scrolling
-;; which-key
-;; remember-mode?
-;; yasnippet
-
-;; modeline
-;; flycheck-tooltip

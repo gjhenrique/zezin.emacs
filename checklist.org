@@ -1,0 +1,84 @@
+* Org mode Learning
+** Rainer Konig Screencasts
+*** S01E01 - Headline & outline mode
+**** Every headline starts with one or more *
+
+**** Visibility of the headline hierarchy:
+Local visibility cycling with TAB
+Global visibility cycling with S-TAB
+
+**** Increase or decrease level with < or >
+
+**** Move up/down within a level with M-k or M-j
+
+**** Move a headline under another top level headline
+Cursor on the headline and then C-c C-w (org-refile)
+
+*** S01E02 - ToDo Keywords
+#+SEQ_TODO: NEXT (n) TODO(t) WAITING (w)
+**** More keywords can be defined with a line
+**** C-c C-c - Tags
+**** C-c C-t - Select the next state
+
+*** S01E03 - Schedule, deadline & agenda view
+**** NEXT Scheduling is done with C-c C-s
+DEADLINE: <2016-11-23 Wed +1w> SCHEDULED: <2016-11-16 Wed>
+**** Deadlines are defined with C-c C-d
+**** Switch to agenda view with C-a a - Don't know which is
+
+*** S01E04 - Repeating tasks
+**** To schedule a repeating task you need to modify the timestamp <2016-06-11 Sa repeat>
+repeat can be 
+- +1w Next occurrence in one week
+- ++1w Next occurrence on the same day of the week
+
+** Nice functions 
+- org-edit-src-code
+- org-edit-src-exit
+- org-edit-src-abort
+- org-toggle-checkbox
+- org-promote-subtree
+- org-demote-subtree
+
+** Interesting packages
+
+
+* Emacs packages
+- [X] ace-window - better window manipulation
+- [X] agressive-indent-mode
+- [X] avy - hints for jump in certain point
+- [X] beacon - highlight
+- [ ] bm
+- [X] dash? - functional library
+- [ ] diff-mode
+- [ ] dicover-my-major?
+- [ ] diff-hl?
+- [ ] expand-region
+- [ ] evil-smartparens
+- [ ] flyspell
+- [ ] helm-swoop
+- [ ] golden-ratio
+- [ ] git-gutter
+- [ ] google-translate
+- [ ] origami
+- [ ] perspective
+- [ ] prodigy
+- [ ] relative-line-numbers
+- [ ] recentf
+- [ ] skewer
+- [ ] smooth-scrolling
+- [ ] which-key
+- [ ] remember-mode?
+- [ ] yasnippet
+- [ ] modeline
+- [ ] flycheck-tooltip
+
+;; Org
+- [ ] org-download
+- [ ] org-pomodoro
+- [ ] org-projectile
+- [ ] org-capture
+
+
+
+
