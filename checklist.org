@@ -79,6 +79,7 @@ repeat can be
 - [ ] org-projectile
 - [ ] org-capture
 
-
-
-
+* Tasks
+** Download theme base16 automatically
+** Verification of font installation
+If Source Code Pro is not installed, fallback to Ubuntu Mono

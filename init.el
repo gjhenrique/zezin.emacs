@@ -25,5 +25,9 @@
 (require 'zezin-keybindings)
 
 (find-file "/home/guilherme/Projects/zezin/init.el")
-(set-frame-font "Source Code Pro 12")
+
+(if (x-list-fonts "Source Code Pro")
+    (set-frame-font "Source Code Pro 12")
+  (message "Source Code Pro is not installed")
+
 (load-theme 'base16-oceanicnext t)
