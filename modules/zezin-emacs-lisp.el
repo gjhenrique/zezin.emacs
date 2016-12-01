@@ -10,7 +10,13 @@
   :init
   (add-hook 'emacs-lisp-mode-hook 'eldoc-mode))
 
-; from kaushalmodi
+(use-package auto-compile
+  :init
+  (progn
+    (setq auto-compile-display-buffer nil)
+    (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
+
+					; from kaushalmodi
 (defvar zezin-fns-in-edebug nil
   "List of functions for which `edebug' is instrumented.")
 

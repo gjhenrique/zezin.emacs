@@ -13,6 +13,9 @@
 (global-linum-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+
+(unless global-mode-string (setq global-mode-string '("")))
+
 (use-package dash)
 (use-package exec-path-from-shell
   :config (when (memq window-system '(mac ns x))

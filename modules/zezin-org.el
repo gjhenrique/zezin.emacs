@@ -1,4 +1,5 @@
-(use-package org-plus-contrib
+(use-package org
+  :ensure org-plus-contrib
   :init
   (progn
     (setq org-log-done t

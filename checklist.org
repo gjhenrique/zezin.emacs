@@ -52,28 +52,29 @@ repeat can be
 - [X] dash? - functional library
 - [ ] diff-mode
 - [ ] dicover-my-major?
-- [ ] diff-hl?
-- [ ] expand-region
+- [X] diff-hl?
+- [X] expand-region
+- [ ] eyebrowse?
 - [ ] evil-smartparens
 - [ ] flyspell
 - [ ] helm-swoop
-- [ ] golden-ratio
-- [ ] git-gutter
+- [X] golden-ratio
 - [ ] google-translate
 - [ ] origami
-- [ ] perspective
+- [ ] perspective?
+- [ ] persp-mode
 - [ ] prodigy
 - [ ] relative-line-numbers
-- [ ] recentf
+- [X] recentf
 - [ ] skewer
-- [ ] smooth-scrolling
-- [ ] which-key
+- [X] smooth-scrolling
+- [X] which-key
 - [ ] remember-mode?
 - [ ] yasnippet
 - [ ] modeline
 - [ ] flycheck-tooltip
 
-;; Org
+# Org
 - [ ] org-download
 - [ ] org-pomodoro
 - [ ] org-projectile
@@ -83,3 +84,25 @@ repeat can be
 ** Download theme base16 automatically
 ** Verification of font installation
 If Source Code Pro is not installed, fallback to Ubuntu Mono
+** E-mail
+** Feed
+** Dired
+** Languages
+*** Javascript
+*** Ruby
+*** Markdown
+** persp-mode
+    :LOGBOOK:
+    CLOCK: [2016-11-19 Sat 16:00]--[2016-11-19 Sat 16:25] =>  0:25
+    CLOCK: [2016-11-19 Sat 15:03]--[2016-11-19 Sat 15:28] =>  0:25
+    CLOCK: [2016-11-19 Sat 13:36]--[2016-11-19 Sat 14:01] =>  0:25
+    CLOCK: [2016-11-19 Sat 14:22]--[2016-11-19 Sat 14:47] =>  0:25
+    :END:
+*** Functions 
+- persp-add-new
+- persp-add-buffer
+- persp-switch-to-buffer
+*** show in smart-mode-line
+mode-line-format
+** diff-hl
+** Ruby

@@ -7,7 +7,7 @@
 	  helm-split-window-in-side-p t
 	  helm-always-two-windows t
 	  helm-echo-input-in-header-line t)
-    ; hiding minibuffer
+    ;; hiding minibuffer
     (defun helm-hide-minibuffer-maybe ()
       (when (with-helm-buffer helm-echo-input-in-header-line)
 	(let ((ov (make-overlay (point-min) (point-max) nil nil t)))
@@ -25,7 +25,6 @@
   :config
   (helm-mode 1))
 
-; searching
 (use-package helm-ag
   :init
   (progn

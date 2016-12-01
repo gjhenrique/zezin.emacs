@@ -23,6 +23,12 @@
 
 (use-package helm-projectile)
 
+(use-package persp-mode
+  :config
+  (progn
+    (persp-mode)
+    (add-to-list 'global-mode-string '(:eval persp-lighter))))
+
 (use-package avy
   :init
   (setq avy-all-windows 'all-frames)
@@ -53,7 +59,13 @@
 
 (use-package smartparens
   :init
-  (add-hook 'prog-mode-hook #'smartparens-mode))
+  (add-hook 'prog-mode-hook #'smartparens-mode)
+  :config
+  (sp-local-pair 'emacs-lisp-mode "`" "'"))
+
+(use-package beacon
+  :config
+  (beacon-mode 1))
 
 (use-package highlight-parentheses
   :init
@@ -91,11 +103,23 @@
 
 (use-package smart-mode-line
   :init
-  (setq sml/no-confirm-load-theme t
-	sml/theme 'respectful
-	rm-whitelist '(""))
+  (progn
+    (line-number-mode 0)
+    (setq sml/no-confirm-load-theme t
+	  sml/theme 'respectful
+	  rm-whitelist '("")))
   :config
-  (sml/setup))
+  (progn
+    ;; Changing the order of mode-line-misc-info (global-mode-string) with mode-line-format
+    (let ((misc-position (position 'mode-line-misc-info mode-line-format))
+	  (mode-line-position (position 'mode-line-modes mode-line-format)))
+      (when (> misc-position mode-line-position)
+	(setq mode-line-format
+	      (-insert-at mode-line-position
+			  'mode-line-misc-info
+			  (-remove-at misc-position mode-line-format)))))
+    (sml/setup)))
+
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook

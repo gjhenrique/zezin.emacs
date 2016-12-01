@@ -28,6 +28,6 @@
 
 (if (x-list-fonts "Source Code Pro")
     (set-frame-font "Source Code Pro 12")
-  (message "Source Code Pro is not installed")
+  (message "Source Code Pro is not installed"))
 
 (load-theme 'base16-oceanicnext t)
