@@ -17,13 +17,19 @@
   :init
   (setq projectile-sort-order 'recentf
 	projectile-cache-file (concat zezin-cache-dir "projectile.cache")
-	projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld"))
+	projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld")
+	projectile-completion-system 'helm)
   :config
   (projectile-global-mode))
 
 (use-package helm-projectile)
 
 (use-package persp-mode
+  :init
+  (setq persp-save-dir (concat zezin-cache-dir "layouts/")
+	persp-reset-windows-on-nil-window-conf nil
+	persp-add-buffer-on-find-file nil
+	persp-auto-save-fname "default")
   :config
   (progn
     (persp-mode)

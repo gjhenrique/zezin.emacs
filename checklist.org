@@ -93,6 +93,7 @@ If Source Code Pro is not installed, fallback to Ubuntu Mono
 *** Markdown
 ** persp-mode
     :LOGBOOK:
+    CLOCK: [2016-12-02 Fri 22:52]--[2016-12-02 Fri 23:59] =>  1:07
     CLOCK: [2016-11-19 Sat 16:00]--[2016-11-19 Sat 16:25] =>  0:25
     CLOCK: [2016-11-19 Sat 15:03]--[2016-11-19 Sat 15:28] =>  0:25
     CLOCK: [2016-11-19 Sat 13:36]--[2016-11-19 Sat 14:01] =>  0:25
@@ -102,7 +103,24 @@ If Source Code Pro is not installed, fallback to Ubuntu Mono
 - persp-add-new
 - persp-add-buffer
 - persp-switch-to-buffer
+- persp-prev
+- persp-next
+- persp-save
+- persp-save-state-to-file
+- persp-load-state-from-file
+
 *** show in smart-mode-line
 mode-line-format
+*** Investigate window configs
 ** diff-hl
 ** Ruby
+   :LOGBOOK:
+   CLOCK: [2016-12-03 Sat 19:46]--[2016-12-03 Sat 19:56] =>  0:10
+   CLOCK: [2016-12-03 Sat 11:30]--[2016-12-03 Sat 11:42] =>  0:12
+   CLOCK: [2016-12-03 Sat 10:53]--[2016-12-03 Sat 10:53] =>  0:00
+   :END:
+** Emacs Daemon
+*** Daemon 
+emacs --daemon
+*** Client
+emacsclient -t

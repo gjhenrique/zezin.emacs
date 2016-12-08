@@ -7,7 +7,8 @@
                               :projectile "h"
                               :search "d"
                               :git "s"
-                              :language "k")))
+                              :language "k"
+			      :perspective "a")))
 
 (cl-defun zezin-add-keybinding (prefix keys &key
 				       (map 'global)
@@ -60,7 +61,8 @@
 (zezin-add-keybinding :buffer
                       '(("f" helm-find-files)
                         ("j" helm-mini)
-			("d" switch-to-previous-buffer)))
+			("d" switch-to-previous-buffer)
+			("k" kill-this-buffer)))
 
 (zezin-add-keybinding :git
                       '(("f" magit-status)))
@@ -78,18 +80,6 @@
            ("C-j" . helm-next-line)
            ("C-k" . helm-previous-line)
            ("C-h" . helm-find-files-up-one-level))
-
-(zezin-add-keybinding :language
-		      '(("f" elisp-slime-nav-find-elisp-thing-at-point)
-			("j" elisp-slime-nav-describe-elisp-thing-at-point))
-		      :keymap 'elisp-slime-nav-mode-map)
-
-(use-package key-chord
-  :config
-  (setq key-chord-two-keys-delay 0.4)
-  (use-package key-seq
-    :config
-    (key-seq-define-global "sj" #'switch-to-previous-buffer)))
 
 (provide 'zezin-keybindings)
 ;;; zezin-keybindings.el ends here

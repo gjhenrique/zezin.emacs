@@ -28,6 +28,11 @@
                                    "\\(?1:\\(\\w\\|\\s_\\)+\\)\\_>") ; word or symbol char
   "Regexp to find defun or defmacro definition.")
 
+(zezin-add-keybinding :language
+		      '(("f" elisp-slime-nav-find-elisp-thing-at-point)
+			("j" elisp-slime-nav-describe-elisp-thing-at-point))
+		      :map 'elisp-slime-nav-mode-map)
+
 (defun zezin-toggle-edebug ()
   (interactive)
   (save-excursion

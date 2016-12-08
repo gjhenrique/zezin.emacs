@@ -1,7 +1,7 @@
 (setq load-prefer-newer t)
 
 (defvar zezin-dir (file-name-directory load-file-name))
-(defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir) )
+(defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 
@@ -19,10 +19,11 @@
 (require 'zezin-window)
 (require 'zezin-git)
 
+(require 'zezin-keybindings)
+
 (require 'zezin-org)
 (require 'zezin-emacs-lisp)
-
-(require 'zezin-keybindings)
+(require 'zezin-ruby)
 
 (find-file "/home/guilherme/Projects/zezin/init.el")
 
