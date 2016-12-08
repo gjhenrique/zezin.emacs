@@ -16,7 +16,10 @@
     (setq auto-compile-display-buffer nil)
     (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
 
-					; from kaushalmodi
+(with-eval-after-load 'smartparens
+  (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil))
+
+;; from kaushalmodi
 (defvar zezin-fns-in-edebug nil
   "List of functions for which `edebug' is instrumented.")
 
