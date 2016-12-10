@@ -58,6 +58,9 @@ repeat can be
 - [ ] evil-smartparens
 - [ ] flyspell
 - [ ] helm-swoop
+- [ ] git-comitj
+- [ ] git-link
+- [ ] git-timemachine-mode
 - [X] golden-ratio
 - [ ] google-translate
 - [ ] origami
@@ -115,6 +118,10 @@ mode-line-format
 ** diff-hl
 ** Ruby
    :LOGBOOK:
+   CLOCK: [2016-12-10 Sat 19:12]--[2016-12-10 Sat 19:37] =>  0:25
+   CLOCK: [2016-12-10 Sat 11:09]--[2016-12-10 Sat 11:34] =>  0:25
+   CLOCK: [2016-12-10 Sat 10:07]--[2016-12-10 Sat 10:32] =>  0:25
+   CLOCK: [2016-12-10 Sat 09:37]--[2016-12-10 Sat 10:02] =>  0:25
    CLOCK: [2016-12-03 Sat 19:46]--[2016-12-03 Sat 19:56] =>  0:10
    CLOCK: [2016-12-03 Sat 11:30]--[2016-12-03 Sat 11:42] =>  0:12
    CLOCK: [2016-12-03 Sat 10:53]--[2016-12-03 Sat 10:53] =>  0:00

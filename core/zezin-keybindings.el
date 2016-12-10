@@ -64,9 +64,6 @@
 			("d" switch-to-previous-buffer)
 			("k" kill-this-buffer)))
 
-(zezin-add-keybinding :git
-                      '(("f" magit-status)))
-
 (bind-keys :map company-active-map
            ("<tab>" . company-complete-common-or-cycle)
            ("<backtab>" . company-select-previous))
