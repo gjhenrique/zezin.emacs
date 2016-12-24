@@ -10,9 +10,7 @@
 
 (use-package robe
   :init
-  (progn
-    (push 'company-robe company-backends)
-    (add-hook 'ruby-mode-hook 'robe-mode)))
+  (add-hook 'ruby-mode-hook 'robe-mode))
 
 (use-package rake
   :init
@@ -36,6 +34,9 @@
 
 (with-eval-after-load 'evil-matchit
   (add-hook #'ruby-mode-hook 'turn-on-evil-matchit-mode))
+
+(with-eval-after-load 'flycheck
+  (push 'ruby-mode flycheck-global-modes))
 
 (with-eval-after-load 'company
   (push 'company-robe company-backends)
@@ -72,9 +73,9 @@
 			("y" rspec-toggle-spec-and-target-find-example)
 			;; rake: TODO
 			;; robe
-			("f" robe-doc)
+			("j" robe-doc)
 			("z" robe-rails-refresh)
-			("j" robe-jump)
+			("f" robe-jump)
 			("x" robe-start)
 			;; bundle
 			("b" bundle-install)

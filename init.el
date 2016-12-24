@@ -17,10 +17,10 @@
 (require 'zezin-editor)
 (require 'zezin-helm)
 (require 'zezin-window)
-(require 'zezin-git)
 
 (require 'zezin-keybindings)
 
+(require 'zezin-git)
 (require 'zezin-org)
 (require 'zezin-emacs-lisp)
 (require 'zezin-ruby)

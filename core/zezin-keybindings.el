@@ -26,7 +26,8 @@
                         ("f" helm-projectile-find-file)
                         ("j" helm-projectile-switch-project)
                         ("g" helm-projectile-switch-to-buffer)
-                        ("h" helm-projectile)))
+                        ("h" helm-projectile)
+			("a" projectile-compile-project)))
 
 (zezin-add-keybinding :editor
                       '(("s" evilnc-comment-or-uncomment-lines)
@@ -34,7 +35,8 @@
                         ("j" evil-avy-goto-char)
                         ("l" evil-avy-goto-line)
                         ("k" evil-avy-goto-url)
-                        ("u" undo-tree-visualize)))
+                        ("u" undo-tree-visualize)
+			("h" helm-imenu)))
 
 (zezin-add-keybinding :window
                       '(("f" ace-window)

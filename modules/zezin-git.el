@@ -9,7 +9,7 @@
     (setq diff-hl-side 'right)
     (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
   :config
-  (diff-hl-mode))
+  (diff-hl-margin-mode))
 
 (use-package git-messenger)
 

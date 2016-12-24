@@ -65,9 +65,12 @@
 
 (use-package smartparens
   :init
-  (add-hook 'prog-mode-hook #'smartparens-mode)
+  (progn
+    (add-hook 'prog-mode-hook #'smartparens-mode))
   :config
-  (sp-local-pair 'emacs-lisp-mode "`" "'"))
+  (progn
+    (require 'smartparens-config)
+    (show-smartparens-global-mode +1)))
 
 (use-package beacon
   :config
@@ -83,6 +86,11 @@
 (use-package flycheck
   :init
   (add-hook 'prog-mode-hook #'flycheck-mode))
+
+(use-package flycheck-pos-tip
+  :after flycheck
+  :init
+  (flycheck-pos-tip-mode))
 
 (use-package company
   :init
