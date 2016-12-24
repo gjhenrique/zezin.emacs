@@ -32,3 +32,4 @@
   (message "Source Code Pro is not installed"))
 
 (load-theme 'base16-oceanicnext t)
+(require 'zezin-javascript)

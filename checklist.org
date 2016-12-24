@@ -69,6 +69,7 @@ repeat can be
 - [ ] prodigy
 - [ ] relative-line-numbers
 - [X] recentf
+- [ ] rest-client
 - [ ] skewer
 - [X] smooth-scrolling
 - [X] which-key
@@ -118,6 +119,8 @@ mode-line-format
 ** diff-hl
 ** Ruby
    :LOGBOOK:
+   CLOCK: [2016-12-10 Sat 20:44]--[2016-12-10 Sat 21:09] =>  0:25
+   CLOCK: [2016-12-10 Sat 20:14]--[2016-12-10 Sat 20:39] =>  0:25
    CLOCK: [2016-12-10 Sat 19:12]--[2016-12-10 Sat 19:37] =>  0:25
    CLOCK: [2016-12-10 Sat 11:09]--[2016-12-10 Sat 11:34] =>  0:25
    CLOCK: [2016-12-10 Sat 10:07]--[2016-12-10 Sat 10:32] =>  0:25
@@ -126,6 +129,13 @@ mode-line-format
    CLOCK: [2016-12-03 Sat 11:30]--[2016-12-03 Sat 11:42] =>  0:12
    CLOCK: [2016-12-03 Sat 10:53]--[2016-12-03 Sat 10:53] =>  0:00
    :END:
+** Javascript
+   :LOGBOOK:
+   CLOCK: [2016-12-12 Mon 23:01]--[2016-12-12 Mon 23:26] =>  0:25
+   CLOCK: [2016-12-11 Sun 18:44]--[2016-12-11 Sun 19:09] =>  0:25
+   CLOCK: [2016-12-11 Sun 11:39]--[2016-12-11 Sun 12:04] =>  0:25
+   :END:
+** org-indent-mode not working
 ** Emacs Daemon
 *** Daemon 
 emacs --daemon
