@@ -24,12 +24,17 @@
 (require 'zezin-org)
 (require 'zezin-emacs-lisp)
 (require 'zezin-ruby)
-
-(find-file "/home/guilherme/Projects/zezin/init.el")
-
-(if (x-list-fonts "Source Code Pro")
-    (set-frame-font "Source Code Pro 12")
-  (message "Source Code Pro is not installed"))
-
-(load-theme 'base16-oceanicnext t)
 (require 'zezin-javascript)
+
+(defun zezin-select-fonts-theme ()
+  (load-theme 'base16-oceanicnext t)
+  (if (x-list-fonts "Source Code Pro")
+      (set-frame-font "Source Code Pro 12")
+    (message "Source Code Pro is not installed")))
+
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(select-frame frame)
+		(zezin-select-fonts-theme)))
+  (zezin-select-fonts-theme))

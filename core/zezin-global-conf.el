@@ -13,6 +13,8 @@
 (global-linum-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+(unless (bound-and-true-p custom-file)
+  (setq custom-file (concat zezin-cache-dir "custom_file")))
 
 (unless global-mode-string (setq global-mode-string '("")))
 
