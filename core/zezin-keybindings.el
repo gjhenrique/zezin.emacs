@@ -2,6 +2,7 @@
 
 (defconst zezin-prefix-keys
   #s(hash-table data (:buffer "j"
+			      :ace "w"
                               :window "f"
                               :editor "g"
                               :projectile "h"
@@ -32,23 +33,29 @@
 (zezin-add-keybinding :editor
                       '(("s" evilnc-comment-or-uncomment-lines)
                         ("a" evilnc-comment-or-uncomment-paragraphs)
-                        ("j" evil-avy-goto-char)
+                        ("j" evil-avy-goto-word-or-subword-1)
                         ("l" evil-avy-goto-line)
+			("g" evil-avy-goto-char-2)
                         ("k" evil-avy-goto-url)
                         ("u" undo-tree-visualize)
 			("h" helm-imenu)))
 
 (zezin-add-keybinding :window
-                      '(("f" ace-window)
-                        ("k" zezin-alternate-buffer-another-window)
-                        ("l" evil-window-right)
-                        ("h" evil-window-left)
-                        ("j" evil-window-down)
-                        ("k" evil-window-up)
-                        ("d" evil-window-delete)
-                        ("g" zezin-toggle-maximize-buffer)
-                        ("s" split-window-right-and-focus)
-                        ("a" split-window-below-and-focus)))
+		      '(("k" zezin-alternate-buffer-another-window)
+			("l" evil-window-right)
+			("h" evil-window-left)
+			("j" evil-window-down)
+			("k" evil-window-up)
+			("d" evil-window-delete)
+			("g" zezin-toggle-maximize-buffer)
+			("s" split-window-right-and-focus)
+			("a" split-window-below-and-focus)))
+
+(general-define-key
+ :states '(normal visual insert emacs)
+ :prefix "SPC"
+ :non-normal-prefix "M-SPC"
+ "w" 'ace-window)
 
 (zezin-add-keybinding :search
                       '(("k" engine/search-google)
@@ -70,7 +77,7 @@
            ("<tab>" . company-complete-common-or-cycle)
            ("<backtab>" . company-select-previous))
 
-(bind-keys ("M-w" er/expand-region))
+(bind-keys ("M-w" . er/expand-region))
 
 ;; helm
 (bind-keys ("M-x" . helm-M-x)

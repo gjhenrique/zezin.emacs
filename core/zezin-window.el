@@ -24,6 +24,7 @@
 		 buf-move-up
 		 buf-move-down
 		 evil-avy-goto-word-or-subword-1
+		 evil-avy-goto-char
 		 evil-avy-goto-line
 		 evil-window-delete
 		 evil-window-split

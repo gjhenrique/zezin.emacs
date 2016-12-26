@@ -15,7 +15,7 @@ Global visibility cycling with S-TAB
 Cursor on the headline and then C-c C-w (org-refile)
 
 *** S01E02 - ToDo Keywords
-#+SEQ_TODO: NEXT (n) TODO(t) WAITING (w)
+# +SEQ_TODO: NEXT (n) TODO(t) WAITING (w)
 **** More keywords can be defined with a line
 **** C-c C-c - Tags
 **** C-c C-t - Select the next state
@@ -67,7 +67,8 @@ repeat can be
 - [ ] perspective?
 - [ ] persp-mode
 - [ ] prodigy
-- [ ] relative-line-numbers
+- [ ] purpose?
+- [X] relative-line-numbers
 - [X] recentf
 - [ ] rest-client
 - [ ] skewer
@@ -85,6 +86,8 @@ repeat can be
 - [ ] org-capture
 
 * Tasks
+** DONE expand-region not working
+   CLOSED: [2016-12-24 Sat 02:35]
 ** Download theme base16 automatically
 ** Verification of font installation
 If Source Code Pro is not installed, fallback to Ubuntu Mono
@@ -116,7 +119,7 @@ If Source Code Pro is not installed, fallback to Ubuntu Mono
 *** show in smart-mode-line
 mode-line-format
 *** Investigate window configs
-** diff-hl
+** diff-hl not showing up
 ** Ruby
    :LOGBOOK:
    CLOCK: [2016-12-10 Sat 20:44]--[2016-12-10 Sat 21:09] =>  0:25
@@ -136,8 +139,19 @@ mode-line-format
    CLOCK: [2016-12-11 Sun 11:39]--[2016-12-11 Sun 12:04] =>  0:25
    :END:
 ** org-indent-mode not working
-** Emacs Daemon
+** DONE Emacs Daemon
+   CLOSED: [2016-12-24 Sat 02:34]
 *** Daemon 
 emacs --daemon
 *** Client
-emacsclient -t
+# terminal
+emacsclient -t 
+# Coment
+emacsclient -c
+** Backup de arquivos
+** Markdown mode and Yaml mode
+** DONE Ace-window -> SPC-w
+   CLOSED: [2016-12-25 Sun 23:45]
+** DONE Error buffer with golden-ratio
+   CLOSED: [2016-12-25 Sun 23:45]
+** Study the evil-mc package
