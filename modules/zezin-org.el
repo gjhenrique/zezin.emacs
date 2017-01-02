@@ -2,7 +2,8 @@
   :ensure org-plus-contrib
   :init
   (progn
-    (setq org-log-done t
+    (setq org-startup-indented t
+	  org-log-done t
 	  org-imenu-depth 4
 	  org-clock-clocked-in-display nil
 	  org-imenu-depth 8

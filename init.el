@@ -26,6 +26,7 @@
 (require 'zezin-ruby)
 (require 'zezin-javascript)
 
+;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
   (load-theme 'base16-oceanicnext t)
   (if (x-list-fonts "Source Code Pro")

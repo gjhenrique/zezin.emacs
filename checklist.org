@@ -93,7 +93,7 @@ repeat can be
 If Source Code Pro is not installed, fallback to Ubuntu Mono
 ** E-mail
 ** Feed
-** Dired
+** Dired[-x]
 ** Languages
 *** Javascript
 *** Ruby
@@ -138,7 +138,8 @@ mode-line-format
    CLOCK: [2016-12-11 Sun 18:44]--[2016-12-11 Sun 19:09] =>  0:25
    CLOCK: [2016-12-11 Sun 11:39]--[2016-12-11 Sun 12:04] =>  0:25
    :END:
-** org-indent-mode not working
+** DONE org-indent-mode not working
+CLOSED: [2017-01-02 Mon 12:23]
 ** DONE Emacs Daemon
    CLOSED: [2016-12-24 Sat 02:34]
 *** Daemon 
@@ -149,9 +150,14 @@ emacsclient -t
 # Coment
 emacsclient -c
 ** Backup de arquivos
-** Markdown mode and Yaml mode
+** DONE Markdown mode and Yaml mode
+   CLOSED: [2017-01-02 Mon 12:18]
+Using vanilla emacs
+
 ** DONE Ace-window -> SPC-w
    CLOSED: [2016-12-25 Sun 23:45]
 ** DONE Error buffer with golden-ratio
-   CLOSED: [2016-12-25 Sun 23:45]
-** Study the evil-mc package
+   CLOSED: [2016-12-26 Mon 00:04]
+
+** Study how the evil-mc package
+** purpose
