@@ -42,6 +42,12 @@
   (push 'company-robe company-backends)
   (push 'ruby-mode company-dabbrev-code-modes))
 
+(defun zezin-launch-rails-console (dir buffer-name &optional environment)
+  (let ((environment (or environment "development")))
+    (with-temp-buffer
+      (setq default-directory dir)
+      (inf-ruby-console-run (format "%s%s" "bundle exec rails console " environment) buffer-name))))
+
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("\\.gemspec\\'" . ruby-mode))
