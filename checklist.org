@@ -186,9 +186,17 @@ Combo with purpose?, perspective, bookmarks+
 ** Learn bookmark+
 ** daemon gives error with evil-mc
 *** Disabling temporarily when in daemon
-** search region or symbol with projectile
+** DONE search region or symbol with projectile
+CLOSED: [2017-01-07 Sat 14:08]
 It was already enabled with keybinding "d" - Duh
 Replacing "d" with "f"
-** jump to use-package declaration
+** DONE jump to use-package declaration
+CLOSED: [2017-01-07 Sat 18:13]
+Also with def ruby methods and multiple folders
+
+Multiple folders with:
+#+BEGIN_SRC lisp
+(helm-do-ag default-directory (list some-dir1 some-dir2))
+#+END_SRC
 ** DONE go to window in the same frame
 CLOSED: [2017-01-07 Sat 13:59]

@@ -28,20 +28,21 @@
 (use-package helm-ag
   :init
   (progn
-					; from spacemacs
-    (defun zezin-helm-do-ag-region-or-symbol (func &optional dir)
+    ;; from spacemacs
+    (defun zezin-helm-do-ag-region-or-symbol (func &optional dir initial-text)
       "Search with `ag' with a default input."
       (cl-letf* (((symbol-value 'helm-ag-insert-at-point) 'symbol)
 		 ;; make thing-at-point choosing the active region first
 		 ((symbol-function 'this-fn) (symbol-function 'thing-at-point))
 		 ((symbol-function 'thing-at-point)
 		  (lambda (thing)
-		    (let ((res (if (region-active-p)
-				   (buffer-substring-no-properties
-				    (region-beginning) (region-end))
-				 (this-fn thing))))
-		      (when res (rxt-quote-pcre res))))))
-        (funcall func dir)))
+		    (or initial-text
+			(let ((res (if (region-active-p)
+				       (buffer-substring-no-properties
+					(region-beginning) (region-end))
+				     (this-fn thing))))
+			  (when res (rxt-quote-pcre res)))))))
+	(funcall func dir)))
     (defun helm-projectile-region-or-symbol ()
       (interactive)
       (zezin-helm-do-ag-region-or-symbol #'helm-projectile-ag))
@@ -54,7 +55,12 @@
        #'helm-do-ag-current-directory))
     (defun helm-do-ag-region-or-symbol ()
       (interactive)
-      (zezin-helm-do-ag-region-or-symbol 'helm-do-ag))))
+      (zezin-helm-do-ag-region-or-symbol #'helm-do-ag))
+    (defun helm-do-ag-use-package ()
+      (interactive)
+      (zezin-helm-do-ag-region-or-symbol #'helm-do-ag
+					 zezin-dir
+					 "\\(use-package "))))
 
 (provide 'zezin-helm)
 ;;; zezin-helm.el ends here

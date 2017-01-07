@@ -67,7 +67,8 @@
                         ("d" helm-do-ag-current-directory)
                         ("s" helm-do-ag-current-directory-region-or-symbol)
                         ("g" helm-do-ag)
-                        ("h" helm-do-ag-region-or-symbol)))
+                        ("h" helm-do-ag-region-or-symbol)
+			("a" helm-do-ag-use-package)))
 
 (zezin-add-keybinding :buffer
                       '(("f" helm-find-files)

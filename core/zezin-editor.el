@@ -3,8 +3,6 @@
   (push '("*Help*" :dedicated t :position bottom :stick t :noselect t :height 0.4) popwin:special-display-config)
   (push '("*Backtrace*" :dedicated t :position bottom :stick t :noselect t :height 0.4) popwin:special-display-config))
 
-(use-package ag)
-
 (use-package recentf
   :init
   (progn
