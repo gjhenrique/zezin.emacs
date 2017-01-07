@@ -63,9 +63,9 @@
                       '(("k" engine/search-google)
                         ("l" engine/search-github)
                         ("j" helm-projectile-ag)
-                        ("s" helm-projectile-region-or-symbol)
+                        ("f" helm-projectile-region-or-symbol)
                         ("d" helm-do-ag-current-directory)
-                        ("f" helm-do-ag-current-directory-region-or-symbol)
+                        ("s" helm-do-ag-current-directory-region-or-symbol)
                         ("g" helm-do-ag)
                         ("h" helm-do-ag-region-or-symbol)))
 

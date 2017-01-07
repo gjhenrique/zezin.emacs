@@ -186,7 +186,9 @@ Combo with purpose?, perspective, bookmarks+
 ** Learn bookmark+
 ** daemon gives error with evil-mc
 *** Disabling temporarily when in daemon
-** search with projectile
+** search region or symbol with projectile
+It was already enabled with keybinding "d" - Duh
+Replacing "d" with "f"
 ** jump to use-package declaration
 ** DONE go to window in the same frame
 CLOSED: [2017-01-07 Sat 13:59]
