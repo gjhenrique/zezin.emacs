@@ -44,4 +44,5 @@ flycheck_*.el
 # projectiles files
 .projectile
 
+layouts
 .cache

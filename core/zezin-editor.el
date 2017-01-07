@@ -4,6 +4,7 @@
   (push '("*Backtrace*" :dedicated t :position bottom :stick t :noselect t :height 0.4) popwin:special-display-config))
 
 (use-package ag)
+
 (use-package recentf
   :init
   (progn
@@ -17,6 +18,15 @@
   :config
   (global-aggressive-indent-mode 1))
 
+
+(use-package window-purpose)
+;;  :config
+;;  (progn
+;;  (purpose-mode)
+;; set location
+;; (purpose-x-golden-ratio-setup)
+;; (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))))
+
 (use-package projectile
   :init
   (setq projectile-sort-order 'recentf
@@ -27,17 +37,6 @@
   (projectile-global-mode))
 
 (use-package helm-projectile)
-
-(use-package persp-mode
-  :init
-  (setq persp-save-dir (concat zezin-cache-dir "layouts/")
-	persp-reset-windows-on-nil-window-conf nil
-	persp-add-buffer-on-find-file nil
-	persp-auto-save-fname "default")
-  :config
-  (progn
-    (persp-mode)
-    (add-to-list 'global-mode-string '(:eval persp-lighter))))
 
 (use-package avy
   :init
@@ -129,6 +128,7 @@
   :config
   (progn
     ;; Changing the order of mode-line-misc-info (global-mode-string) with mode-line-format
+    (require 'cl)
     (let ((misc-position (position 'mode-line-misc-info mode-line-format))
 	  (mode-line-position (position 'mode-line-modes mode-line-format)))
       (when (> misc-position mode-line-position)

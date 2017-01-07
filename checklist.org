@@ -42,12 +42,12 @@ repeat can be
 
 ** Interesting packages
 
-
 * Emacs packages
 - [X] ace-window - better window manipulation
 - [X] agressive-indent-mode
 - [X] avy - hints for jump in certain point
 - [X] beacon - highlight
+- [ ] bookmarks+
 - [ ] bm
 - [X] dash? - functional library
 - [ ] diff-mode
@@ -78,6 +78,7 @@ repeat can be
 - [ ] yasnippet
 - [ ] modeline
 - [ ] flycheck-tooltip
+- [ ] ztree
 
 # Org
 - [ ] org-download
@@ -160,4 +161,30 @@ Using vanilla emacs
    CLOSED: [2016-12-26 Mon 00:04]
 
 ** Study how the evil-mc package
-** purpose
+** Purpose
+Main reason:
+Combo with purpose?, perspective, bookmarks+
+
+*** About
+- Easy and reliable way for the user to maintain a consistent window layout
+- Framework for extensions that make use of the window layout
+
+*** Usage
+- Every window or buffer has a purpose
+- The purpose of a buffer doesnt change - it is determined by the purpose configuration
+
+**** Basic usage
+- Open, close and resize window layout _M-x purpose-save-window-layout_ and _M-x purpose-load-window-layout_
+- Buffer will open 
+- Dedicated windows: _C-c , D_
+- 
+
+*** Window disposition
+**** Ruby with specs
+|1| Ruby |2| Spec |3| org-mode Other-Ruby - Magit - .el  |4| Other-spec - *compilation* *rspec-compilation*
+
+** Learn bookmark+
+** daemon gives error with evil-mc
+*** Disabling temporarily when in daemon
+** search with projectile
+** jump to every use-package declaration
