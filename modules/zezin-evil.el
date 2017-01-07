@@ -10,6 +10,7 @@
   (global-anzu-mode t))
 
 (use-package evil-mc
+  :if (not (daemonp))
   :config
   (evil-mc-mode 1))
 
