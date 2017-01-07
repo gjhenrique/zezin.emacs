@@ -187,4 +187,6 @@ Combo with purpose?, perspective, bookmarks+
 ** daemon gives error with evil-mc
 *** Disabling temporarily when in daemon
 ** search with projectile
-** jump to every use-package declaration
+** jump to use-package declaration
+** DONE go to window in the same frame
+CLOSED: [2017-01-07 Sat 13:59]

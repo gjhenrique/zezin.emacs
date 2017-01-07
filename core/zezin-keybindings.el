@@ -49,13 +49,15 @@
 			("d" evil-window-delete)
 			("g" zezin-toggle-maximize-buffer)
 			("s" split-window-right-and-focus)
+			("f" ace-window)
 			("a" split-window-below-and-focus)))
 
+;; Figure it out a way to reuse general-define-key
 (general-define-key
  :states '(normal visual insert emacs)
  :prefix "SPC"
  :non-normal-prefix "M-SPC"
- "w" 'ace-window)
+ "w" 'other-window)
 
 (zezin-add-keybinding :search
                       '(("k" engine/search-google)
