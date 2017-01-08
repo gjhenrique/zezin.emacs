@@ -31,6 +31,7 @@
 (require 'zezin-emacs-lisp)
 (require 'zezin-ruby)
 (require 'zezin-javascript)
+(require 'zezin-web)
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()

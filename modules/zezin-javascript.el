@@ -38,32 +38,11 @@
 		      `(("a" web-beautify-json))
 		      :map 'json-mode)
 
-;; keybindings
-;; web-beautify
-
-;; tern-find-definition
-;; tern-rename
-;; ter-get-docs
-
-
-;; js2-mode
-;; js2-refactor
-
 ;; mocha.el
 ;; jade?
 ;; skewer-mode?
 ;; livid-mode
-;; company
-;; company-tern
-;; flycheck
-;; helm
-;; json-mode
 ;; json-snatcher
-;; company-tern
-;; tern
-;; web-beautify
-
-;; react-mode?
 
 (provide 'zezin-javascript)
 ;;; zezin-javascript ends here

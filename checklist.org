@@ -208,3 +208,6 @@ CLOSED: [2017-01-08 Sun 18:34]
 ** switch-to-previous-buffer has to take into consideration all the other windows
 ** DONE es6 -> javscript-mode
 CLOSED: [2017-01-08 Sun 19:08]
+** DONE web-mode
+** keybindings for zezin-web
+** company for zezin-web
