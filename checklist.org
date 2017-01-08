@@ -203,5 +203,8 @@ CLOSED: [2017-01-08 Sun 18:33]
 ** Can't open spacemacs anymore becuase it is downloading the world 
 Point the packages installation to <spacemacs>/elpa
 ** yasnippet
-** org-mode open links with enter
+** DONE org-mode open links with enter
+CLOSED: [2017-01-08 Sun 18:34]
 ** switch-to-previous-buffer has to take into consideration all the other windows
+** DONE es6 -> javscript-mode
+CLOSED: [2017-01-08 Sun 19:08]
