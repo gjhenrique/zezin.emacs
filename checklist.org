@@ -200,3 +200,10 @@ Multiple folders with:
 #+END_SRC
 ** DONE go to window in the same frame
 CLOSED: [2017-01-07 Sat 13:59]
+** DONE [git] go to file in github or github
+CLOSED: [2017-01-08 Sun 07:30]
+** browse-url-at-point shortcut
+** Can't open spacemacs anymore becuase it is downloading the world 
+Point the packages installation to <spacemacs>/elpa
+** yasnippet
+** org-mode open links with enter

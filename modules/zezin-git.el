@@ -1,5 +1,10 @@
 (use-package magit)
 
+(use-package git-link
+  :init
+  (setq git-link-open-in-browser t))
+
+
 (use-package evil-magit
   :after magit)
 
@@ -24,7 +29,8 @@
 			("d" git-timemachine)
 			("l" git-messenger:popup-message)
 			("p" smeargle)
-			("q" smeargle-clear)))
+			("q" smeargle-clear)
+			("s" git-link)))
 
 (provide 'zezin-git)
 ;;; zezin-git.el ends here
