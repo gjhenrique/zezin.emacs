@@ -95,10 +95,6 @@ If Source Code Pro is not installed, fallback to Ubuntu Mono
 ** E-mail
 ** Feed
 ** Dired[-x]
-** Languages
-*** Javascript
-*** Ruby
-*** Markdown
 ** persp-mode
     :LOGBOOK:
     CLOCK: [2016-12-02 Fri 22:52]--[2016-12-02 Fri 23:59] =>  1:07
@@ -202,8 +198,10 @@ Multiple folders with:
 CLOSED: [2017-01-07 Sat 13:59]
 ** DONE [git] go to file in github or github
 CLOSED: [2017-01-08 Sun 07:30]
-** browse-url-at-point shortcut
+** DONE browse-url-at-point shortcut
+CLOSED: [2017-01-08 Sun 18:33]
 ** Can't open spacemacs anymore becuase it is downloading the world 
 Point the packages installation to <spacemacs>/elpa
 ** yasnippet
 ** org-mode open links with enter
+** switch-to-previous-buffer has to take into consideration all the other windows

@@ -21,5 +21,11 @@
 
 (use-package htmlize)
 
+
+(zezin-add-keybinding :language
+		      ;; rspec
+		      '(("i" org-agenda-open-link))
+		      :map 'org-mode-map)
+
 (provide 'zezin-org)
 ;;; zezin-org ends here

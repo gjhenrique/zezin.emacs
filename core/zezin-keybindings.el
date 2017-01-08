@@ -38,7 +38,8 @@
 			("g" evil-avy-goto-char-2)
                         ("k" evil-avy-goto-url)
                         ("u" undo-tree-visualize)
-			("h" helm-imenu)))
+			("h" helm-imenu)
+			("i" browse-url-at-point)))
 
 (zezin-add-keybinding :window
 		      '(("k" zezin-alternate-buffer-another-window)
