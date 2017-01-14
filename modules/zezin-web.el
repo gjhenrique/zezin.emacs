@@ -9,11 +9,13 @@
 
 (use-package emmet-mode
   :init
-  (spacemacs/add-to-hooks 'emmet-mode '(css-mode-hook
-					html-mode-hook
-					sass-mode-hook
-					scss-mode-hook
-					web-mode-hook))
+  (let ((hooks '(css-mode-hook
+		 html-mode-hook
+		 sass-mode-hook
+		 scss-mode-hook
+		 web-mode-hook)))
+    (dolist (hook hooks)
+      (add-hook hook 'emmet-mode)))
   :config
   (progn
     (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-line)
