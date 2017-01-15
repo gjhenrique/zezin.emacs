@@ -23,6 +23,7 @@
 (require 'zezin-editor)
 (require 'zezin-helm)
 (require 'zezin-window)
+(require 'zezin-purpose)
 
 (require 'zezin-keybindings)
 

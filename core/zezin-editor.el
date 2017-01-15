@@ -16,15 +16,6 @@
   :config
   (global-aggressive-indent-mode 1))
 
-
-(use-package window-purpose)
-;;  :config
-;;  (progn
-;;  (purpose-mode)
-;; set location
-;; (purpose-x-golden-ratio-setup)
-;; (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))))
-
 (use-package projectile
   :init
   (setq projectile-sort-order 'recentf

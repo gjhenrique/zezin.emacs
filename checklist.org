@@ -211,3 +211,6 @@ CLOSED: [2017-01-08 Sun 19:08]
 ** DONE web-mode
 ** keybindings for zezin-web
 ** company for zezin-web
+** DONE erb is opening in fundamental mode
+CLOSED: [2017-01-14 Sat 22:41]
+false alarm
