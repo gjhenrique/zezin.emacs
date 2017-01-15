@@ -54,5 +54,8 @@
 					 zezin-dir
 					 "\\(use-package "))))
 
+(use-package helm-projectile
+  :after projectile)
+
 (provide 'zezin-helm)
 ;;; zezin-helm.el ends here

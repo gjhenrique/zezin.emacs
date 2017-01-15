@@ -25,8 +25,6 @@
   :config
   (projectile-global-mode))
 
-(use-package helm-projectile)
-
 (use-package avy
   :init
   (setq avy-all-windows 'all-frames)
