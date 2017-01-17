@@ -33,6 +33,7 @@
 (require 'zezin-ruby)
 (require 'zezin-javascript)
 (require 'zezin-web)
+(require 'zezin-docker)
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
