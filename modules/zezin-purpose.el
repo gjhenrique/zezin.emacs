@@ -5,8 +5,6 @@
   (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp)))
 
 (use-package window-purpose
-  :init
-  (setq purpose-message-on-p t) 
   :config
   (progn
     (purpose-mode)
