@@ -217,4 +217,5 @@ false alarm
 ** Docker
 ** DONE Location of backup files
 CLOSED: [2017-01-17 Tue 22:37]
-** aggressive-indent-mode only in emacs lisp
+** DONE aggressive-indent-mode only in emacs lisp
+CLOSED: [2017-01-17 Tue 22:47]
