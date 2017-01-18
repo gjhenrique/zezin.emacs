@@ -5,9 +5,17 @@
 (setq inhibit-splash-screen t)
 (setq inhibit-startup-message t)
 (setq load-prefer-newer t)
-(setq make-backup-files nil)
 (setq initial-scratch-message nil)
 (setq help-window-select t)
+
+;;backups
+(setq backup-by-copying t
+      version-control t
+      delete-old-versions t
+      kept-new-versions 6
+      kept-old-versions 2
+      backup-directory-alist `((".*" . ,zezin-backup-dir))
+      auto-save-file-name-transforms `((".*" ,zezin-backup-dir t)))
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)

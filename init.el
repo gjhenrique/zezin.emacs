@@ -10,9 +10,15 @@
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
+(defvar zezin-backup-dir (expand-file-name ".backups/" zezin-dir))
 
-(unless (file-exists-p zezin-cache-dir)
-  (make-directory zezin-cache-dir))
+
+(defun zezin-create-inexistent-folder (folder-name)
+  (unless (file-exists-p folder-name)
+    (make-directory folder-name)))
+
+(zezin-create-inexistent-folder zezin-cache-dir)
+(zezin-create-inexistent-folder zezin-backup-dir)
 
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
