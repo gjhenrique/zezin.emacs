@@ -18,7 +18,9 @@
 
 (use-package rspec-mode
   :init
-  (add-hook 'ruby-mode-hook 'rspec-enable-appropriate-mode))
+  (add-hook 'ruby-mode-hook 'rspec-enable-appropriate-mode)
+  :config
+  (rspec-install-snippets))
 
 (use-package goto-gem)
 

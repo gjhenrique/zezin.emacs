@@ -12,7 +12,6 @@
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 (defvar zezin-backup-dir (expand-file-name ".backups/" zezin-dir))
 
-
 (defun zezin-create-inexistent-folder (folder-name)
   (unless (file-exists-p folder-name)
     (make-directory folder-name)))

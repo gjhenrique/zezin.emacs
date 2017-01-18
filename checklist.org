@@ -75,9 +75,9 @@ repeat can be
 - [X] smooth-scrolling
 - [X] which-key
 - [ ] remember-mode?
-- [ ] yasnippet
+- [X] yasnippet
 - [ ] modeline
-- [ ] flycheck-tooltip
+- [X] flycheck-tooltip
 - [ ] ztree
 
 # Org
@@ -202,7 +202,8 @@ CLOSED: [2017-01-08 Sun 07:30]
 CLOSED: [2017-01-08 Sun 18:33]
 ** Can't open spacemacs anymore becuase it is downloading the world 
 Point the packages installation to <spacemacs>/elpa
-** yasnippet
+** DONE yasnippet
+CLOSED: [2017-01-18 Wed 00:12]
 ** DONE org-mode open links with enter
 CLOSED: [2017-01-08 Sun 18:34]
 ** switch-to-previous-buffer has to take into consideration all the other windows
@@ -219,3 +220,4 @@ false alarm
 CLOSED: [2017-01-17 Tue 22:37]
 ** DONE aggressive-indent-mode only in emacs lisp
 CLOSED: [2017-01-17 Tue 22:47]
+** Add company to yasnippet

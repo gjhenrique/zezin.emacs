@@ -125,6 +125,12 @@
 			  (-remove-at misc-position mode-line-format)))))
     (sml/setup)))
 
+(use-package yasnippet
+  :init
+  (let ((custom-snippets-dir (format "%s%s" zezin-dir "snippets/custom")))
+    (add-to-list 'yas-snippet-dirs custom-snippets-dir))
+  :config
+  (yas-global-mode 1))
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook
