@@ -39,6 +39,7 @@
 (require 'zezin-javascript)
 (require 'zezin-web)
 (require 'zezin-docker)
+(require 'zezin-yaml)
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
