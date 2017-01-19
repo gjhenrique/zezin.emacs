@@ -43,10 +43,15 @@
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
-  (load-theme 'base16-oceanicnext t)
+  (zezin-load-theme)
   (if (x-list-fonts "Source Code Pro")
       (set-frame-font "Source Code Pro 12")
     (message "Source Code Pro is not installed")))
+
+(defun zezin-load-theme ()
+  (use-package base16-theme
+    :config
+    (load-theme 'base16-oceanicnext t)))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
