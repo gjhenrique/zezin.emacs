@@ -28,12 +28,6 @@
   :init
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
-(with-eval-after-load 'popwin
-  (push '("*rspec-compilation*" :dedicated t :position bottom :stick t :noselect t :height 0.4)
-	popwin:special-display-config)
-  (push '("*rake-compilation*" :dedicated t :position bottom :stick t :noselect t :height 0.4)
-	popwin:special-display-config ))
-
 (with-eval-after-load 'evil-matchit
   (add-hook #'ruby-mode-hook 'turn-on-evil-matchit-mode))
 

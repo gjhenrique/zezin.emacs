@@ -10,7 +10,6 @@
     (purpose-mode)
     (purpose-x-golden-ratio-setup)
     (purpose-x-kill-setup)
-    (purpose-x-popwin-setup)
     (zezin-add-purposes)
     (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))
     (purpose-compile-user-configuration)))
