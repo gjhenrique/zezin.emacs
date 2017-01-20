@@ -40,22 +40,3 @@
 (require 'zezin-web)
 (require 'zezin-docker)
 (require 'zezin-yaml)
-
-;; Loading themes and fonts
-(defun zezin-select-fonts-theme ()
-  (zezin-load-theme)
-  (if (x-list-fonts "Source Code Pro")
-      (set-frame-font "Source Code Pro 12")
-    (message "Source Code Pro is not installed")))
-
-(defun zezin-load-theme ()
-  (use-package base16-theme
-    :config
-    (load-theme 'base16-oceanicnext t)))
-
-(if (daemonp)
-    (add-hook 'after-make-frame-functions
-	      (lambda (frame)
-		(select-frame frame)
-		(zezin-select-fonts-theme)))
-  (zezin-select-fonts-theme))

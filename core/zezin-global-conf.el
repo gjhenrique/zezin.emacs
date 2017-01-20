@@ -39,5 +39,24 @@
 (use-package auto-package-update)
 (use-package pcre2el)
 
+
+;; Loading themes and fonts
+(defun zezin-select-fonts-theme ()
+  (zezin-load-theme)
+  (if (x-list-fonts "Source Code Pro")
+      (set-frame-font "Source Code Pro 12")
+    (message "Source Code Pro is not installed")))
+
+(defun zezin-load-theme ()
+  (use-package base16-theme
+    :config
+    (load-theme 'base16-oceanicnext t)))
+
+(zezin-select-fonts-theme)
+(add-hook 'after-make-frame-functions
+	  (lambda (frame)
+	    (select-frame frame)
+	    (zezin-select-fonts-theme)))
+
 (provide 'zezin-global-conf)
 ;;; zezin-global-conf.el ends here
