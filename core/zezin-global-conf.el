@@ -17,6 +17,10 @@
       backup-directory-alist `((".*" . ,zezin-backup-dir))
       auto-save-file-name-transforms `((".*" ,zezin-backup-dir t)))
 
+;; TODO: Check if it is chromium, chromium-browser or chrome
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium-browser")
+
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 (tooltip-mode -1)
@@ -38,7 +42,6 @@
 
 (use-package auto-package-update)
 (use-package pcre2el)
-
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
