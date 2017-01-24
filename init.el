@@ -39,4 +39,4 @@
 (require 'zezin-javascript)
 (require 'zezin-web)
 (require 'zezin-docker)
-(require 'zezin-yaml)
+(require 'zezin-misc)

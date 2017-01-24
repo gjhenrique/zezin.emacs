@@ -224,3 +224,5 @@ CLOSED: [2017-01-17 Tue 22:47]
 ** Add generic if chromium or chromium-browser are valid programs
 ** Rspec and mini-test modes
 ** Behavior of compilation without popwin
+** DONE nginx mode
+CLOSED: [2017-01-24 Ter 17:19]
