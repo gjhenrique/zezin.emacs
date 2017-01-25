@@ -13,6 +13,7 @@
 		 html-mode-hook
 		 sass-mode-hook
 		 scss-mode-hook
+		 react-mode-hook
 		 web-mode-hook)))
     (dolist (hook hooks)
       (add-hook hook 'emmet-mode)))

@@ -54,6 +54,7 @@
     (add-hook 'prog-mode-hook #'smartparens-mode))
   :config
   (progn
+    (add-to-list 'sp--html-modes 'react-mode)
     (require 'smartparens-config)
     (show-smartparens-global-mode +1)))
 
