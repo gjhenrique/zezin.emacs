@@ -54,18 +54,19 @@
   (add-hook #'react-mode-hook #'zezin-use-eslint-from-node-modules)
   (add-hook #'js2-mode-hook #'zezin-use-eslint-from-node-modules))
 
+(defvar zezin-js-keybindings
+  '(("f" tern-find-definition)
+    ("j" tern-get-docs)
+    ("l" tern-get-type)))
+
 (zezin-add-keybinding :language
-		      `(("f" tern-find-definition)
-			("j" tern-get-docs)
-			("l" tern-get-type)
-			("a" web-beautify-js))
+		      `(,(append
+			  zezin-js-keybindings
+			  '(("a" web-beautify-js))))
 		      :map 'js2-mode-map)
 
 (zezin-add-keybinding :language
-		      `(("f" tern-find-definition)
-			("j" tern-get-docs)
-			("l" tern-get-type)
-			("a" web-beautify-js))
+		      zezin-js-keybindings
 		      :map 'react-mode-map)
 
 (zezin-add-keybinding :language
