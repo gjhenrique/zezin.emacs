@@ -3,9 +3,12 @@
 	 ("\\.html?\\'" . web-mode)
 	 ("\\.erb\\'" . web-mode))
   :init
-  (setq web-mode-enable-auto-pairing nil
-	web-mode-markup-indent-offset 2
-	css-indent-offset 2))
+  (setq-default css-indent-offset 2
+		web-mode-markup-indent-offset 2
+		web-mode-css-indent-offset 2
+		web-mode-code-indent-offset 2
+		web-mode-attr-indent-offset 2
+		web-mode-enable-auto-pairing nil))
 
 (use-package emmet-mode
   :init
