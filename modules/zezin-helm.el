@@ -52,7 +52,7 @@
       (interactive)
       (zezin-helm-do-ag-region-or-symbol #'helm-do-ag
 					 zezin-dir
-					 "\\(use-package "))))
+					 "\\(use-package\\ "))))
 
 (use-package helm-projectile
   :after projectile)
