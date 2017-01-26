@@ -1,7 +1,8 @@
 (use-package js2-mode
   :init
   (progn
-    (setq js2-basic-offset 2)
+    (setq-default js2-basic-offset 2
+		  js2-strict-trailing-comma-warning nil)
     (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
     (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
