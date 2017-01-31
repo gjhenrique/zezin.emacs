@@ -17,9 +17,12 @@
       backup-directory-alist `((".*" . ,zezin-backup-dir))
       auto-save-file-name-transforms `((".*" ,zezin-backup-dir t)))
 
-;; TODO: Check if it is chromium, chromium-browser or chrome
+;; Interlocking
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html
+(setq create-lockfiles nil)
+
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium-browser")
+      browse-url-generic-program "chromium")
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
