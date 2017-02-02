@@ -16,7 +16,7 @@
   (setq projectile-sort-order 'recentf
 	projectile-cache-file (concat zezin-cache-dir "projectile.cache")
 	projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld")
-	projectile-completion-system 'helm)
+	projectile-completion-system 'ivy)
   :config
   (projectile-global-mode))
 

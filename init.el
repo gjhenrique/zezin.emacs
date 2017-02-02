@@ -26,11 +26,12 @@
 (require 'zezin-global-conf)
 (require 'zezin-evil)
 (require 'zezin-editor)
-(require 'zezin-helm)
 (require 'zezin-window)
 (require 'zezin-purpose)
 
 (require 'zezin-keybindings)
+
+(require 'zezin-swiper)
 
 (require 'zezin-git)
 (require 'zezin-org)

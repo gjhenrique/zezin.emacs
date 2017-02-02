@@ -23,11 +23,12 @@
 	 (-flatten keys)))
 
 (zezin-add-keybinding :projectile
-                      '(("d" helm-projectile-find-dir)
-                        ("f" helm-projectile-find-file)
-                        ("j" helm-projectile-switch-project)
-                        ("g" helm-projectile-switch-to-buffer)
-                        ("h" helm-projectile)
+                      '(
+			("d" counsel-projectile-find-dir)
+                        ("f" counsel-projectile-find-file)
+                        ("j" counsel-projectile-switch-project)
+                        ("g" counsel-projectile-switch-to-buffer)
+                        ("h" counsel-projectile)
 			("a" projectile-compile-project)))
 
 (zezin-add-keybinding :editor
@@ -38,7 +39,7 @@
 			("g" evil-avy-goto-char-2)
                         ("k" evil-avy-goto-url)
                         ("u" undo-tree-visualize)
-			("h" helm-imenu)
+			("h" counsel-imenu)
 			("i" browse-url-at-point)))
 
 (zezin-add-keybinding :window
@@ -63,17 +64,19 @@
 (zezin-add-keybinding :search
                       '(("k" engine/search-google)
                         ("l" engine/search-github)
-                        ("j" helm-projectile-ag)
-                        ("f" helm-projectile-region-or-symbol)
-                        ("d" helm-do-ag-current-directory)
-                        ("s" helm-do-ag-current-directory-region-or-symbol)
-                        ("g" helm-do-ag)
-                        ("h" helm-do-ag-region-or-symbol)
-			("a" helm-do-ag-use-package)))
+			("j" counsel-projectile-ag)
+                        ("f" counsel-ag-region-or-symbol-projectile)
+			("d" counsel-ag)
+                        ("s" counsel-ag-region-or-symbol-current-dir)
+			;; ("g" counsel-ag)
+                        ;; ("h" counsel-ag-region-or-symbol)
+			("a" counsel-ag-use-package)
+			))
 
 (zezin-add-keybinding :buffer
-                      '(("f" helm-find-files)
-                        ("j" helm-mini)
+                      '(
+			("f" counsel-find-file)
+			("j" ivy-switch-buffer)
 			("d" switch-to-previous-buffer)
 			("k" kill-this-buffer)))
 
@@ -81,15 +84,8 @@
            ("<tab>" . company-complete-common-or-cycle)
            ("<backtab>" . company-select-previous))
 
-(bind-keys ("M-w" . er/expand-region))
-
-;; helm
-(bind-keys ("M-x" . helm-M-x)
-           :map helm-map
-           ("<tab>" . helm-execute-persistent-action)
-           ("C-j" . helm-next-line)
-           ("C-k" . helm-previous-line)
-           ("C-h" . helm-find-files-up-one-level))
+(bind-keys ("M-p" . er/expand-region)
+	   ("M-x" . counsel-M-x))
 
 (provide 'zezin-keybindings)
 ;;; zezin-keybindings.el ends here

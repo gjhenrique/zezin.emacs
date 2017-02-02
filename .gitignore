@@ -46,3 +46,4 @@ flycheck_*.el
 
 layouts
 .cache
+smex-items
