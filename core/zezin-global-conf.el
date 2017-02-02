@@ -28,7 +28,6 @@
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
-(global-linum-mode)
 (fset 'yes-or-no-p 'y-or-n-p)
 
 (global-auto-revert-mode 1)

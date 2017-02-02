@@ -104,7 +104,6 @@
 (use-package smart-mode-line
   :init
   (progn
-    (line-number-mode 0)
     (setq sml/no-confirm-load-theme t
 	  sml/theme 'respectful
 	  rm-whitelist '("")))
