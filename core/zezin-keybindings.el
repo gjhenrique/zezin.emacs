@@ -68,8 +68,9 @@
                         ("f" counsel-ag-region-or-symbol-projectile)
 			("d" counsel-ag)
                         ("s" counsel-ag-region-or-symbol-current-dir)
+			("h" swiper)
 			;; ("g" counsel-ag)
-                        ;; ("h" counsel-ag-region-or-symbol)
+                        ;; ("t" counsel-ag-region-or-symbol)
 			("a" counsel-ag-use-package)
 			))
 

@@ -12,11 +12,8 @@
   :config
   (smex-initialize))
 
-(use-package counsel)
-
-(use-package counsel-projectile
-  :after counsel
-  :init
+(use-package counsel
+  :config
   (progn
     (defun counsel-ag-directory (dir &optional initial-text)
       (interactive)
@@ -39,6 +36,9 @@
     (defun counsel-ag-use-package ()
       (interactive)
       (counsel-ag-directory zezin-dir "use-package "))))
+
+(use-package counsel-projectile
+  :after counsel)
 
 (use-package ivy-purpose)
 
