@@ -37,6 +37,10 @@
   (when (file-exists-p custom-file)
     (load custom-file)))
 
+(let ((emacs-directory "~/Projects/emacs"))
+  (when (file-exists-p emacs-directory)
+    (setq source-directory emacs-directory)))
+
 (unless global-mode-string (setq global-mode-string '("")))
 
 (use-package dash)
