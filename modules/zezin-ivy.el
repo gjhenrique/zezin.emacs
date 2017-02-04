@@ -1,4 +1,4 @@
-(cl-defun zezin-symbol-or-region (&optional initial-text)
+(cl-defun zezin-region-or-symbol (&optional initial-text)
   (or initial-text
       (if (region-active-p)
 	  (buffer-substring-no-properties
@@ -37,7 +37,17 @@
 
     (defun counsel-ag-use-package ()
       (interactive)
-      (counsel-ag-directory zezin-dir "use-package "))))
+      (counsel-ag-directory zezin-dir "use-package "))
+
+    (defun counsel-ag-read-dir ()
+      (interactive)
+      (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
+	(counsel-ag nil folder)))
+
+    (defun counsel-ag-region-or-symbol-read-dir ()
+      (interactive)
+      (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
+	(counsel-ag-directory folder)))))
 
 (use-package counsel-projectile
   :after counsel)
@@ -48,7 +58,7 @@
   :config
   (cl-defun swiper-region-or-symbol (&optional initial-text)
     (interactive)
-    (let ((res (zezin-symbol-or-region initial-text)))
+    (let ((res (zezin-region-or-symbol initial-text)))
       (swiper res))))
 
 (provide 'zezin-ivy)

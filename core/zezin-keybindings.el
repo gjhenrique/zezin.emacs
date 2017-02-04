@@ -69,7 +69,8 @@
                         ("s" counsel-ag-region-or-symbol-current-dir)
 			("h" swiper)
 			("g" swiper-region-or-symbol)
-                        ;; ("t" counsel-ag-region-or-symbol)
+                        ("t" counsel-ag-read-dir-region-or-symbol)
+			("r" counsel-ag-read-dir)
 			("a" counsel-ag-use-package)))
 
 (zezin-add-keybinding :buffer
