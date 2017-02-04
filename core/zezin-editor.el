@@ -98,6 +98,8 @@
       "https://github.com/search?ref=simplesearch&q=%s")
     (defengine google
       "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s")
+    (defengine duckduckgo
+      "https://duckduckgo.com/?q=%s")
     (defengine stackoverflow
       "http://stackoverflow.com/search?q=%s")))
 

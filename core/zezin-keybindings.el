@@ -61,7 +61,7 @@
  "w" 'other-window)
 
 (zezin-add-keybinding :search
-                      '(("k" engine/search-google)
+                      '(("k" engine/search-duckduckgo)
                         ("l" engine/search-github)
 			("j" counsel-projectile-ag)
                         ("f" counsel-ag-region-or-symbol-projectile)
