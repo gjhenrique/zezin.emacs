@@ -76,7 +76,7 @@
 (zezin-add-keybinding :buffer
                       '(("f" counsel-find-file)
 			("j" ivy-switch-buffer)
-			("d" switch-to-previous-buffer)
+			("d" mode-line-other-buffer)
 			("k" kill-this-buffer)))
 
 (bind-keys :map company-active-map
