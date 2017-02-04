@@ -20,7 +20,9 @@
   :init
   (add-hook 'ruby-mode-hook 'rspec-enable-appropriate-mode)
   :config
-  (rspec-install-snippets))
+  (progn
+    (add-hook 'after-init-hook 'inf-ruby-switch-setup)
+    (rspec-install-snippets)))
 
 (use-package goto-gem)
 
