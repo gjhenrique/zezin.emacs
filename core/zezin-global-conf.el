@@ -33,7 +33,9 @@
 (global-auto-revert-mode 1)
 
 (unless (bound-and-true-p custom-file)
-  (setq custom-file (concat zezin-cache-dir "custom_file")))
+  (setq custom-file (concat zezin-cache-dir "custom_file"))
+  (when (file-exists-p custom-file)
+    (load custom-file)))
 
 (unless global-mode-string (setq global-mode-string '("")))
 
