@@ -24,6 +24,8 @@
     (add-hook 'after-init-hook 'inf-ruby-switch-setup)
     (rspec-install-snippets)))
 
+(use-package minitest)
+
 (use-package goto-gem)
 
 (use-package projectile-rails
@@ -65,31 +67,41 @@
 (add-to-list 'auto-mode-alist '("Berksfile\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Appraisals\\'" . ruby-mode))
 
-
 (zezin-add-keybinding :language
-		      ;; rspec
-		      `(("p" rspec-verify-all)
+		      `(;; rspec
+			("p" rspec-verify-all)
 			("o" rspec-verify)
 			("u" rspec-verify-method)
 			("i" rspec-run-last-failed)
 			("t" rspec-verify-single)
 			("u" rspec-toggle-spec-and-target)
 			("y" rspec-toggle-spec-and-target-find-example)
+
+			;; minitest
+			("q" minitest-verify-all)
+			("w" minitest-verify)
+			("e" minitest-verify-single)
+			("c" minitest-rerun)
+
 			;; rake: TODO
 			;; robe
 			("j" robe-doc)
 			("z" robe-rails-refresh)
 			("f" robe-jump)
 			("x" robe-start)
+
 			;; bundle
 			("b" bundle-install)
+
 			;; goto-gem
 			("s" goto-gem)
 			("a" goto-gem-grep-gem)
+
 			;; ruby-tools
 			("m" ruby-tools-single-quote-string)
 			("n" ruby-tools-to-double-quote-string)
 			("v" ruby-tools-to-double-quote-string)
+
 			;; projectile-rails
 			;; Spacemacs <3
 			;; Find files
