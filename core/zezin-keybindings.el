@@ -23,8 +23,7 @@
 	 (-flatten keys)))
 
 (zezin-add-keybinding :projectile
-                      '(
-			("d" counsel-projectile-find-dir)
+                      '(("d" counsel-projectile-find-dir)
                         ("f" counsel-projectile-find-file)
                         ("j" counsel-projectile-switch-project)
                         ("g" counsel-projectile-switch-to-buffer)
@@ -69,14 +68,12 @@
 			("d" counsel-ag)
                         ("s" counsel-ag-region-or-symbol-current-dir)
 			("h" swiper)
-			;; ("g" counsel-ag)
+			("g" swiper-region-or-symbol)
                         ;; ("t" counsel-ag-region-or-symbol)
-			("a" counsel-ag-use-package)
-			))
+			("a" counsel-ag-use-package)))
 
 (zezin-add-keybinding :buffer
-                      '(
-			("f" counsel-find-file)
+                      '(("f" counsel-find-file)
 			("j" ivy-switch-buffer)
 			("d" switch-to-previous-buffer)
 			("k" kill-this-buffer)))

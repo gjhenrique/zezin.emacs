@@ -28,10 +28,9 @@
 (require 'zezin-editor)
 (require 'zezin-window)
 (require 'zezin-purpose)
+(require 'zezin-ivy)
 
 (require 'zezin-keybindings)
-
-(require 'zezin-swiper)
 
 (require 'zezin-git)
 (require 'zezin-org)

@@ -1,3 +1,10 @@
+(cl-defun zezin-symbol-or-region (&optional initial-text)
+  (or initial-text
+      (if (region-active-p)
+	  (buffer-substring-no-properties
+	   (region-beginning) (region-end))
+	(thing-at-point 'symbol))))
+
 (use-package ivy
   :init
   (setq ivy-use-virtual-buffers 1
@@ -15,14 +22,9 @@
 (use-package counsel
   :config
   (progn
-    (defun counsel-ag-directory (dir &optional initial-text)
+    (cl-defun counsel-ag-directory (dir &optional initial-text)
       (interactive)
-      (let ((res
-	     (or initial-text
-		 (if (region-active-p)
-		     (buffer-substring-no-properties
-		      (region-beginning) (region-end))
-		   (thing-at-point 'symbol)))))
+      (let ((res (zezin-region-or-symbol initial-text)))
 	(counsel-ag res dir)))
 
     (defun counsel-ag-region-or-symbol-projectile ()
@@ -42,7 +44,12 @@
 
 (use-package ivy-purpose)
 
-(use-package swiper)
+(use-package swiper
+  :config
+  (cl-defun swiper-region-or-symbol (&optional initial-text)
+    (interactive)
+    (let ((res (zezin-symbol-or-region initial-text)))
+      (swiper res))))
 
-(provide 'zezin-swiper)
-;;; zezin-swiper.el ends here
+(provide 'zezin-ivy)
+;;; zezin-ivy.el ends here
