@@ -42,11 +42,54 @@
   (push 'company-robe company-backends)
   (push 'ruby-mode company-dabbrev-code-modes))
 
-(defun zezin-launch-rails-console (dir buffer-name &optional environment)
-  (let ((environment (or environment "development")))
-    (with-temp-buffer
-      (setq default-directory dir)
-      (inf-ruby-console-run (format "%s%s" "bundle exec rails console " environment) buffer-name))))
+
+;; Multiple projects Ruby
+(defun railsprojects-function-project-name (fun-name a)
+  (intern (concat fun-name a)))
+
+(defmacro railsprojects-setup-inf-ruby (project-dir project-name)
+  `(cl-defun ,(railsprojects-function-project-name "railsprojects-inf-ruby-console-" project-name) (&optional environment)
+     ;; TODO: Interactive with development as default
+     (let ((environment (or environment "development")))
+       (with-temp-buffer
+	 (setq default-directory ,project-dir)
+	 (inf-ruby-console-run (format "%s%s" "bundle exec rails console " environment) ,project-name)))))
+
+(defmacro railsprojects-setup-magit (project-dir project-name)
+  `(defun ,(railsprojects-function-project-name "railsprojects-magit-status-" project-name) ()
+     (interactive)
+     (magit-status ,project-dir)))
+
+(defmacro railsprojects-setup-project-dired (project-dir project-name)
+  `(defun ,(railsprojects-function-project-name "railsprojects-project-dired-" project-name) ()
+     (interactive)
+     (dired ,project-dir)))
+
+(defmacro railsprojects-setup-counsel-ag (project-dir project-name)
+  `(progn
+     (defun ,(railsprojects-function-project-name "railsprojects-counsel-ag-region-or-symbol-" project-name) ()
+       (interactive)
+       (counsel-ag-project-directory ,project-dir))
+     (defun ,(railsprojects-function-project-name "railsprojects-counsel-ag-" project-name) ()
+       (interactive)
+       (counsel-ag nil ,project-dir))))
+
+(defmacro railsprojects-setup-projectile-rails (project-dir project-name)
+  `(defun ,(railsprojects-function-project-name "railsprojects-projectile-rails-" project-name) (fun)
+     (cl-letf
+	 (((symbol-function 'projectile-rails-root) (lambda () ,project-dir))
+	  ((symbol-function 'projectile-project-root) (lambda () ,project-dir))
+	  ((symbol-function 'projectile-project-project-name) (lambda () ,project-name)))
+       (funcall fun)
+       (projectile-rails-find-controller))))
+
+(defmacro railsprojects-setup-rails-project (project-dir project-name)
+  `(progn
+     (railsprojects-setup-inf-ruby ,project-dir ,project-name)
+     (railsprojects-setup-magit ,project-dir ,project-name)
+     (railsprojects-setup-counsel-ag ,project-dir ,project-name)
+     (railsprojects-setup-dired ,project-dir ,project-name)
+     (railsprojects-setup-projectile-rails ,project-dir ,project-name)))
 
 (add-to-list 'auto-mode-alist '("\\.rake\\'" . ruby-mode))
 (add-to-list 'auto-mode-alist '("Rakefile\\'" . ruby-mode))
@@ -84,6 +127,7 @@
 			("c" minitest-rerun)
 
 			;; rake: TODO
+
 			;; robe
 			("j" robe-doc)
 			("z" robe-rails-refresh)
@@ -95,7 +139,6 @@
 
 			;; goto-gem
 			("s" goto-gem)
-			("a" goto-gem-grep-gem)
 
 			;; ruby-tools
 			("m" ruby-tools-single-quote-string)
@@ -125,24 +168,24 @@
 			("dy" projectile-rails-find-layout)
 			("d@" projectile-rails-find-mailer)
 			;; Goto file
-			("dc" projectile-rails-find-current-controller)
-			("dd" projectile-rails-goto-schema)
-			("de" projectile-rails-goto-seeds)
-			("dh" projectile-rails-find-current-helper)
-			("dj" projectile-rails-find-current-javascript)
-			("dg" projectile-rails-goto-gemfile)
-			("dm" projectile-rails-find-current-model)
-			("dn" projectile-rails-find-current-migration)
-			("dp" projectile-rails-find-current-spec)
-			("dr" projectile-rails-goto-routes)
-			("ds" projectile-rails-find-current-stylesheet)
-			("dt" projectile-rails-find-current-test)
-			("du" projectile-rails-find-current-fixture)
-			("dv" projectile-rails-find-current-view)
-			("dz" projectile-rails-goto-spec-helper)
-			("d." projectile-rails-goto-file-at-point)
-			("dq" projectile-toggle-between-implementation-and-test))
-		      :map 'ruby-mode-map)
+			("ac" projectile-rails-find-current-controller)
+			("ad" projectile-rails-goto-schema)
+			("ae" projectile-rails-goto-seeds)
+			("ah" projectile-rails-find-current-helper)
+			("aj" projectile-rails-find-current-javascript)
+			("ag" projectile-rails-goto-gemfile)
+			("am" projectile-rails-find-current-model)
+			("an" projectile-rails-find-current-migration)
+			("ap" projectile-rails-find-current-spec)
+			("ar" projectile-rails-goto-routes)
+			("as" projectile-rails-find-current-stylesheet)
+			("at" projectile-rails-find-current-test)
+			("au" projectile-rails-find-current-fixture)
+			("av" projectile-rails-find-current-view)
+			("az" projectile-rails-goto-spec-helper)
+			("a." projectile-rails-goto-file-at-point)
+			("aq" projectile-toggle-between-implementation-and-test))
+		      :map 'ruby-mode-map) 
 
 (provide 'zezin-ruby)
 ;;; zezin-ruby ends here
