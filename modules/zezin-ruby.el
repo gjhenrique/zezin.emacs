@@ -60,7 +60,7 @@
      (interactive)
      (magit-status ,project-dir)))
 
-(defmacro railsprojects-setup-project-dired (project-dir project-name)
+(defmacro railsprojects-setup-dired (project-dir project-name)
   `(defun ,(railsprojects-function-project-name "railsprojects-project-dired-" project-name) ()
      (interactive)
      (dired ,project-dir)))
@@ -69,7 +69,7 @@
   `(progn
      (defun ,(railsprojects-function-project-name "railsprojects-counsel-ag-region-or-symbol-" project-name) ()
        (interactive)
-       (counsel-ag-project-directory ,project-dir))
+       (counsel-ag-directory ,project-dir))
      (defun ,(railsprojects-function-project-name "railsprojects-counsel-ag-" project-name) ()
        (interactive)
        (counsel-ag nil ,project-dir))))

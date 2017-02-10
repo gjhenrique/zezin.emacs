@@ -1,4 +1,5 @@
 (use-package yaml-mode)
+(use-package markdown-mode)
 
 (use-package nginx-mode)
 
