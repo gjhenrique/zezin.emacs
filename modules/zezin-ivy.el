@@ -52,8 +52,6 @@
 (use-package counsel-projectile
   :after counsel)
 
-(use-package ivy-purpose)
-
 (use-package swiper
   :config
   (cl-defun swiper-region-or-symbol (&optional initial-text)

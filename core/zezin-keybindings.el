@@ -69,7 +69,7 @@
                         ("s" counsel-ag-region-or-symbol-current-dir)
 			("h" swiper)
 			("g" swiper-region-or-symbol)
-                        ("t" counsel-ag-read-dir-region-or-symbol)
+                        ("t" counsel-ag-region-or-symbol-read-dir)
 			("r" counsel-ag-read-dir)
 			("a" counsel-ag-use-package)))
 
@@ -77,7 +77,8 @@
                       '(("f" counsel-find-file)
 			("j" ivy-switch-buffer)
 			("d" mode-line-other-buffer)
-			("k" kill-this-buffer)))
+			("k" kill-this-buffer)
+			("s" purpose-pop-buffer-same-window)))
 
 (bind-keys :map company-active-map
            ("<tab>" . company-complete-common-or-cycle)

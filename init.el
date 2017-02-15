@@ -27,8 +27,8 @@
 (require 'zezin-evil)
 (require 'zezin-editor)
 (require 'zezin-window)
-(require 'zezin-purpose)
 (require 'zezin-ivy)
+(require 'zezin-purpose)
 
 (require 'zezin-keybindings)
 
