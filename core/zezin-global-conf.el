@@ -69,5 +69,11 @@
 	    (select-frame frame)
 	    (zezin-select-fonts-theme)))
 
+(defun sudo-save ()
+  (interactive)
+  (if (not buffer-file-name)
+      (write-file (concat "/sudo:root@localhost:" (ido-read-file-name "File:")))
+    (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
 (provide 'zezin-global-conf)
 ;;; zezin-global-conf.el ends here
