@@ -2,11 +2,10 @@
   (add-to-list 'purpose-user-mode-purposes '(ruby-mode . ruby))
   (add-to-list 'purpose-user-mode-purposes '(rspec-mode . rspec))
   (add-to-list 'purpose-user-mode-purposes '(web-mode . web))
-  (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp)))
+  (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp))
+  (add-to-list 'purpose-user-mode-purposes '(yaml-mode . ruby)))
 
 (use-package window-purpose
-  :init
-  (setq purpose-default-action-order 'prefer-same-window)
   :config
   (progn
     (purpose-mode)
