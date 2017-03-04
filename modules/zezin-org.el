@@ -7,7 +7,11 @@
 	  org-imenu-depth 4
 	  org-clock-clocked-in-display nil
 	  org-imenu-depth 8
-	  org-indent-mode t)))
+	  org-indent-mode t))
+  ;; org-capute
+  (setq org-capture-templates
+	'(("b" "Bookmark" entry (file+headline "~/share/all/org-mode/notes.org" "Bookmarks")
+	   "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1))))
 
 (use-package evil-org)
 
@@ -35,6 +39,15 @@
   (setq org-confirm-babel-evaluate 'my-org-confirm-babel-evaluate)
   (setq org-html-htmlize-output-type 'css))
 
+(defun zezin-org-publish-all ()
+  (interactive)
+  (save-excursion
+    (org-publish-all)))
+
+(defun zezin-org-publish-current-file ()
+  (interactive)
+  (save-excursion
+    (org-publish-current-file)))
 
 (provide 'zezin-org)
 ;;; zezin-org ends here

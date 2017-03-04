@@ -3,7 +3,6 @@
 
 (use-package nginx-mode)
 
-
 ;; restclient
 (use-package restclient
   :config
@@ -21,6 +20,16 @@
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((restclient . t))))
+
+(use-package google-translate
+  :init
+  (setq google-translate-translation-directions-alist '(("en" . "pt") ("pt" . "en"))
+	google-translate-show-phonetic t
+	google-translate-pop-up-buffer-set-focus t)
+  :config
+  (require 'google-translate-smooth-ui))
+
+(use-package define-word)
 
 (provide 'zezin-misc)
 ;;; zezin-misc ends here

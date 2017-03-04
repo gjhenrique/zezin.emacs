@@ -71,7 +71,10 @@
 			("g" swiper-region-or-symbol)
                         ("t" counsel-ag-region-or-symbol-read-dir)
 			("r" counsel-ag-read-dir)
-			("a" counsel-ag-use-package)))
+			("a" counsel-ag-use-package)
+			("i" google-translate-smooth-translate)
+			("u" define-word-at-point)
+			("y" define-word)))
 
 (zezin-add-keybinding :buffer
                       '(("f" counsel-find-file)
