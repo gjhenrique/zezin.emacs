@@ -42,4 +42,5 @@
 (require 'zezin-javascript)
 (require 'zezin-elixir)
 (require 'zezin-go)
+(require 'zezin-clojure)
 (require 'zezin-misc)
