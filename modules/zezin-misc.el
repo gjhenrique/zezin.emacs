@@ -31,5 +31,8 @@
 
 (use-package define-word)
 
+(use-package docker)
+(use-package dockerfile-mode)
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here

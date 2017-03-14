@@ -38,6 +38,5 @@
 (require 'zezin-ruby)
 (require 'zezin-web)
 (require 'zezin-javascript)
-(require 'zezin-docker)
 (require 'zezin-elixir)
 (require 'zezin-misc)
