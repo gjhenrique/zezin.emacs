@@ -11,6 +11,7 @@
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 (defvar zezin-backup-dir (expand-file-name ".backups/" zezin-dir))
+(defvar zezin-vendor-dir (expand-file-name "vendor/" zezin-dir))
 
 (defun zezin-create-inexistent-folder (folder-name)
   (unless (file-exists-p folder-name)
@@ -21,6 +22,7 @@
 
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
+(add-to-list 'load-path zezin-vendor-dir)
 
 (require 'zezin-package)
 (require 'zezin-global-conf)
