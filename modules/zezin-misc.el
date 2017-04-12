@@ -29,6 +29,9 @@
   :config
   (require 'google-translate-smooth-ui))
 
+(use-package asp-mode
+  :ensure nil)
+
 (use-package define-word)
 
 (use-package docker)
