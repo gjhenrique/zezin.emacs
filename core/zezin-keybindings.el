@@ -87,7 +87,7 @@
            ("<tab>" . company-complete-common-or-cycle)
            ("<backtab>" . company-select-previous))
 
-(bind-keys ("M-p" . er/expand-region)
+(bind-keys ("M-o" . er/expand-region)
 	   ("M-x" . counsel-M-x))
 
 (provide 'zezin-keybindings)
