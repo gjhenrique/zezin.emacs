@@ -39,4 +39,5 @@
 (require 'zezin-web)
 (require 'zezin-javascript)
 (require 'zezin-elixir)
+(require 'zezin-go)
 (require 'zezin-misc)
