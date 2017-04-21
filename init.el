@@ -12,6 +12,7 @@
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 (defvar zezin-backup-dir (expand-file-name ".backups/" zezin-dir))
 (defvar zezin-vendor-dir (expand-file-name "vendor/" zezin-dir))
+(defvar zezin-work-file (substitute-in-file-name "$HOME/Dropbox/Vida/work.el"))
 
 (defun zezin-create-inexistent-folder (folder-name)
   (unless (file-exists-p folder-name)
@@ -44,3 +45,6 @@
 (require 'zezin-go)
 (require 'zezin-clojure)
 (require 'zezin-misc)
+
+(when (file-exists-p zezin-work-file)
+  (load-file zezin-work-file))
