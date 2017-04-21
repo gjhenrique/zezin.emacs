@@ -44,9 +44,12 @@
 (unless global-mode-string (setq global-mode-string '("")))
 
 (use-package dash)
+
 (use-package exec-path-from-shell
-  :config (when (memq window-system '(mac ns x))
-            (exec-path-from-shell-initialize)))
+  :init
+  (setq exec-path-from-shell-arguments (list "-l"))
+  :config (when (memq window-system '(mac ns x nil))
+	    (exec-path-from-shell-initialize)))
 
 (use-package auto-package-update)
 (use-package pcre2el)
@@ -63,11 +66,12 @@
     :config
     (load-theme 'base16-oceanicnext t)))
 
-(zezin-select-fonts-theme)
-(add-hook 'after-make-frame-functions
-	  (lambda (frame)
-	    (select-frame frame)
-	    (zezin-select-fonts-theme)))
+(if (daemonp)
+    (add-hook 'after-make-frame-functions
+	      (lambda (frame)
+		(select-frame frame)
+		(zezin-select-fonts-theme)))
+  (zezin-select-fonts-theme))
 
 (defun sudo-save ()
   (interactive)
