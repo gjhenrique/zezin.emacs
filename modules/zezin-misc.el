@@ -37,5 +37,7 @@
 (use-package docker)
 (use-package dockerfile-mode)
 
+(use-package writegood-mode)
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here
