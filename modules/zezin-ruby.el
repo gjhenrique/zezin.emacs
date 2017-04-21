@@ -185,7 +185,7 @@
 			("az" projectile-rails-goto-spec-helper)
 			("a." projectile-rails-goto-file-at-point)
 			("aq" projectile-toggle-between-implementation-and-test))
-		      :map 'ruby-mode-map) 
+		      :map 'ruby-mode-map)
 
 (provide 'zezin-ruby)
 ;;; zezin-ruby ends here
