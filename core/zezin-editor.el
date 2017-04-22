@@ -141,5 +141,9 @@
   (mapc 'kill-buffer (buffer-list))
   (delete-other-windows))
 
+(add-hook 'dired-load-hook
+          (lambda ()
+            (load "dired-x")))
+
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here
