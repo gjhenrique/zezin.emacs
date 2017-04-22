@@ -135,5 +135,11 @@
 		markdown-mode))
   (add-hook hook 'turn-on-flyspell))
 
+;; http://stackoverflow.com/questions/13981899/how-can-i-kill-all-buffers-in-my-emacs
+(defun nuke-all-buffers ()
+  (interactive)
+  (mapc 'kill-buffer (buffer-list))
+  (delete-other-windows))
+
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here
