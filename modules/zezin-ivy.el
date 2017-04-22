@@ -52,6 +52,11 @@
 (use-package counsel-projectile
   :after counsel)
 
+(use-package ivy-rich
+  :after ivy
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer))
+
 (use-package swiper
   :config
   (cl-defun swiper-region-or-symbol (&optional initial-text)
