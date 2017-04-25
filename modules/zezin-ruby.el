@@ -130,7 +130,7 @@
 
 			;; robe
 			("j" robe-doc)
-			("z" robe-rails-refresh)
+			("z" robe-ask)
 			("f" robe-jump)
 			("x" robe-start)
 
