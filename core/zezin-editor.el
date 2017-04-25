@@ -129,6 +129,7 @@
       (add-to-list 'yas-snippet-dirs custom-snippets-dir))
     (yas-global-mode 1)))
 
+(use-package bookmark+)
 ;; custom modifications
 (dolist (hook '(text-mode-hook
 		org-mode-hook
