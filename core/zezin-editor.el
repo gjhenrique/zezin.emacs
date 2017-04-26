@@ -142,6 +142,9 @@
   (mapc 'kill-buffer (buffer-list))
   (delete-other-windows))
 
+(defun zezin-start-frames ()
+  (make-frame '((title . "EmacsSpecs") (name . "Specs"))))
+
 (add-hook 'dired-load-hook
           (lambda ()
             (load "dired-x")))

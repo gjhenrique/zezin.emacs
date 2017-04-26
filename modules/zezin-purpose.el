@@ -21,6 +21,11 @@
 		 nil
 		 (reusable-frames . t))))
 
+(defun zezin-dedicate-purpose-window ()
+  (let ((title (substring-no-properties
+		(cdr (assoc 'title (frame-parameters))))))
+    (purpose-set-window-purpose 'magit)))
+
 (use-package window-purpose
   :init
   (progn
@@ -38,8 +43,11 @@
     (zezin-add-reusable-buffers "\\*magit*")
     (zezin-add-purposes)
     (zezin-disable-dired)
+
     (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))
-    (purpose-compile-user-configuration)))
+    (purpose-compile-user-configuration)
+
+    (zezin-dedicate-purpose-window)))
 
 (use-package ivy-purpose)
 
