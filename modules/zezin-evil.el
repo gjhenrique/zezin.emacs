@@ -9,10 +9,12 @@
   :config
   (global-anzu-mode t))
 
-(use-package evil-mc
-  :if (not (daemonp))
+(use-package evil-multiedit
+  :bind
+  (:map evil-visual-state-map
+   ("M-c" . evil-multiedit-toggle-marker-here))
   :config
-  (evil-mc-mode 1))
+  (evil-multiedit-default-keybinds))
 
 (use-package evil-matchit)
 
