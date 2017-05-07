@@ -14,10 +14,9 @@
   (with-eval-after-load 'dired
     (define-key dired-mode-map [remap dired-find-file] #'dired-find-file-without-purpose)))
 
-(defun zezin-add-reusable-buffers
-    (buffer-regex)
+(defun zezin-add-reusable-buffers (buffer-regex)
   (add-to-list 'display-buffer-alist
-	       '(buffer-regex
+	       `(,buffer-regex
 		 nil
 		 (reusable-frames . t))))
 
@@ -27,11 +26,6 @@
     (purpose-set-window-purpose 'magit)))
 
 (use-package window-purpose
-  :init
-  (progn
-    (setq purpose-default-action-order 'prefer-other-window)
-    (add-to-list 'display-buffer-alist
-		 '("." nil (reusable-frames . t))))
   :config
   (progn
     (purpose-mode)
