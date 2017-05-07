@@ -16,6 +16,10 @@
     (setq auto-compile-display-buffer nil)
     (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
 
+(use-package highlight-quoted
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
+
 (with-eval-after-load 'smartparens
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil))
 
