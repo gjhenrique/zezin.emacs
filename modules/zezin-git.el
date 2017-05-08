@@ -11,10 +11,10 @@
 (use-package diff-hl
   :init
   (progn
-    (setq diff-hl-side 'right)
+    (setq diff-hl-side 'left)
     (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
   :config
-  (diff-hl-margin-mode))
+  (diff-hl-mode))
 
 (use-package git-messenger)
 
