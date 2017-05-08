@@ -1,4 +1,4 @@
 #name : binding.pry
 #group : general
 # --
-binding.pry
+require 'pry'; binding.pry
