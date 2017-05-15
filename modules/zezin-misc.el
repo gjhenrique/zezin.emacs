@@ -1,4 +1,7 @@
-(use-package yaml-mode)
+(use-package yaml-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\.yml.example\\'" . yaml-mode)))
+
 (use-package markdown-mode)
 
 (use-package nginx-mode)
