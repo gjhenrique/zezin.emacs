@@ -32,11 +32,6 @@
   :init
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
-(use-package reek
-  :ensure nil
-  :init
-  (add-hook 'ruby-mode-hook 'reek-mode))
-
 (with-eval-after-load 'evil-matchit
   (add-hook #'ruby-mode-hook 'turn-on-evil-matchit-mode))
 
