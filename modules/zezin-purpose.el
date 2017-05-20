@@ -39,9 +39,7 @@
     (zezin-disable-dired)
 
     (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))
-    (purpose-compile-user-configuration)
-
-    (zezin-dedicate-purpose-window)))
+    (purpose-compile-user-configuration)))
 
 (use-package ivy-purpose)
 
