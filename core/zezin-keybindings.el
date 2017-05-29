@@ -39,7 +39,8 @@
                         ("k" evil-avy-goto-url)
                         ("u" undo-tree-visualize)
 			("h" counsel-imenu)
-			("i" browse-url-at-point)))
+			("i" browse-url-at-point)
+			("e" bjm/elfeed-load-db-and-open)))
 
 (zezin-add-keybinding :window
 		      '(("k" zezin-alternate-buffer-another-window)

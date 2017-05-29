@@ -42,5 +42,30 @@
 
 (use-package writegood-mode)
 
+(use-package elfeed
+  :bind (:map elfeed-search-mode-map
+	      ("q" . bjm/elfeed-save-db-and-bury))
+  ;; elfeed-db-directory 
+  :init
+  (setq-default elfeed-search-filter "@1-week-ago +unread +mustread")
+  (defun bjm/elfeed-load-db-and-open ()
+    "Wrapper to load the elfeed db from disk before opening"
+    (interactive)
+    (elfeed-db-load)
+    (elfeed)
+    (elfeed-search-update--force))
+
+  (defun bjm/elfeed-save-db-and-bury ()
+    "Wrapper to save the elfeed db to disk before burying buffer"
+    (interactive)
+    (elfeed-db-save)
+    (quit-window)))
+
+(use-package elfeed-org
+  :init
+  (setq rmh-elfeed-org-files (list (expand-file-name "feeds.org" zezin-dir)))
+  :config
+  (elfeed-org))
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here

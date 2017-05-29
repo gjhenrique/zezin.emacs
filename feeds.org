@@ -1,0 +1,139 @@
+* Imported Feeds            :elfeed:
+** Programming                                                 :programming:
+*** [[http://aphyr.com/posts.atom][Aphyr: Posts]]
+*** [[http://yehudakatz.com/feed/][Katz Got Your Tongue]]
+*** [[http://gjhenrique.com/atom.xml][Personal Blog]]
+*** [[http://egghead.io/feed][egghead.io]]
+*** [[http://zedshaw.com/feed.xml][Zed A. Shaw]]
+*** [[http://aegisknight.org/feed][Chad Austin]]
+*** [[http://feeds.feedburner.com/railscasts][RailsCasts]]
+*** [[http://nateberkopec.com/feed.xml][Nate Berkopec]]
+*** [[http://syndication.thedailywtf.com/TheDailyWtf][The Daily WTF]]
+*** [[http://www.infoq.com/rss/rss.action][InfoQ Personalized Feed for Unregistered User - Register to upgrade!]]
+*** [[http://jvns.ca/atom.xml][Julia Evans]]                                                  :mustread:
+*** [[http://feeds.feedburner.com/AyendeRahien][Ayende @ Rahien]]
+*** [[http://mozakai.blogspot.com/feeds/posts/default][azakai's blog]]
+*** [[http://martinfowler.com/bliki/bliki.atom][Martin Fowler]]                                                :mustread:
+*** [[http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots][Giant Robots Smashing Into Other Giant Robots]]
+*** [[http://feeds.feedburner.com/codinghorror/][Coding Horror]]                                                :mustread:
+*** [[http://rubyweekly.com/rss][Ruby Weekly]]
+*** [[http://blog.8thlight.com/feed/atom.xml][8th Light Blog]]
+*** [[http://feeds.feedburner.com/GustavoDuarte][Gustavo Duarte]]
+*** [[http://blog.cleancoder.com/atom.xml][The Clean Code Blog]]
+*** [[https://www.citusdata.com/feed.xml][Citus Data Blog]]
+*** [[http://feeds.feedburner.com/Rubyflow][RubyFlow]]
+*** [[http://feeds.feedburner.com/IT-eBooks][IT eBooks]]
+** Do it yourself                                             :doityourself:
+*** [[http://www.wikihow.com/feed.rss][How to of the Day]]
+** Security                                                       :security:
+# *** [[http://newschoolsecurity.com/feed/][The New School of Information Security]]
+*** [[http://software-security.sans.org/blog/feed/][AppSec Street Fighter]]
+# *** [[http://googleprojectzero.blogspot.com/feeds/posts/default][Project Zero]]                                                 :mustread:
+*** [[https://www.schneier.com/blog/atom.xml][Schneier on Security]]
+*** [[http://doar-e.github.io/atom.xml][Diary of a reverse]]
+*** [[http://krebsonsecurity.com/feed/][Krebs on Security]]
+*** [[http://taosecurity.blogspot.com/feeds/posts/default][TaoSecurity]]
+*** [[http://securosis.com/feeds/blog][Securosis Blog]]
+*** [[http://blog.fortinet.com/feed/][Fortinet Blog | Latest Posts]]
+*** [[http://feeds.feedburner.com/MartinMcKeaysNetworkSecurityBlog][Network Security Blog]]
+*** [[http://seclists.org/rss/fulldisclosure.rss][Full Disclosure]]
+*** [[http://seclists.org/rss/bugtraq.rss][Bugtraq]]
+** Javascript                                                   :javascript:
+*** [[http://marijnhaverbeke.nl/blog/feed.atom][marijnhaverbeke.nl/blog]]                                      :mustread:
+** Ruby                                                               :ruby:
+*** [[http://feeds.feedburner.com/GiantRobotsSmashingIntoOtherGiantRobots][Giant Robots Smashing Into Other Giant Robots]]
+*** [[http://rubyweekly.com/rss][Ruby Weekly]]                                                :rubyweekly:
+*** [[http://afreshcup.com/home/rss.xml][A Fresh Cup]]
+*** [[http://feeds.feedburner.com/Rubyflow][RubyFlow]]
+*** [[http://craftingruby.com/feed.xml][Crafting Ruby]]
+** clojure                                                         :clojure:
+*** [[http://stuartsierra.com/feed][Digital Digressions by Stuart Sierra]]
+*** [[https://clojure.news/rss][Clojure News]]
+*** [[http://feeds2.feedburner.com/stevelosh][Steve Losh]]
+*** [[http://feeds.cognitect.com/blog/feed.rss][Cognitect Blog]]
+*** [[http://feeds.feedburner.com/LispCast][LispCast]]
+*** [[http://reborg.tumblr.com/rss][Clojure Weekly]]
+*** [[http://planet.clojure.in/atom.xml][Planet Clojure]]
+** Hacks                                                             :hacks:
+*** [[http://www.embedds.com/feed/][Embedded projects from around the web]]
+*** [[http://dangerousprototypes.com/feed/][Dangerous Prototypes]]
+*** [[http://linuxgizmos.com/feed/][LinuxGizmos.com]]
+*** [[http://www.embedded.com/Rss/All][All Articles]]
+*** [[http://www.embarcados.com.br/feed/][Embarcados – Sua fonte de informações sobre Sistemas Embarcados]]
+*** [[http://www.hackaday.com/rss.xml][Hack A Day]]
+*** [[http://www.build-electronic-circuits.com/feed/][Build Electronic Circuits]]
+*** [[http://www.yoctoproject.org/blogs/feed][Blog]]
+*** [[http://maxembedded.wordpress.com/feed/][maxEmbedded]]
+*** [[http://www.adafruit.com/blog/feed/][Adafruit Industries – Makers, hackers, artists, designers and engineers!]]
+*** [[http://feeds.feedburner.com/pyroelectro][PyroElectro]]
+*** [[http://wordpress.codewrite.co.uk/pic/feed/][PIC Tutorials]]
+*** [[http://hforsten.com/feeds/all.atom.xml][Henrik's Blog]]
+** Rails                                                             :rails:
+*** [[http://feeds.feedburner.com/railscasts][RailsCasts]]
+*** [[http://nateberkopec.com/feed.xml][Nate Berkopec]]                                                :mustread:
+*** [[http://feeds.feedburner.com/AkitaOnRails][AkitaOnRails.com]]                                             :mustread:
+** Misc                                                               :misc:
+*** [[http://showrss.info/user/14615.rss][showRSS personal feed]]
+*** [[http://riscafaca.com.br/feed/][Risca Faca]]
+** Companies                                                     :companies:
+*** [[https://about.gitlab.com/atom.xml][GitLab]]                                                :mustread:gitlab:
+*** [[http://blog.cloudflare.com/rss.xml][Cloudflare Blog]]
+*** [[http://feeds.feedburner.com/GDBcode][Google Developers Blog]]
+*** [[http://techblog.netflix.com/feeds/posts/default][Netflix TechBlog - Medium]]                                    :mustread:
+*** [[http://blog.dropbox.com/?feed=rss2][Dropbox Blog]]
+*** [[https://blog.codeminer42.com/feed][The Miners - Medium]]                                            :miners:
+*** [[https://slack.engineering/feed][Several People Are Coding - Medium]]
+# *** [[https://www.digitalocean.com/community/tutorials/feed.atom][DigitalOcean Community]]                                   :digitalocean:
+*** [[https://eng.uber.com/feed/][Uber Engineering Blog]]
+*** [[http://blog.reddit.com/feeds/posts/default][Upvoted]]
+*** [[http://labs.spotify.com/feed/][Labs]]
+*** [[http://engineering.twitter.com/feeds/posts/default][English (US)]]
+*** [[https://medium.com/feed/signal-v-noise][Signal v. Noise (Basecamp)]]
+** Tech                                                               :tech:
+*** [[http://feeds.arstechnica.com/arstechnica/index/][Ars Technica]]
+** Linux                                                             :linux:
+*** [[http://www.diolinux.com.br/feeds/posts/default][Diolinux - Open Source, Ubuntu, Android e tecnologia]]
+*** [[http://www.embedds.com/feed/][Embedded projects from around the web]]
+*** [[http://www.howtoforge.com/node/feed][Howtoforge Linux Howtos und Tutorials]]
+*** [[http://linuxgizmos.com/feed/][LinuxGizmos.com]]
+*** [[http://lwn.net/headlines/newrss][LWN.net]]
+*** [[http://feeds.feedburner.com/GustavoDuarte][Gustavo Duarte]]
+*** [[http://www.archlinux.org/feeds/news/][Arch Linux: Recent news updates]]
+*** [[http://feeds2.feedburner.com/webupd8][Web Upd8 - Ubuntu / Linux blog]]
+*** [[http://www.linuxjournal.com/node/feed][Linux Journal - The Original Magazine of the Linux Community]]
+*** [[http://www.linaro.org/linaro-blog/rss][Linaro Blog – Linaro]]
+*** [[http://www.yoctoproject.org/blogs/feed][Blog]]
+*** [[http://free-electrons.com/feed/][free electrons]]
+*** [[https://www.reddit.com/r/archlinux/comments/3l1u6w/how_do_i_use_vim_with_the_system_clipboard_on/.rss][How do i use vim with the system clipboard on archlinux? The arch package does not include xterm_clipboard or clipboard : archlinux]]
+** Livros                                                           :livros:
+*** [[http://feeds.feedburner.com/IT-eBooks][IT eBooks]]
+** Emacs                                                             :emacs:
+*** [[http://blog.aaronbieber.com/feed.xml][The Chronicle of a ColdFusion Expatriate]]
+*** [[http://sachachua.com/blog/feed][sacha chua :: living an awesome life]]
+*** [[http://emacsninja.com/feed.atom][Emacs Ninja]]
+*** [[http://endlessparentheses.com/atom.xml][Endless Parentheses]]                                          :mustread:
+*** [[http://feeds.feedburner.com/XahsEmacsBlog][Xah Emacs Blog]]
+*** [[http://emacshorrors.com/feed][Emacs Horrors]]
+*** [[http://pragmaticemacs.com/feed/][Pragmatic Emacs]]
+*** [[http://nullprogram.com/feed/][NullProgram]]
+** Android                                                         :android:
+*** [[http://feeds.feedburner.com/blogspot/hsDu][Android Developers Blog]]
+*** [[http://www.blogdoandroid.com/feed/][Blog Do Android]]
+*** [[https://copperhead.co/feed.xml][Copperhead Security]]
+*** [[http://www.xda-developers.com/feed/][xda-developers » xda-developers]]
+*** [[http://android.inspired-ui.com/rss][Inspired UI]]
+*** [[http://www.sureshjoshi.com/feed/][Suresh's Site]]
+*** [[http://www.rafaeltoledo.net/feed/][Rafael Toledo]]
+** Financeiro                                                   :financeiro:
+*** [[http://feeds.feedburner.com/QueroFicarRico][Quero Ficar Rico]]
+*** [[http://www.valoresreais.com/feed/][Valores Reais]]
+*** [[http://www.clubedospoupadores.com/feed][Clube dos Poupadores]]
+*** [[http://feeds.feedburner.com/dinheirama][Dinheirama]]
+*** [[http://web.infomoney.com.br/offline/rss/investimentos.xml][InfoMoney :]]
+** Comics                                                           :comics:
+*** [[https://xkcd.com/rss.xml][xkcd]]                                                         :mustread:
+*** [[http://turnoff.us/feed.xml][turnoff]]
+*** [[http://explainxkcd.com/rss.xml][explainxkcd]]
+*** [[https://www.smbc-comics.com/rss.php][Saturday Morning]]
+*** [[https://warandpeas.com/feed/][War and Peas]] 
+*** [[http://www.commitstrip.com/en/feed/][ComitStrip]] 
