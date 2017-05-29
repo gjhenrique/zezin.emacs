@@ -56,6 +56,7 @@
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
+  (interactive)
   (zezin-load-theme)
   (if (x-list-fonts "Source Code Pro")
       (set-frame-font "Source Code Pro 12")
