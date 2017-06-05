@@ -27,8 +27,8 @@
 *** [[http://www.wikihow.com/feed.rss][How to of the Day]]
 ** Security                                                       :security:
 # *** [[http://newschoolsecurity.com/feed/][The New School of Information Security]]
+*** [[http://googleprojectzero.blogspot.com/feeds/posts/default][Project Zero]]                                                 :mustread:
 *** [[http://software-security.sans.org/blog/feed/][AppSec Street Fighter]]
-# *** [[http://googleprojectzero.blogspot.com/feeds/posts/default][Project Zero]]                                                 :mustread:
 *** [[https://www.schneier.com/blog/atom.xml][Schneier on Security]]
 *** [[http://doar-e.github.io/atom.xml][Diary of a reverse]]
 *** [[http://krebsonsecurity.com/feed/][Krebs on Security]]
@@ -112,7 +112,6 @@
 *** [[http://sachachua.com/blog/feed][sacha chua :: living an awesome life]]
 *** [[http://emacsninja.com/feed.atom][Emacs Ninja]]
 *** [[http://endlessparentheses.com/atom.xml][Endless Parentheses]]                                          :mustread:
-*** [[http://feeds.feedburner.com/XahsEmacsBlog][Xah Emacs Blog]]
 *** [[http://emacshorrors.com/feed][Emacs Horrors]]
 *** [[http://pragmaticemacs.com/feed/][Pragmatic Emacs]]
 *** [[http://nullprogram.com/feed/][NullProgram]]

@@ -67,5 +67,9 @@
   :config
   (elfeed-org))
 
+(use-package el-pocket
+  :config
+  (el-pocket-load-auth))
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here
