@@ -12,9 +12,11 @@
 
 (use-package auto-compile
   :init
+  (setq auto-compile-display-buffer nil)
+  :config
   (progn
-    (setq auto-compile-display-buffer nil)
-    (add-hook 'emacs-lisp-mode-hook 'auto-compile-mode)))
+    (auto-compile-on-load-mode)
+    (auto-compile-on-save-mode)))
 
 (use-package highlight-quoted
   :config
