@@ -63,9 +63,9 @@
     (message "Source Code Pro is not installed")))
 
 (defun zezin-load-theme ()
-  (use-package kaolin-theme
+  (use-package base16-theme
     :config
-    (load-theme 'kaolin t)))
+    (load-theme 'base16-default-dark t)))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
