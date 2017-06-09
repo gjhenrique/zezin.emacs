@@ -1,13 +1,12 @@
 * Imported Feeds            :elfeed:
 ** Programming                                                 :programming:
-*** [[http://aphyr.com/posts.atom][Aphyr: Posts]]
+*** [[http://aphyr.com/posts.atom][Aphyr: Posts]]                                                 :mustread:
 *** [[http://yehudakatz.com/feed/][Katz Got Your Tongue]]
 *** [[http://gjhenrique.com/atom.xml][Personal Blog]]
 *** [[http://egghead.io/feed][egghead.io]]
 *** [[http://zedshaw.com/feed.xml][Zed A. Shaw]]
 *** [[http://aegisknight.org/feed][Chad Austin]]
 *** [[http://feeds.feedburner.com/railscasts][RailsCasts]]
-*** [[http://nateberkopec.com/feed.xml][Nate Berkopec]]
 *** [[http://syndication.thedailywtf.com/TheDailyWtf][The Daily WTF]]
 *** [[http://www.infoq.com/rss/rss.action][InfoQ Personalized Feed for Unregistered User - Register to upgrade!]]
 *** [[http://jvns.ca/atom.xml][Julia Evans]]                                                  :mustread:
@@ -21,7 +20,6 @@
 *** [[http://feeds.feedburner.com/GustavoDuarte][Gustavo Duarte]]
 *** [[http://blog.cleancoder.com/atom.xml][The Clean Code Blog]]
 *** [[https://www.citusdata.com/feed.xml][Citus Data Blog]]
-*** [[http://feeds.feedburner.com/Rubyflow][RubyFlow]]
 *** [[http://feeds.feedburner.com/IT-eBooks][IT eBooks]]
 ** Do it yourself                                             :doityourself:
 *** [[http://www.wikihow.com/feed.rss][How to of the Day]]
@@ -136,3 +134,6 @@
 *** [[https://www.smbc-comics.com/rss.php][Saturday Morning]]
 *** [[https://warandpeas.com/feed/][War and Peas]] 
 *** [[http://www.commitstrip.com/en/feed/][ComitStrip]] 
+** Trampo                                                           :trampo:
+*** Jenkins                                                    :jenkins:ci:
+**** [[http://ci.qaservices.locaweb.com.br/job/iaas_iaas/job/iaas_build/job/iaas_cloud_core/rssAll][cloud-core]]                                                :cloud_core:
