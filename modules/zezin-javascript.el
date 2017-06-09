@@ -27,7 +27,7 @@
   :init
   (add-to-list 'company-backends 'company-tern))
 
-(use-package jade)
+(use-package indium)
 (use-package json-mode)
 (use-package web-beautify)
 
