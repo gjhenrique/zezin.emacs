@@ -32,6 +32,9 @@
 
 (global-auto-revert-mode 1)
 
+;; Accept UTF-8 as utf-8
+(define-coding-system-alias 'UTF-8 'utf-8)
+
 (unless (bound-and-true-p custom-file)
   (setq custom-file (concat zezin-cache-dir "custom_file"))
   (when (file-exists-p custom-file)
