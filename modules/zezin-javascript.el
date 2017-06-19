@@ -7,21 +7,14 @@
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
     (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
 
-;; react-mode activation
-(progn
-  (setq react-mode-map (make-sparse-keymap))
-  (define-derived-mode react-mode web-mode "react")
-  (add-to-list 'auto-mode-alist '("\\.jsx\\'" . react-mode))
-  (add-to-list 'auto-mode-alist '("\\.react.js\\'" . react-mode))
-  (add-to-list 'auto-mode-alist '("\\index.android.js\\'" . react-mode))
-  (add-to-list 'auto-mode-alist '("\\index.ios.js\\'" . react-mode))
-  (add-to-list 'magic-mode-alist '("/\\*\\* @jsx React\\.DOM \\*/" . react-mode))
-  (add-to-list 'magic-mode-alist '("^import React" . react-mode)))
+(use-package rjsx-mode
+  :bind (:map rjsx-mode-map
+              ("TAB" . rjsx-delete-creates-full-tag)))
 
 (use-package tern
   :init
   (add-hook 'js2-mode-hook 'tern-mode)
-  (add-hook 'react-mode-hook 'tern-mode))
+  (add-hook 'rjsx-mode-hook 'tern-mode))
 
 (use-package company-tern
   :init
@@ -35,10 +28,10 @@
 (with-eval-after-load 'flycheck
   (push 'js2-mode flycheck-global-modes)
   (push 'json-mode flycheck-global-modes)
-  (push 'react-mode flycheck-global-modes)
+  (push 'rjsx-mode flycheck-global-modes)
 
   (dolist (checker '(javascript-eslint javascript-standard))
-    (flycheck-add-mode checker 'react-mode)
+    (flycheck-add-mode checker 'rjsx-mode)
     (flycheck-add-mode checker 'js2-mode))
 
   (defun zezin-use-eslint-from-node-modules ()
@@ -52,7 +45,7 @@
 		       local-eslint
 		     global-eslint)))
       (setq-local flycheck-javascript-eslint-executable eslint)))
-  (add-hook #'react-mode-hook #'zezin-use-eslint-from-node-modules)
+  (add-hook #'rjsx-mode-hook #'zezin-use-eslint-from-node-modules)
   (add-hook #'js2-mode-hook #'zezin-use-eslint-from-node-modules))
 
 (defvar zezin-js-keybindings
@@ -68,7 +61,7 @@
 
 (zezin-add-keybinding :language
 		      zezin-js-keybindings
-		      :map 'react-mode-map)
+		      :map 'rjsx-mode-map)
 
 (zezin-add-keybinding :language
 		      `(("a" web-beautify-json))

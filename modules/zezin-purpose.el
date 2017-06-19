@@ -5,7 +5,7 @@
   (add-to-list 'purpose-user-mode-purposes '(web-mode . web))
   (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp))
   (add-to-list 'purpose-user-mode-purposes '(js2-mode . javascript))
-  (add-to-list 'purpose-user-mode-purposes '(react-mode . javascript))
+  (add-to-list 'purpose-user-mode-purposes '(rjsx-mode . javascript))
   ;; TODO: This is ugly
   (add-to-list 'purpose-user-mode-purposes '(yaml-mode . ruby)))
 
