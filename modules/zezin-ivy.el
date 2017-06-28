@@ -25,7 +25,7 @@
     (cl-defun counsel-ag-directory (dir &optional initial-text)
       (interactive)
       (let ((res (zezin-region-or-symbol initial-text)))
-	(counsel-ag res dir)))
+	(counsel-ag res dir "--hidden")))
 
     (defun counsel-ag-region-or-symbol-projectile ()
       (interactive)
