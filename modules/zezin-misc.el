@@ -71,5 +71,7 @@
   :config
   (el-pocket-load-auth))
 
+(use-package systemd)
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here
