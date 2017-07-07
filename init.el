@@ -45,6 +45,7 @@
 (require 'zezin-go)
 (require 'zezin-clojure)
 (require 'zezin-python)
+(require 'zezin-ocaml)
 (require 'zezin-misc)
 
 (when (file-exists-p zezin-work-file)
