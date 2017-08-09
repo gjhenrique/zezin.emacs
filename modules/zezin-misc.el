@@ -8,7 +8,6 @@
 
 (use-package csharp-mode)
 
-;; restclient
 (use-package restclient
   :config
   (zezin-add-keybinding :language
