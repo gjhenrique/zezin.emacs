@@ -6,6 +6,8 @@
 
 (use-package nginx-mode)
 
+(use-package csharp-mode)
+
 ;; restclient
 (use-package restclient
   :config
