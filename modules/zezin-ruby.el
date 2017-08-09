@@ -4,6 +4,8 @@
   :init
   (add-hook 'rubocop-mode 'ruby-mode-hook))
 
+(setq ruby-insert-encoding-magic-comment nil)
+
 (use-package ruby-tools
   :init
   (add-hook 'ruby-mode-hook 'ruby-tools-mode))
