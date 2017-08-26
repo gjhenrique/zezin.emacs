@@ -38,6 +38,7 @@
 			("g" evil-avy-goto-char-2)
                         ("k" evil-avy-goto-url)
                         ("u" undo-tree-visualize)
+                        ("t" zezin-go-to-file-in-clipboard)
 			("h" counsel-imenu)
 			("i" browse-url-at-point)
 			("e" bjm/elfeed-load-db-and-open)))

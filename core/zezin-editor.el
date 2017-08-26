@@ -141,6 +141,30 @@
   (mapc 'kill-buffer (buffer-list))
   (delete-other-windows))
 
+;; https://stackoverflow.com/questions/2416655/file-path-to-clipboard-in-emacs
+(defun zezin-copy-file-name-to-clipboard ()
+  "Copy the current buffer file name to the clipboard."
+  (interactive)
+  (let ((filename (if (equal major-mode 'dired-mode)
+                      default-directory
+                    (buffer-file-name))))
+    (when filename
+      (kill-new filename)
+      (message "Copied buffer file name '%s' to the clipboard." filename))))
+
+(defun clipboard/get ()
+  (with-temp-buffer
+    (clipboard-yank)
+    (buffer-substring-no-properties (point-min) (point-max))))
+
+(defun zezin-go-to-file-in-clipboard ()
+  "Go to file in the clipboard"
+  (interactive)
+  (let ((filename (string-trim (clipboard/get))))
+    (if (file-exists-p filename)
+        (ffap filename)
+      (message "File %s not exists" filename))))
+
 (defun zezin-start-frames ()
   (make-frame '((title . "EmacsSpecs") (name . "Specs"))))
 
