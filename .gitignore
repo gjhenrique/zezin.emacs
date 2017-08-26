@@ -47,3 +47,8 @@ flycheck_*.el
 layouts
 .cache
 smex-items
+
+.last-package-update-day
+anaconda-mode/
+network-security.data
+url/
