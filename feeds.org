@@ -25,7 +25,7 @@
 *** [[http://www.wikihow.com/feed.rss][How to of the Day]]
 ** Security                                                       :security:
 # *** [[http://newschoolsecurity.com/feed/][The New School of Information Security]]
-*** [[http://googleprojectzero.blogspot.com/feeds/posts/default][Project Zero]]                                                 :mustread:
+# *** [[http://googleprojectzero.blogspot.com/feeds/posts/default][Project Zero]]                                                 :mustread:
 *** [[http://software-security.sans.org/blog/feed/][AppSec Street Fighter]]
 *** [[https://www.schneier.com/blog/atom.xml][Schneier on Security]]
 *** [[http://doar-e.github.io/atom.xml][Diary of a reverse]]
@@ -134,6 +134,3 @@
 *** [[https://www.smbc-comics.com/rss.php][Saturday Morning]]
 *** [[https://warandpeas.com/feed/][War and Peas]] 
 *** [[http://www.commitstrip.com/en/feed/][ComitStrip]] 
-** Trampo                                                           :trampo:
-*** Jenkins                                                    :jenkins:ci:
-**** [[http://ci.qaservices.locaweb.com.br/job/iaas_iaas/job/iaas_build/job/iaas_cloud_core/rssAll][cloud-core]]                                                :cloud_core:
