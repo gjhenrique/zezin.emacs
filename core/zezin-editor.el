@@ -129,6 +129,14 @@
     (yas-global-mode 1)))
 
 (use-package bookmark+)
+
+(use-package dumb-jump
+  :init
+  (setq dumb-jump-selector 'ivy)
+  (setq dumb-jump-force-searcher 'ag)
+  ;; Search in files that are also in .gitignore
+  (setq dumb-jump-ag-cmd "ag -U"))
+
 ;; custom modifications
 (dolist (hook '(text-mode-hook
 		org-mode-hook
