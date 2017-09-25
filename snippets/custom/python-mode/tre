@@ -1,4 +1,4 @@
 #name : tre
-#group : from
+#group : general
 # --
-general trepan.api import debug;debug();
+from trepan.api import debug;debug();
