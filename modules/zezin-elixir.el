@@ -27,4 +27,10 @@
      :post-handlers '(:add spacemacs//elixir-do-end-close-action)
      :actions '(insert))))
 
+(zezin-add-keybinding :language
+                      `(("f" alchemist-goto-definition-at-point)
+                        ("j" alchemist-help-search-at-point))
+                      ;; add tests
+                      :map 'elixir-mode-map)
+
 (provide 'zezin-elixir)
