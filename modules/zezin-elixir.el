@@ -1,10 +1,16 @@
 (use-package elixir-mode)
 
+(use-package erlang)
+
 (use-package alchemist
   :init
-  (let ((elixir-project (substitute-in-file-name "$HOME/Projects/elixir/")))
-    (when (file-exists-p elixir-project)
-      (setq alchemist-goto-elixir-source-dir elixir-project))))
+  (progn
+    (let ((erlang-project (substitute-in-file-name "$HOME/Projects/erlang/")))
+      (when (file-exists-p erlang-project)
+        (setq alchemist-goto-erlang-source-dir erlang-project)))
+    (let ((elixir-project (substitute-in-file-name "$HOME/Projects/elixir/")))
+      (when (file-exists-p elixir-project)
+        (setq alchemist-goto-elixir-source-dir elixir-project)))))
 
 (use-package flycheck-credo
   :defer t
