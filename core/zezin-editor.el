@@ -134,8 +134,11 @@
   :init
   (setq dumb-jump-selector 'ivy)
   (setq dumb-jump-force-searcher 'ag)
-  ;; Search in files that are also in .gitignore
-  (setq dumb-jump-ag-cmd "ag -U"))
+  :config
+  (defun dumb-jump-go-without-cvs ()
+    (interactive)
+    (let ((dumb-jump-ag-cmd "ag -U"))
+      (dumb-jump-go))))
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook

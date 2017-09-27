@@ -41,7 +41,9 @@
                         ("t" zezin-go-to-file-in-clipboard)
 			("h" counsel-imenu)
 			("i" browse-url-at-point)
-			("e" bjm/elfeed-load-db-and-open)))
+			("e" bjm/elfeed-load-db-and-open)
+                        ("," dumb-jump-go)
+                        ("." dumb-jump-go-without-cvs)))
 
 (zezin-add-keybinding :window
 		      '(("k" zezin-alternate-buffer-another-window)
