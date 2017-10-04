@@ -43,7 +43,9 @@
 			("i" browse-url-at-point)
 			("e" bjm/elfeed-load-db-and-open)
                         ("," dumb-jump-go)
-                        ("." dumb-jump-go-without-cvs)))
+                        ("." dumb-jump-go-without-cvs)
+                        ("z" dumb-jump-go-prompt)
+                        ("x" dumb-jump-go-prompt-without-cvs)))
 
 (zezin-add-keybinding :window
 		      '(("k" zezin-alternate-buffer-another-window)

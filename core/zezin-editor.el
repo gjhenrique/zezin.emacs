@@ -133,10 +133,15 @@
   (setq dumb-jump-selector 'ivy)
   (setq dumb-jump-force-searcher 'ag)
   :config
-  (defun dumb-jump-go-without-cvs ()
-    (interactive)
-    (let ((dumb-jump-ag-cmd "ag -U"))
-      (dumb-jump-go))))
+  (progn
+    (defun dumb-jump-go-without-cvs ()
+      (interactive)
+      (let ((dumb-jump-ag-cmd "ag -U"))
+        (dumb-jump-go)))
+    (defun dumb-jump-go-prompt-without-cvs ()
+      (interactive)
+      (let ((dumb-jump-ag-cmd "ag -U"))
+        (dumb-jump-go-prompt)))))
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook
