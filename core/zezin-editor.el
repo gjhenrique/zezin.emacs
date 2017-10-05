@@ -179,9 +179,6 @@
         (ffap filename)
       (message "File %s not exists" filename))))
 
-(defun zezin-start-frames ()
-  (make-frame '((title . "EmacsSpecs") (name . "Specs"))))
-
 (add-hook 'dired-load-hook
           (lambda ()
             (load "dired-x")))
