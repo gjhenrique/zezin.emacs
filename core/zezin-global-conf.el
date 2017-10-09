@@ -52,7 +52,7 @@
   :init
   (setq exec-path-from-shell-arguments (list "-l"))
   :config (when (memq window-system '(mac ns x nil))
-	    (exec-path-from-shell-initialize)))
+            (exec-path-from-shell-initialize)))
 
 (use-package auto-package-update)
 (use-package pcre2el)
@@ -72,9 +72,9 @@
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
-	      (lambda (frame)
-		(select-frame frame)
-		(zezin-select-fonts-theme)))
+              (lambda (frame)
+                (select-frame frame)
+                (zezin-select-fonts-theme)))
   (zezin-select-fonts-theme))
 
 (defun sudo-save ()
