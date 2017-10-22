@@ -66,9 +66,9 @@
     (message "Source Code Pro is not installed")))
 
 (defun zezin-load-theme ()
-  (use-package base16-theme
+  (use-package doom-themes
     :config
-    (load-theme 'base16-default-dark t)))
+    (load-theme 'doom-vibrant)))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
