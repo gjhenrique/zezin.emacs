@@ -28,8 +28,6 @@
 
 (use-package minitest)
 
-(use-package goto-gem)
-
 (use-package projectile-rails
   :init
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
@@ -139,9 +137,7 @@
 
 			;; bundle
 			("b" bundle-install)
-
-			;; goto-gem
-			("s" goto-gem)
+			("s" bundle-open)
 
 			;; ruby-tools
 			("m" ruby-tools-single-quote-string)
