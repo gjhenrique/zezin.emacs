@@ -41,6 +41,7 @@
                         ("t" zezin-go-to-file-in-clipboard)
 			("h" counsel-imenu)
 			("i" browse-url-at-point)
+                        ("w" tldr)
 			("e" bjm/elfeed-load-db-and-open)
                         ("," dumb-jump-go)
                         ("." dumb-jump-go-without-cvs)

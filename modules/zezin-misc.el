@@ -76,5 +76,7 @@
 
 (use-package systemd)
 
+(use-package tldr)
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here
