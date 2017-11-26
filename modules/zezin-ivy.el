@@ -20,6 +20,10 @@
   (smex-initialize))
 
 (use-package counsel
+  :init
+  (setq counsel-fzf-cmd (substitute-in-file-name "$HOME/.fzf/bin/fzf -f %s"))
+  (setq counsel-fzf-dir-function (lambda () default-directory))
+
   :config
   (progn
     (cl-defun counsel-ag-directory (dir &optional initial-text)
