@@ -143,6 +143,12 @@
       (let ((dumb-jump-ag-cmd "ag -U"))
         (dumb-jump-go-prompt)))))
 
+(use-package dired+)
+
+(use-package pcre2el
+  :config
+  (pcre-mode))
+
 ;; custom modifications
 (dolist (hook '(text-mode-hook
 		org-mode-hook
