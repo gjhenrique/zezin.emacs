@@ -4,6 +4,7 @@
     (setq-default js2-strict-trailing-comma-warning nil)
     (setq-default js2-strict-missing-semi-warning nil)
     (setq-default js2-basic-offset 2)
+    (setq-default js-switch-indent-offset 2)
     (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
     (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
