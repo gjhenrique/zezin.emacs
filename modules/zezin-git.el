@@ -2,8 +2,10 @@
 
 (use-package git-link
   :init
-  (setq git-link-open-in-browser t))
-
+  (setq git-link-open-in-browser t)
+  :config
+  (add-to-list 'git-link-remote-alist
+               '("code\\.locaweb\\.com\\.br" git-link-gitlab)))
 
 (use-package evil-magit
   :after magit)
