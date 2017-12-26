@@ -1,10 +1,4 @@
 ;; Declare first to add the auto-mode-alist before javascript
-(use-package rjsx-mode
-  :init
-  (add-to-list 'auto-mode-alist '( "\\(/containers/\\|/components/\\).+js\\'" . rjsx-mode))
-  :bind (:map rjsx-mode-map
-              ("TAB" . rjsx-delete-creates-full-tag)))
-
 (use-package js2-mode
   :init
   (progn
@@ -15,6 +9,12 @@
     (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
     (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
+
+(use-package rjsx-mode
+  :init
+  (add-to-list 'auto-mode-alist '("\\(containers\\|components\\).+js\\'" . rjsx-mode))
+  :bind (:map rjsx-mode-map
+              ("TAB" . rjsx-delete-creates-full-tag)))
 
 (use-package tern
   :init
