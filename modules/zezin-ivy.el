@@ -1,7 +1,6 @@
 (cl-defun zezin-region-or-symbol (&optional initial-text)
   (or initial-text
       (if (region-active-p)
-	  (buffer-substring-no-properties
           (buffer-substring-no-properties
            (region-beginning) (region-end))
         (thing-at-point 'symbol))))
@@ -20,10 +19,27 @@
   :config
   (smex-initialize))
 
+(defun zezin-find-root-lib (folder lib-identifier)
+  "Cut the folder of the last"
+  (let ((directories (f-split folder)))
+    (and (member lib-identifier directories)
+         (apply 'f-join (-take
+                         (+ (-elem-index lib-identifier directories) 2)
+                         directories)))))
+
+(defun zezin-find-lib-folder (folder)
+  (or
+   (zezin-find-root-lib default-directory "gems")))
+
+(defun zezin-counsel-fzf-dir ()
+  (or
+   (zezin-find-lib-folder default-directory)
+   default-directory))
+
 (use-package counsel
   :init
   (setq counsel-fzf-cmd (substitute-in-file-name "$HOME/.fzf/bin/fzf -f %s"))
-  (setq counsel-fzf-dir-function (lambda () default-directory))
+  (setq counsel-fzf-dir-function 'zezin-counsel-fzf-dir)
 
   :config
   (progn
@@ -47,7 +63,17 @@
     (defun counsel-ag-read-dir ()
       (interactive)
       (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
-	(counsel-ag nil folder)))
+        (counsel-ag nil folder)))
+
+    (defun counsel-ag-read-lib ()
+      (interactive)
+      (let ((folder (zezin-find-lib-folder default-directory)))
+        (counsel-ag-directory folder)))
+
+    (defun counsel-ag-read-gem (gem-name)
+      (interactive (list (completing-read "Bundled gem: " (bundle-list-gems-cached))))
+      (let ((gem-location (bundle-gem-location gem-name)))
+        (counsel-ag-directory gem-location)))
 
     (defun counsel-ag-region-or-symbol-read-dir ()
       (interactive)
