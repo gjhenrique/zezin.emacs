@@ -2,13 +2,14 @@
   (or initial-text
       (if (region-active-p)
 	  (buffer-substring-no-properties
-	   (region-beginning) (region-end))
-	(thing-at-point 'symbol))))
+          (buffer-substring-no-properties
+           (region-beginning) (region-end))
+        (thing-at-point 'symbol))))
 
 (use-package ivy
   :init
   (setq ivy-use-virtual-buffers 1
-	ivy-height 20)
+        ivy-height 20)
   :config
   (progn
     (with-eval-after-load 'ido
@@ -29,7 +30,7 @@
     (cl-defun counsel-ag-directory (dir &optional initial-text)
       (interactive)
       (let ((res (zezin-region-or-symbol initial-text)))
-	(counsel-ag res dir "--hidden")))
+        (counsel-ag res dir "--hidden")))
 
     (defun counsel-ag-region-or-symbol-projectile ()
       (interactive)
@@ -51,7 +52,7 @@
     (defun counsel-ag-region-or-symbol-read-dir ()
       (interactive)
       (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
-	(counsel-ag-directory folder)))))
+        (counsel-ag-directory folder)))))
 
 (use-package counsel-projectile
   :after counsel)
