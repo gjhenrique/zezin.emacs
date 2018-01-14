@@ -20,7 +20,10 @@
 
 (use-package rspec-mode
   :init
-  (add-hook 'ruby-mode-hook 'rspec-enable-appropriate-mode)
+  (progn
+    (add-hook 'ruby-mode-hook 'rspec-enable-appropriate-mode)
+    ;; TODO: Spring isn't working. Investigate later
+    (setq rspec-use-spring-when-possible nil))
   :config
   (progn
     (add-hook 'after-init-hook 'inf-ruby-switch-setup)
