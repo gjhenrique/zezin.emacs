@@ -42,6 +42,7 @@
                         ("t" zezin-go-to-file-in-clipboard)
 			("h" counsel-imenu)
 			("i" browse-url-at-point)
+			("o" engine/search-google)
                         ("w" tldr)
 			("e" bjm/elfeed-load-db-and-open)
                         ("," dumb-jump-go)
