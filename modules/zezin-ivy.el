@@ -28,7 +28,8 @@
                          directories)))))
 
 (defun zezin-find-lib-folder (folder)
-  (zezin-find-root-lib default-directory "gems"))
+  (zezin-find-root-lib default-directory "gems")
+  (zezin-find-root-lib default-directory "elpa"))
 
 (defun zezin-counsel-fzf-dir ()
   (or
