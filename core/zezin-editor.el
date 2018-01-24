@@ -128,6 +128,8 @@
       (add-to-list 'yas-snippet-dirs custom-snippets-dir))
     (yas-global-mode 1)))
 
+(use-package yasnippet-snippets)
+
 (use-package dumb-jump
   :init
   (setq dumb-jump-selector 'ivy)
