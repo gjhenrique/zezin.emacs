@@ -78,5 +78,14 @@
 
 (use-package tldr)
 
+(use-package atomic-chrome
+  :init
+  (progn
+    (define-derived-mode atomic-chrome-mode markdown-mode "AtomicChrome")
+    (setq atomic-chrome-default-major-mode 'atomic-chrome-mode)
+    (setq atomic-chrome-buffer-open-style 'full))
+  :config
+  (atomic-chrome-start-server))
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here
