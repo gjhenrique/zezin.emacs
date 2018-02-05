@@ -29,7 +29,8 @@
 
 (defun zezin-find-lib-folder (folder)
   (zezin-find-root-lib default-directory "gems")
-  (zezin-find-root-lib default-directory "elpa"))
+  (zezin-find-root-lib default-directory "elpa")
+  (zezin-find-root-lib default-directory "node_modules"))
 
 (defun zezin-counsel-fzf-dir ()
   (or
