@@ -30,9 +30,7 @@
     (evil-define-key 'hybrid emmet-mode-keymap (kbd "TAB") 'emmet-expand-line)
     (evil-define-key 'hybrid emmet-mode-keymap (kbd "<tab>") 'emmet-expand-line)))
 
-(use-package less-css-mode)
 (use-package sass-mode)
-(use-package scss-mode)
 (use-package haml-mode)
 
 ;; prelude
@@ -51,8 +49,6 @@
 
 (with-eval-after-load 'flycheck
   (dolist (mode '(haml-mode
-		  less-mode
-		  sass-mode
 		  scss-mode
 		  web-mode))
     (push mode flycheck-global-modes)))
