@@ -7,6 +7,7 @@
 (setq load-prefer-newer t)
 (setq initial-scratch-message nil)
 (setq help-window-select t)
+(setq column-number-mode t)
 
 ;;backups
 (setq backup-by-copying t
