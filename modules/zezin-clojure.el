@@ -2,9 +2,7 @@
   :init
   (setq cider-repl-pop-to-buffer-on-connect nil)
   :config
-  (add-hook 'cider-mode-hook 'eldoc-mode)
-  ;; (require 'eval-sexp-fun)
-  )
+  (add-hook 'cider-mode-hook 'eldoc-mode))
 
 (use-package clojure-mode
   :init
