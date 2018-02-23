@@ -16,9 +16,6 @@
   :init
   (add-hook 'clojure-mode-hook 'clj-refactor-mode))
 
-(use-package clojure-cheatsheet
-  :after clojure-mode)
-
 (use-package flycheck-clojure
   :after flycheck
   :config
