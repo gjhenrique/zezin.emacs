@@ -28,6 +28,7 @@
                         ("j" counsel-projectile-switch-project)
                         ("s" counsel-fzf)
                         ("g" counsel-projectile-switch-to-buffer)
+                        ("l" projectile-find-file-dwim)
                         ("h" counsel-projectile)
 			("a" projectile-compile-project)))
 

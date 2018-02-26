@@ -16,6 +16,8 @@
   (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp))
   (add-to-list 'purpose-user-mode-purposes '(js2-mode . javascript))
   (add-to-list 'purpose-user-mode-purposes '(rjsx-mode . javascript))
+  (add-to-list 'purpose-user-regexp-purposes '("^\\magit" . magit))
+
   ;; TODO: This is ugly
   (add-to-list 'purpose-user-mode-purposes '(yaml-mode . ruby)))
 
@@ -72,7 +74,7 @@
   (purpose-toggle-window-buffer-dedicated))
 
 (defun zezin-start-magit-frame (frame)
-  (switch-to-buffer (get-buffer-create "*magit: purpose"))
+  (switch-to-buffer (get-buffer-create "magit: purpose"))
   (purpose-toggle-window-purpose-dedicated))
 
 (defun zezin-start-compilation-frame (frame)
@@ -94,10 +96,9 @@
     (purpose-mode)
     (purpose-x-golden-ratio-setup)
     (purpose-x-kill-setup)
-    (purpose-x-magit-single-on)
 
     (zezin-add-reusable-buffers "\\**compilation\\*")
-    (zezin-add-reusable-buffers "\\*magit*")
+    (zezin-add-reusable-buffers "\\magit*")
     (zezin-add-purposes)
     (zezin-disable-purpose-with-dired)
 

@@ -12,7 +12,17 @@
 
 (use-package rjsx-mode
   :init
-  (add-to-list 'auto-mode-alist '("\\(containers\\|components\\).+js\\'" . rjsx-mode))
+  (progn
+    (add-to-list 'auto-mode-alist '("\\(containers\\|components\\).+js\\'" . rjsx-mode))
+
+    ;; https://emacs.stackexchange.com/questions/33536/how-to-edit-jsx-react-files-in-emacs
+    (defadvice js-jsx-indent-line (after js-jsx-indent-line-after-hack activate)
+      "Workaround sgml-mode and follow airbnb component style."
+      (save-excursion
+        (beginning-of-line)
+        (if (looking-at-p "^ +\/?> *$")
+            (delete-char sgml-basic-offset)))))
+
   :bind (:map rjsx-mode-map
               ("TAB" . rjsx-delete-creates-full-tag)))
 
@@ -29,6 +39,13 @@
 (use-package json-mode)
 (use-package web-beautify)
 
+(use-package tide)
+
+(use-package flow-js2-mode
+  :ensure nil
+  :init
+  (add-hook 'js2-mode-hook 'flow-minor-mode))
+
 ;; npm install -g eslint babel-eslint eslint-plugin-react
 (with-eval-after-load 'flycheck
   (push 'js2-mode flycheck-global-modes)
@@ -41,14 +58,14 @@
 
   (defun zezin-use-eslint-from-node-modules ()
     (let* ((root (locate-dominating-file
-		  (or (buffer-file-name) default-directory)
-		  "node_modules"))
-	   (global-eslint (executable-find "eslint"))
-	   (local-eslint (expand-file-name "node_modules/.bin/eslint"
-					   root))
-	   (eslint (if (file-executable-p local-eslint)
-		       local-eslint
-		     global-eslint)))
+                  (or (buffer-file-name) default-directory)
+                  "node_modules"))
+           (global-eslint (executable-find "eslint"))
+           (local-eslint (expand-file-name "node_modules/.bin/eslint"
+                                           root))
+           (eslint (if (file-executable-p local-eslint)
+                       local-eslint
+                     global-eslint)))
       (setq-local flycheck-javascript-eslint-executable eslint)))
   (add-hook #'rjsx-mode-hook #'zezin-use-eslint-from-node-modules)
   (add-hook #'js2-mode-hook #'zezin-use-eslint-from-node-modules))
@@ -59,18 +76,18 @@
     ("l" tern-get-type)))
 
 (zezin-add-keybinding :language
-		      `(,(append
-			  zezin-js-keybindings
-			  '(("a" web-beautify-js))))
-		      :map 'js2-mode-map)
+                      `(,(append
+                          zezin-js-keybindings
+                          '(("a" web-beautify-js))))
+                      :map 'js2-mode-map)
 
 (zezin-add-keybinding :language
-		      zezin-js-keybindings
-		      :map 'rjsx-mode-map)
+                      zezin-js-keybindings
+                      :map 'rjsx-mode-map)
 
 (zezin-add-keybinding :language
-		      `(("a" web-beautify-json))
-		      :map 'json-mode)
+                      `(("a" web-beautify-json))
+                      :map 'json-mode)
 
 ;; mocha.el
 ;; jade?
