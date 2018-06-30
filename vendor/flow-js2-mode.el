@@ -1,3 +1,32 @@
+;;; flow-js2-mode.el --- Support for flow annotations in js2-mode -*- lexical-binding: t -*-
+
+;; Copyright (C) 2017 Andreas Fuchs
+;; Copyright (C) 2017-2018 Matúš Goljer
+
+;; Author: Matúš Goljer <matus.goljer@gmail.com>
+;; Maintainer: Matúš Goljer <matus.goljer@gmail.com>
+;; Version: 0.1.0
+;; Created: 28th May 2017
+;; Package-requires: ()
+;; Keywords: languages, extensions
+
+;; This program is free software; you can redistribute it and/or
+;; modify it under the terms of the GNU General Public License
+;; as published by the Free Software Foundation; either version 3
+;; of the License, or (at your option) any later version.
+
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+
+;; You should have received a copy of the GNU General Public License
+;; along with this program. If not, see <http://www.gnu.org/licenses/>.
+
+;;; Commentary:
+
+;;; Code:
+
 (require 'js2-mode)
 (require 'flow-minor-mode)
 
@@ -14,7 +43,7 @@
          "missing `type' keyword after `opaque'")
 
 (defgroup flow-js2-mode nil
-  "Support for flow annotations in JSX files."
+  "Support for flow annotations in `js2-mode'."
   :group 'js2-mode)
 
 (defconst flow-js2-primitive-types '("boolean" "number" "string" "null" "void" "any" "mixed")
@@ -111,7 +140,7 @@
     `(progn
        (cl-defstruct (,name (:include js2-node) (:constructor nil)
                             (:constructor ,(intern (format "make-%s" name)) (&key ,@constructor-args)))
-         docstring
+         ,docstring
          ,@fields)
        (put ',attributed-sym 'js2-visitor 'js2-visit-none)
        (put ',attributed-sym 'js2-printer
@@ -133,10 +162,10 @@ variables and function arguments alike." (n i)
 
 ;;; Combination types --- a | b or a & b
 (flow-js2-define-node-type (flow-js2-typespec-combination-node (op left right)
+                                                               op left right
                                                                (pos (js2-node-pos left))
                                                                (len (- js2-ts-cursor
-                                                                       (js2-node-pos left)))
-                                                               op left right)
+                                                                       (js2-node-pos left))))
   "Represent a flow combination (union or intersection) type." (n i)
   (js2-print-ast (flow-js2-typespec-combination-node-left n) 0)
   (insert " ")
@@ -228,11 +257,10 @@ variables and function arguments alike." (n i)
                          :len (- (js2-node-end array-node) (js2-node-pos type-spec))
                          :typespec type-spec))))
     (when (js2-match-token js2-LT)
-      (when (js2-must-match js2-NAME "flow.msg.no.generic.name")
-        (js2-create-name-node))
+      ;; TODO: store the generic types somewhere in the AST
+      (js2-parse-flow-type-spec)
       (while (js2-match-token js2-COMMA)
-        (when (js2-must-match js2-NAME "flow.msg.no.generic.name")
-          (js2-create-name-node)))
+        (js2-parse-flow-type-spec))
       (js2-must-match js2-GT "flow.msg.no.generic.closing"))
     (js2-set-face (js2-node-pos type-spec) (js2-node-end type-spec) 'font-lock-type-face 'record)
     type-spec))
@@ -244,7 +272,7 @@ variables and function arguments alike." (n i)
                       (left type-spec)
                       (right (js2-parse-flow-leaf-type-spec)))
                   (setq type-spec (make-flow-js2-typespec-combination-node :op op
-                                                                           :left type-spec
+                                                                           :left left
                                                                            :right right))
                   (js2-node-add-children type-spec left right)))
     type-spec))
@@ -368,4 +396,4 @@ This function parses the <T> immediately after `function'"
     (funcall orig-fun async-p)))
 
 (provide 'flow-js2-mode)
-;;; flow-js2-mode ends here
+;;; flow-js2-mode.el ends here
