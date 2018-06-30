@@ -29,7 +29,7 @@
 
 (use-package google-translate
   :init
-  (setq google-translate-translation-directions-alist '(("en" . "pt") ("pt" . "en"))
+  (setq google-translate-translation-directions-alist '(("en" . "pt") ("pt" . "en") ("pt" . "it") ("it" . "pt"))
 	google-translate-show-phonetic t
 	google-translate-pop-up-buffer-set-focus t)
   :config
