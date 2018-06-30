@@ -14,7 +14,6 @@
   :init
   (progn
     (add-to-list 'auto-mode-alist '("\\(containers\\|components\\).+js\\'" . rjsx-mode))
-
     ;; https://emacs.stackexchange.com/questions/33536/how-to-edit-jsx-react-files-in-emacs
     (defadvice js-jsx-indent-line (after js-jsx-indent-line-after-hack activate)
       "Workaround sgml-mode and follow airbnb component style."
@@ -26,25 +25,27 @@
   :bind (:map rjsx-mode-map
               ("TAB" . rjsx-delete-creates-full-tag)))
 
-(use-package tern
-  :init
-  (add-hook 'js2-mode-hook 'tern-mode)
-  (add-hook 'rjsx-mode-hook 'tern-mode))
-
-(use-package company-tern
-  :init
-  (add-to-list 'company-backends 'company-tern))
-
 (use-package indium)
 (use-package json-mode)
 (use-package web-beautify)
 
-(use-package tide)
+(defun setup-tide-mode ()
+  (interactive)
+  (company-mode +1))
+
+(use-package tide
+  :config
+  (progn
+    (tide-setup)
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1)))
 
 (use-package flow-js2-mode
-  :ensure nil
+  :ensure nil)
+
+(use-package eslintd-fix
   :init
-  (add-hook 'js2-mode-hook 'flow-minor-mode))
+  (add-hook 'js2-mode-hook 'eslintd-fix-mode))
 
 ;; npm install -g eslint babel-eslint eslint-plugin-react
 (with-eval-after-load 'flycheck
