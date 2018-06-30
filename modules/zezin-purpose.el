@@ -5,8 +5,7 @@
         ((title . "Emacs - Git") (start-fn . zezin-start-magit-frame))
         ((title . "Emacs - Compilation") (start-fn . zezin-start-compilation-frame))))
 
-(setq zezin-work-file "$HOME/Dropbox/Vida/work.org")
-(setq zezin-life-file "$HOME/Dropbox/Vida/Learning.org")
+(setq zezin-work-file "$HOME/Dropbox/Vida/wallbrand.org")
 
 (defun zezin-add-purposes ()
   (add-to-list 'purpose-user-mode-purposes '(ruby-mode . ruby))
@@ -15,6 +14,7 @@
   (add-to-list 'purpose-user-mode-purposes '(web-mode . web))
   (add-to-list 'purpose-user-mode-purposes '(emacs-lisp-mode . elisp))
   (add-to-list 'purpose-user-mode-purposes '(js2-mode . javascript))
+  (add-to-list 'purpose-user-mode-purposes '(js-mode . javascript))
   (add-to-list 'purpose-user-mode-purposes '(rjsx-mode . javascript))
   (add-to-list 'purpose-user-regexp-purposes '("^\\magit" . magit))
 
@@ -65,9 +65,7 @@
                zezin-frames))))
 
 (defun zezin-find-note-file ()
-  (if (am-i-working?)
-      zezin-work-file
-    zezin-life-file))
+  zezin-work-file)
 
 (defun zezin-start-notes-frame (frame)
   (find-file (substitute-in-file-name (zezin-find-note-file)))
