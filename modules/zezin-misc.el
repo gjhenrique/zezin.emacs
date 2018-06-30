@@ -38,6 +38,8 @@
 (use-package asp-mode
   :ensure nil)
 
+(use-package php-mode)
+
 (use-package define-word)
 
 (use-package docker)
