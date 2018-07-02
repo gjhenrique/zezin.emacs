@@ -91,6 +91,10 @@
 (use-package window-purpose
   :config
   (progn
+    (setq purpose-x-magit-single-conf
+          (purpose-conf "magit-single"
+                        :regexp-purposes '(("^magit" . magit))))
+
     (purpose-mode)
     (purpose-x-golden-ratio-setup)
     (purpose-x-kill-setup)
