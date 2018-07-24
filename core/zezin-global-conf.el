@@ -8,6 +8,7 @@
 (setq initial-scratch-message nil)
 (setq help-window-select t)
 (setq column-number-mode t)
+(setq x-alt-keysym 'meta)
 
 ;;backups
 (setq backup-by-copying t
