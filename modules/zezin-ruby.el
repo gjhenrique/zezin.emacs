@@ -93,10 +93,9 @@
 			("b" bundle-install)
 			("s" bundle-open)
 
-			;; ruby-tools
-			("m" ruby-tools-single-quote-string)
-			("n" ruby-tools-to-double-quote-string)
-			("v" ruby-tools-to-double-quote-string)
+			;; rubocop
+			("m" rubocop-autocorrect-current-file)
+			("n" rubocop-autocorrect-project)
 
 			;; projectile-rails
 			;; Spacemacs <3
