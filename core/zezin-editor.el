@@ -70,7 +70,9 @@
 
 (use-package flycheck
   :init
-  (add-hook 'prog-mode-hook #'flycheck-mode))
+  (add-hook 'prog-mode-hook #'flycheck-mode)
+  :config
+  (add-hook 'ruby-mode-hook (lambda () (flycheck-disable-checker #'ruby-reek))))
 
 (use-package flycheck-pos-tip
   :after flycheck
