@@ -5,7 +5,7 @@
         ((title . "Emacs - Git") (start-fn . zezin-start-magit-frame))
         ((title . "Emacs - Compilation") (start-fn . zezin-start-compilation-frame))))
 
-(setq zezin-work-file "$HOME/Dropbox/Vida/wallbrand.org")
+(setq zezin-work-file "$HOME/Life/wallbrand.org")
 
 (defun zezin-add-purposes ()
   (add-to-list 'purpose-user-mode-purposes '(ruby-mode . ruby))
