@@ -29,6 +29,15 @@
 (use-package json-mode)
 (use-package web-beautify)
 
+(use-package prettier-js
+  :init
+  (progn
+    (add-hook 'js2-mode-hook 'prettier-js-mode)
+    (setq prettier-js-args '(
+                             "--trailing-comma" "es5"
+                             "--single-quote" "true"
+                             ))))
+
 (defun setup-tide-mode ()
   (interactive)
   (company-mode +1))
@@ -74,6 +83,7 @@
 (defvar zezin-js-keybindings
   '(("f" tern-find-definition)
     ("j" tern-get-docs)
+    ("k" prettier-js)
     ("l" tern-get-type)))
 
 (zezin-add-keybinding :language
