@@ -88,7 +88,7 @@
 (use-package ivy-rich
   :after ivy
   :config
-  (ivy-set-display-transformer 'ivy-switch-buffer 'ivy-rich-switch-buffer-transformer))
+  (ivy-rich-mode))
 
 (use-package swiper
   :config
