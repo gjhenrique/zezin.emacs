@@ -10,6 +10,12 @@
     (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
     (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
 
+(use-package coffee-mode
+  :init
+  (add-hook 'coffee-mode-hook '(lambda ()
+                                 (setq indent-line-function 'javascript/coffee-indent
+                                       evil-shift-width coffee-tab-width))))
+
 (use-package rjsx-mode
   :init
   (progn
