@@ -55,9 +55,6 @@
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)))
 
-(use-package flow-js2-mode
-  :ensure nil)
-
 (use-package eslintd-fix
   :init
   (add-hook 'js2-mode-hook 'eslintd-fix-mode))
