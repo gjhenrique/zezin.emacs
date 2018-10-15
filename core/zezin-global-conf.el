@@ -67,10 +67,18 @@
       (set-frame-font "Source Code Pro 12")
     (message "Source Code Pro is not installed")))
 
+(defun zezin-load-light-theme ()
+  (interactive)
+  (load-theme 'doom-one-light))
+
+(defun zezin-load-dark-theme ()
+  (interactive)
+  (load-theme 'doom-vibrant))
+
 (defun zezin-load-theme ()
   (use-package doom-themes
     :config
-    (load-theme 'doom-vibrant)))
+    (zezin-load-dark-theme)))
 
 (if (daemonp)
     (add-hook 'after-make-frame-functions
