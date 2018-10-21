@@ -1,8 +1,3 @@
-(use-package ggtags
-  :init
-  (progn
-    (add-hook 'c-mode)
-    )
-  )
+(use-package ggtags)
 
 (use-package counsel-gtags)
