@@ -39,6 +39,7 @@
 (require 'zezin-org)
 (require 'zezin-emacs-lisp)
 (require 'zezin-ruby)
+(require 'zezin-c)
 (require 'zezin-web)
 (require 'zezin-javascript)
 (require 'zezin-elixir)
@@ -50,3 +51,4 @@
 
 (when (file-exists-p zezin-work-file)
   (load-file zezin-work-file))
+(put 'dired-find-alternate-file 'disabled nil)
