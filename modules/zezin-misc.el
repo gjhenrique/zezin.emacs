@@ -29,9 +29,16 @@
 
 (use-package google-translate
   :init
-  (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
-	google-translate-show-phonetic t
-	google-translate-pop-up-buffer-set-focus t)
+  (progn
+    (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
+	  google-translate-show-phonetic t
+	  google-translate-pop-up-buffer-set-focus t)
+    (cl-defun zezin-listen-german-word ()
+      (interactive)
+      (let ((text (or
+                   (zezin-region-or-symbol)
+                   (completing-read "Word: " nil))))
+        (google-translate-listen-translation "de" text))))
   :config
   (require 'google-translate-smooth-ui))
 

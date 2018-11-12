@@ -85,6 +85,7 @@
                         ("x" counsel-ag-read-lib)
                         ("c" counsel-ag-read-gem)
 			("i" google-translate-smooth-translate)
+                        ("o" zezin-listen-german-word)
 			("u" define-word-at-point)
 			("y" define-word)))
 
