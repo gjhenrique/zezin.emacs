@@ -21,8 +21,6 @@
   (projectile-global-mode))
 
 (use-package avy
-  :init
-  (setq avy-all-windows 'all-frames)
   :config
   ;; spacemacs
   (defun zezin-avy-goto-url ()
