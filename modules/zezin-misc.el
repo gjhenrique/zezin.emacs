@@ -54,6 +54,10 @@
 
 (use-package writegood-mode)
 
+(use-package tramp
+  :init
+  (setq tramp-default-method "ssh"))
+
 (use-package elfeed
   :bind (:map elfeed-search-mode-map
 	      ("q" . bjm/elfeed-save-db-and-bury))

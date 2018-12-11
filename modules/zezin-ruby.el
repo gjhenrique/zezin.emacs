@@ -1,5 +1,8 @@
 (use-package bundler)
 
+(use-package feature-mode
+  :mode (("\\.feature\\'" . feature-mode)))
+
 (use-package rubocop
   :init
   (add-hook 'rubocop-mode 'ruby-mode-hook))
