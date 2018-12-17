@@ -34,6 +34,7 @@
 (use-package indium)
 (use-package json-mode)
 (use-package web-beautify)
+(use-package handlebars-mode)
 
 (use-package prettier-js
   :init

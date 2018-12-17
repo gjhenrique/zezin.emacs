@@ -100,5 +100,18 @@
   :config
   (atomic-chrome-start-server))
 
+;; https://www.emacswiki.org/emacs/SqlBeautify
+(defun sql-beautify-region (beg end)
+  "Beautify SQL in region between beg and END."
+  (interactive "r")
+  (save-excursion
+    (shell-command-on-region beg end "anbt-sql-formatter" nil t)))
+
+(defun sql-beautify-buffer ()
+  "Beautify SQL in buffer."
+  (interactive)
+  (sql-beautify-region (point-min) (point-max)))
+
+
 (provide 'zezin-misc)
 ;;; zezin-misc ends here

@@ -27,6 +27,7 @@
                          (+ (-elem-index lib-identifier directories) 2)
                          directories)))))
 
+;; TODO: Generalize this so we have a list instead of a function
 (defun zezin-find-lib-folder (folder)
   (or
    (zezin-find-root-lib default-directory "gems")
@@ -80,7 +81,12 @@
     (defun counsel-ag-region-or-symbol-read-dir ()
       (interactive)
       (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
-        (counsel-ag-directory folder)))))
+        (counsel-ag-directory folder)))
+
+    (defun counsel-fzf-read-dir ()
+      (interactive)
+      (let ((folder (file-name-directory (read-file-name "fzf in directory: "))))
+        (counsel-fzf nil folder)))))
 
 (use-package counsel-projectile
   :after counsel)
