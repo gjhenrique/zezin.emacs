@@ -1,23 +1,26 @@
+(use-package clojure-mode
+  :mode (
+         ("\\.cljs\\'" . clojurescript-mode)
+         ("\\.boot\\'" . clojure-mode)
+         ("#!.*boot\\s-*$" . clojure-mode)
+         ("\\.cljc\\'" . clojurec-mode)
+         ("\\.\\(clj\\|dtm\\|edn\\)\\'" . clojure-mode)))
+
 (use-package cider
+  :after clojure-mode
   :init
   (setq cider-repl-pop-to-buffer-on-connect nil)
   :config
   (add-hook 'cider-mode-hook 'eldoc-mode))
 
-(use-package clojure-mode
-  :init
-  (progn
-    (add-to-list 'auto-mode-alist '("\\.boot\\'" . clojure-mode))
-    (add-to-list 'magic-mode-alist '("#!.*boot\\s-*$" . clojure-mode))))
-
-(use-package clojure-snippets)
+(use-package clojure-snippets
+  :after (yasnippet clojure-mode))
 
 (use-package clj-refactor
-  :init
-  (add-hook 'clojure-mode-hook 'clj-refactor-mode))
+  :hook (clojure-mode . clj-refactor-mode))
 
 (use-package flycheck-clojure
-  :after flycheck
+  :after (flycheck clojure-mode)
   :config
   (flycheck-clojure-setup))
 

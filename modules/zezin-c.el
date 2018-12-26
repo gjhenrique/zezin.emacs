@@ -1,4 +1,9 @@
-(use-package counsel-gtags)
+(use-package counsel-gtags
+  :commands
+  counsel-gtags-dwim
+  counsel-gtags-go-forward
+  counsel-gtags-go-backward
+  counsel-gtags-find-file)
 
 (zezin-add-keybinding :language
                       `(("j" counsel-gtags-dwim)
@@ -15,12 +20,3 @@
                       :map 'c++-mode-map)
 
 (provide 'zezin-c)
-;; counsel-gtags-find-definition
-;; counsel-gtags-find-reference
-;; counsel-gtags-find-symbol
-;; counsel-gtags-find-file
-;; counsel-gtags-go-backward
-;; counsel-gtags-go-forward
-;; counsel-gtags-create-tags
-;; counsel-gtags-update-tags
-;; counsel-gtags-dwin

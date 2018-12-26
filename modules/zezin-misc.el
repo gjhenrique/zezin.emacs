@@ -1,33 +1,34 @@
 (use-package yaml-mode
-  :init
-  (add-to-list 'auto-mode-alist '("\\.yml.example\\'" . yaml-mode)))
+  :mode ("\\.yml\\'" "\\.yaml\\'" "\\.yml.example\\'"))
 
-(use-package markdown-mode)
+(use-package markdown-mode
+  :mode (("\\.markdown$" . markdown-mode)
+         ("\\.md$"       . markdown-mode)))
 
-(use-package nginx-mode)
-
-(use-package csharp-mode)
-
-(use-package realgud)
+(use-package nginx-mode
+  :mode ("nginx\\.conf\\'" "/nginx/.+\\.conf\\'"))
 
 (use-package restclient
+  :mode ("\\.http\\'" . restclient-mode)
   :config
   (zezin-add-keybinding :language
 			'(("f" restclient-http-send-current))
 			:map 'restclient-mode-map))
 
 (use-package company-restclient
+  :after restclient
   :config
   (add-to-list 'company-backends 'company-restclient))
 
 (use-package ob-restclient
-  :after org-plus-contrib
+  :after (org-plus-contrib restclient)
   :config
   (org-babel-do-load-languages
    'org-babel-load-languages
    '((restclient . t))))
 
 (use-package google-translate
+  :commands google-translate-smooth-translate
   :init
   (progn
     (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
@@ -42,23 +43,26 @@
   :config
   (require 'google-translate-smooth-ui))
 
-(use-package asp-mode
-  :ensure nil)
+(use-package php-mode
+  :mode ("\\.php\\'" . php-mode))
 
-(use-package php-mode)
+(use-package define-word
+  :commands (define-word-at-point define-word))
 
-(use-package define-word)
+(use-package dockerfile-mode
+  :mode "Dockerfile\\'")
 
-(use-package docker)
-(use-package dockerfile-mode)
-
-(use-package writegood-mode)
+(use-package writegood-mode
+  :hook ((markdown-mode . writegood-mode)
+         (org-mode . writegood-mode)))
 
 (use-package tramp
+  :defer 5
   :init
   (setq tramp-default-method "ssh"))
 
 (use-package elfeed
+  :commands bjm/elfeed-load-db-and-open
   :bind (:map elfeed-search-mode-map
 	      ("q" . bjm/elfeed-save-db-and-bury))
   ;; elfeed-db-directory 
@@ -78,27 +82,17 @@
     (quit-window)))
 
 (use-package elfeed-org
+  :after elfeed org
   :init
   (setq rmh-elfeed-org-files (list (expand-file-name "feeds.org" zezin-dir)))
   :config
   (elfeed-org))
 
-(use-package el-pocket
-  :config
-  (el-pocket-load-auth))
+(use-package systemd
+  :mode ("\\.service\\'" . systemd-mode))
 
-(use-package systemd)
-
-(use-package tldr)
-
-(use-package atomic-chrome
-  :init
-  (progn
-    (define-derived-mode atomic-chrome-mode markdown-mode "AtomicChrome")
-    (setq atomic-chrome-default-major-mode 'atomic-chrome-mode)
-    (setq atomic-chrome-buffer-open-style 'full))
-  :config
-  (atomic-chrome-start-server))
+(use-package tldr
+  :commands tldr)
 
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)

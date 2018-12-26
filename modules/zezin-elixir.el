@@ -1,8 +1,13 @@
-(use-package elixir-mode)
+(use-package elixir-mode
+  :mode (("\\.ex\\'" . elixir-mode)
+	 ("\\.exs$" . elixir-mode)))
 
-(use-package erlang)
+(use-package erlang
+  :mode (("\\.erl\\'" . erlang-mode)
+         ("\\.hrl\\'" . erlang-mode)))
 
 (use-package alchemist
+  :after elixir
   :init
   (progn
     (let ((erlang-project (substitute-in-file-name "$HOME/Projects/erlang/")))
@@ -13,12 +18,9 @@
         (setq alchemist-goto-elixir-source-dir elixir-project)))))
 
 (use-package flycheck-credo
-  :defer t
-  :init
-  (progn
-    (eval-after-load 'flycheck
-      '(flycheck-credo-setup))
-    (add-hook 'elixir-mode-hook 'flycheck-mode)))
+  :after (elixir-mode flycheck-mode)
+  :config
+  (flycheck-credo-setup))
 
 (with-eval-after-load 'smartparens
   (sp-with-modes '(elixir-mode)

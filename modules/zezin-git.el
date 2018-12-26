@@ -1,28 +1,22 @@
-(use-package magit)
+(use-package magit
+  :commands (magit-status magit-log-head magit-blame))
 
 (use-package git-link
+  :commands git-link
   :init
-  (setq git-link-open-in-browser t)
-  :config
-  (add-to-list 'git-link-remote-alist
-               '("code\\.locaweb\\.com\\.br" git-link-gitlab)))
+  (setq git-link-open-in-browser t))
 
 (use-package evil-magit
-  :after magit)
+  :after (evil magit))
 
-(use-package diff-hl
-  :init
-  (progn
-    (setq diff-hl-side 'left)
-    (add-hook 'magit-post-refresh-hook 'diff-hl-magit-post-refresh))
-  :config
-  (diff-hl-mode))
+(use-package git-messenger
+  :commands git-messenger:popup-message)
 
-(use-package git-messenger)
+(use-package git-timemachine
+  :commands git-timemachine)
 
-(use-package git-timemachine)
-
-(use-package smeargle)
+(use-package smeargle
+  :commands smeargle smeargle-clear)
 
 (zezin-add-keybinding :git
 		      '(("f" magit-status)

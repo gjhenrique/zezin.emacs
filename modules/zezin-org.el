@@ -1,5 +1,7 @@
 (use-package org
   :ensure org-plus-contrib
+  :mode "\\.rb\\'"
+  :interpreter ("org" . org-mode)
   :init
   (progn
     (setq org-startup-indented t
@@ -7,23 +9,18 @@
 	  org-imenu-depth 4
 	  org-clock-clocked-in-display nil
 	  org-imenu-depth 8
-	  org-indent-mode t))
-  ;; org-capute
-  (setq org-capture-templates
-	'(("b" "Bookmark" entry (file+headline "~/share/all/org-mode/notes.org" "Bookmarks")
-	   "* %?\n:PROPERTIES:\n:CREATED: %U\n:END:\n\n" :empty-lines 1))))
+	  org-indent-mode t)))
 
-(use-package evil-org)
+(use-package evil-org
+  :after (evil org)
+  :hook (org-mode . evil-org-mode))
 
 (use-package org-bullets
-  :defer t
-  :init (add-hook 'org-mode-hook 'org-bullets-mode))
+  :after org
+  :hook (org-mode . org-bullets-mode))
 
-(use-package org-pomodoro
-  :init
-  (setq org-pomodoro-format "%s"))
-
-(use-package htmlize)
+(use-package htmlize
+  :defer t)
 
 (zezin-add-keybinding :language
 		      '(("i" org-agenda-open-link))

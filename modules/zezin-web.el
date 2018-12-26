@@ -13,14 +13,11 @@
 		web-mode-enable-auto-pairing nil))
 
 (use-package emmet-mode
-  :init
-  (let ((hooks '(css-mode-hook
-		 html-mode-hook
-		 sass-mode-hook
-		 scss-mode-hook
-		 web-mode-hook)))
-    (dolist (hook hooks)
-      (add-hook hook 'emmet-mode)))
+  :hook ((css-mode-hook . emmet-mode)
+         (html-mode-hook . emmet-mode)
+         (sass-mode-hook . emmet-mode)
+         (scss-mode-hook . emmet-mode)
+         (web-mode-hook . emmet-mode))
   :config
   (progn
     (evil-define-key 'insert emmet-mode-keymap (kbd "TAB") 'emmet-expand-line)
@@ -30,8 +27,11 @@
     (evil-define-key 'hybrid emmet-mode-keymap (kbd "TAB") 'emmet-expand-line)
     (evil-define-key 'hybrid emmet-mode-keymap (kbd "<tab>") 'emmet-expand-line)))
 
-(use-package sass-mode)
-(use-package haml-mode)
+(use-package sass-mode
+  :mode ("\\.sass\\'" . sass-mode))
+
+(use-package haml-mode
+  :mode ("\\.hamlc?\\'" . haml-mode))
 
 ;; prelude
 (with-eval-after-load 'smartparens

@@ -3,10 +3,12 @@
   (switch-to-buffer-other-window (car (evil-alternate-buffer))))
 
 (use-package ace-window
+  :commands ace-window
   :init
   (setq aw-keys '(?f ?j ?d ?k ?g ?h ?s ?l ?a)))
 
 (use-package golden-ratio
+  :defer 20
   :init
   (setq golden-ratio-adjust-factor 1
 	golden-ratio-wide-adjust-factor 1)

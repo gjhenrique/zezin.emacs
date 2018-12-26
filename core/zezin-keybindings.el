@@ -1,4 +1,5 @@
-(use-package general)
+(use-package general
+  :after evil)
 
 (defconst zezin-prefix-keys
   #s(hash-table data (:buffer "j"

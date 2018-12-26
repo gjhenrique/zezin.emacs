@@ -1,20 +1,20 @@
 ;; Declare first to add the auto-mode-alist before javascript
 (use-package js2-mode
+  :mode (("\\.js\\'" . js2-mode)
+         ("\\.es6\\'" . js2-mode))
   :init
   (progn
     (setq-default js2-strict-trailing-comma-warning nil)
     (setq-default js2-strict-missing-semi-warning nil)
     (setq-default js2-basic-offset 2)
     (setq-default js-switch-indent-offset 2)
-    (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)
-    (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-    (add-to-list 'auto-mode-alist '("\\.es6\\'" . js2-mode))))
+    (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)))
 
 (use-package coffee-mode
-  :init
-  (add-hook 'coffee-mode-hook '(lambda ()
-                                 (setq indent-line-function 'javascript/coffee-indent
-                                       evil-shift-width coffee-tab-width))))
+  :mode ("\\.coffee" . coffee-mode)
+  :config
+  (setq indent-line-function 'javascript/coffee-indent
+        evil-shift-width coffee-tab-width))
 
 (use-package rjsx-mode
   :init
@@ -31,34 +31,39 @@
   :bind (:map rjsx-mode-map
               ("TAB" . rjsx-delete-creates-full-tag)))
 
-(use-package indium)
-(use-package json-mode)
-(use-package web-beautify)
-(use-package handlebars-mode)
+(use-package indium
+  :after js2-mode)
+
+(use-package json-mode
+  :commands json-mode
+  :mode "\\.json\\'")
+
+(use-package web-beautify
+  :commands web-beautify-js web-beautify-json web-beautify-css)
+
+(use-package handlebars-mode
+  :mode "\\.hbs\\'")
 
 (use-package prettier-js
+  :hook (js2-mode prettier-js-mode)
   :init
-  (progn
-    (add-hook 'js2-mode-hook 'prettier-js-mode)
     (setq prettier-js-args '(
                              "--trailing-comma" "es5"
-                             "--single-quote" "true"
-                             ))))
+                             "--single-quote" "true")))
 
 (defun setup-tide-mode ()
   (interactive)
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
   (company-mode +1))
 
 (use-package tide
-  :config
-  (progn
-    (tide-setup)
-    (eldoc-mode +1)
-    (tide-hl-identifier-mode +1)))
+  :mode(("\\.ts\\'" . typescript-mode))
+  :hook ((typescript-mode . tide-setup)
+         (typescript-mode . setup-tide-mode)))
 
 (use-package eslintd-fix
-  :init
-  (add-hook 'js2-mode-hook 'eslintd-fix-mode))
+  :hook (js2-mode . eslintd-fix-mode))
 
 ;; npm install -g eslint babel-eslint eslint-plugin-react
 (with-eval-after-load 'flycheck

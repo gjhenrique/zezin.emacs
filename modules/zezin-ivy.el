@@ -15,10 +15,6 @@
       (ido-mode -1)
       (ivy-mode 1))))
 
-(use-package smex
-  :config
-  (smex-initialize))
-
 (defun zezin-find-root-lib (folder lib-identifier)
   "Cut the folder of the last"
   (let ((directories (f-split folder)))
@@ -43,7 +39,6 @@
   :init
   (setq counsel-fzf-cmd (substitute-in-file-name "$HOME/.fzf/bin/fzf -f %s"))
   (setq counsel-fzf-dir-function 'zezin-counsel-fzf-dir)
-
   :config
   (progn
     (cl-defun counsel-ag-directory (dir &optional initial-text)
@@ -89,14 +84,16 @@
         (counsel-fzf nil folder)))))
 
 (use-package counsel-projectile
-  :after counsel)
+  :after (counsel projectile))
 
 (use-package ivy-rich
-  :after ivy
+  :defer 10
+  :after (ivy counsel)
   :config
   (ivy-rich-mode))
 
 (use-package swiper
+  :commands (swiper swiper-region-or-symbol)
   :config
   (cl-defun swiper-region-or-symbol (&optional initial-text)
     (interactive)

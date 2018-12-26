@@ -48,7 +48,7 @@
 
 (unless global-mode-string (setq global-mode-string '("")))
 
-(use-package dash)
+(use-package dash :defer t)
 
 (use-package exec-path-from-shell
   :init
@@ -56,8 +56,8 @@
   :config (when (memq window-system '(mac ns x nil))
             (exec-path-from-shell-initialize)))
 
-(use-package auto-package-update)
-(use-package pcre2el)
+(use-package auto-package-update :defer t)
+(use-package pcre2el :defer t)
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()

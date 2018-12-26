@@ -8,8 +8,7 @@
 	  recentf-max-saved-items 1000)))
 
 (use-package aggressive-indent
-  :config
-  (add-hook 'emacs-lisp-mode-hook #'aggressive-indent-mode))
+  :hook (emacs-lisp-mode . aggressive-indent-mode))
 
 (use-package projectile
   :init
@@ -21,6 +20,9 @@
   (projectile-global-mode))
 
 (use-package avy
+  ;; evil-integration loads it
+  :after evil
+  :defer t
   :config
   ;; spacemacs
   (defun zezin-avy-goto-url ()
@@ -29,10 +31,10 @@
     (avy--generic-jump "https?://" nil 'pre)))
 
 (use-package undo-tree
+  :commands undo-tree-visualize
   :init
-  (progn
-    (setq undo-tree-visualizer-timestamps t
-	  undo-tree-visualizer-diff t))
+  (setq undo-tree-visualizer-timestamps t
+	undo-tree-visualizer-diff t)
   :config
   (global-undo-tree-mode))
 
@@ -40,16 +42,15 @@
   :config
   (which-key-mode))
 
-(use-package expand-region)
+(use-package expand-region
+  :commands er/expand-region)
 
 (use-package smooth-scrolling
   :config
   (smooth-scrolling-mode 1))
 
 (use-package smartparens
-  :init
-  (progn
-    (add-hook 'prog-mode-hook #'smartparens-mode))
+  :hook (prog-mode . smartparens-mode)
   :config
   (progn
     (require 'smartparens-config)
@@ -60,15 +61,12 @@
   (beacon-mode 1))
 
 (use-package highlight-parentheses
-  :init
-  (progn
-    (add-hook 'prog-mode-hook #'highlight-parentheses-mode))
+  :hook (prog-mode . highlight-parentheses-mode)
   :config
   (set-face-attribute 'hl-paren-face nil :weight 'extra-bold))
 
 (use-package flycheck
-  :init
-  (add-hook 'prog-mode-hook #'flycheck-mode)
+  :hook (prog-mode . flycheck-mode)
   :config
   (add-hook 'ruby-mode-hook (lambda () (flycheck-disable-checker #'ruby-reek))))
 
@@ -86,10 +84,10 @@
     (global-company-mode)))
 
 (use-package rainbow-delimiters
-  :init
-  (add-hook 'prog-mode-hook #'rainbow-delimiters-mode))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (use-package engine-mode
+  :commands (engine/search-google engine/search-duckduckgo engine/search-github)
   :config
   (progn
     (engine-mode t)
@@ -112,6 +110,7 @@
   (progn
     ;; Changing the order of mode-line-misc-info (global-mode-string) with mode-line-format
     (require 'cl)
+    (require 'dash)
     (let ((misc-position (position 'mode-line-misc-info mode-line-format))
 	  (mode-line-position (position 'mode-line-modes mode-line-format)))
       (when (> misc-position mode-line-position)
@@ -122,15 +121,18 @@
     (sml/setup)))
 
 (use-package yasnippet
+  :hook (prog-mode . yas-minor-mode)
   :config
-  (progn
-    (let ((custom-snippets-dir (format "%s%s" zezin-dir "snippets/custom")))
-      (add-to-list 'yas-snippet-dirs custom-snippets-dir))
-    (yas-global-mode 1)))
-
-(use-package yasnippet-snippets)
+  (use-package yasnippet-snippets)
+  (let ((custom-snippets-dir (format "%s%s" zezin-dir "snippets/custom")))
+    (add-to-list 'yas-snippet-dirs custom-snippets-dir)))
 
 (use-package dumb-jump
+  :commands
+  dumb-jump-go
+  dumb-jump-go-without-cvs
+  dumb-jump-go-prompt
+  dumb-jump-go-prompt-without-cvs
   :init
   (setq dumb-jump-selector 'ivy)
   (setq dumb-jump-force-searcher 'ag)
@@ -144,10 +146,6 @@
       (interactive)
       (let ((dumb-jump-ag-cmd "ag -U"))
         (dumb-jump-go-prompt)))))
-
-(use-package pcre2el
-  :config
-  (pcre-mode))
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook
@@ -172,7 +170,7 @@
       (kill-new filename)
       (message "Copied buffer file name '%s' to the clipboard." filename))))
 
-(defun clipboard/get ()
+(defun zezin-clipboard/get ()
   (with-temp-buffer
     (clipboard-yank)
     (buffer-substring-no-properties (point-min) (point-max))))
@@ -185,9 +183,10 @@
         (ffap filename)
       (message "File %s not exists" filename))))
 
-(add-hook 'dired-load-hook
-          (lambda ()
-            (load "dired-x")))
+(use-package dired-x
+  :ensure f
+  :after dired
+  :hook (dired-load-hook . (lambda () load "dired-x")))
 
 (provide 'zezin-editor)
 ;;; zezin-editor.el ends here

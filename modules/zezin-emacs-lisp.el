@@ -1,16 +1,14 @@
 (use-package ielm)
 
 (use-package elisp-slime-nav
-  :init
-  (progn
-    (add-hook #'emacs-lisp-mode-hook #'elisp-slime-nav-mode)
-    (add-hook #'ielm-mode-hook #'elisp-slime-nav-mode)))
+  :hook ((emacs-lisp-mode . elisp-slime-nav-mode)
+         (ielm-mode . elisp-slime-nav-mode)))
 
 (use-package eldoc
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'eldoc-mode))
+  :hook (emacs-lisp-mode-hook . eldoc-mode))
 
 (use-package auto-compile
+  :defer 20
   :init
   (setq auto-compile-display-buffer nil)
   :config
@@ -19,8 +17,7 @@
     (auto-compile-on-save-mode)))
 
 (use-package highlight-quoted
-  :config
-  (add-hook 'emacs-lisp-mode-hook 'highlight-quoted-mode))
+  :hook (emacs-lisp-mode-hook . highlight-quoted-mode))
 
 (with-eval-after-load 'smartparens
   (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil))
@@ -40,7 +37,7 @@
 (zezin-add-keybinding :language
 		      '(("f" elisp-slime-nav-find-elisp-thing-at-point)
 			("j" elisp-slime-nav-describe-elisp-thing-at-point))
-		      :map 'elisp-slime-nav-mode-map)
+		      :map 'emacs-lisp-mode-map)
 
 (defun zezin-toggle-edebug ()
   (interactive)
