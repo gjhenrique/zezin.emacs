@@ -44,8 +44,9 @@
 
 (use-package rspec-mode
   :hook ((ruby-mode . rspec-enable-appropriate-mode)
-         (rspec-mode . rspec-intsall-snippets)
-         (after-init . inf-ruby-switch-setup)))
+         (after-init . inf-ruby-switch-setup))
+  :config
+  (rspec-install-snippets))
 
 (use-package minitest
   :commands (minitest-verify-all minitest-verify minitest-verify-single minitest-rerun))
