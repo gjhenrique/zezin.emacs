@@ -123,9 +123,11 @@
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode)
   :config
-  (use-package yasnippet-snippets)
   (let ((custom-snippets-dir (format "%s%s" zezin-dir "snippets/custom")))
     (add-to-list 'yas-snippet-dirs custom-snippets-dir)))
+
+(use-package yasnippet-snippets
+  :after yasnippet)
 
 (use-package dumb-jump
   :commands
