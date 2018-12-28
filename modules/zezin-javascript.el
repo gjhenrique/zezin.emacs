@@ -58,6 +58,11 @@
   (tide-hl-identifier-mode +1)
   (company-mode +1))
 
+(use-package typescript-mode
+  :mode "\\.ts\\'"
+  :init
+  (setq typescript-indent-level 2))
+
 (use-package tide
   :mode(("\\.ts\\'" . typescript-mode))
   :hook ((typescript-mode . tide-setup)
@@ -91,16 +96,21 @@
   (add-hook #'js2-mode-hook #'zezin-use-eslint-from-node-modules))
 
 (defvar zezin-js-keybindings
-  '(("f" tern-find-definition)
-    ("j" tern-get-docs)
-    ("k" prettier-js)
-    ("l" tern-get-type)))
+  '(("f" tide-jump-to-definition)
+    ("j" tide-documentation-at-point)
+    ("k" prettier-js)))
 
 (zezin-add-keybinding :language
                       `(,(append
                           zezin-js-keybindings
                           '(("a" web-beautify-js))))
                       :map 'js2-mode-map)
+
+(zezin-add-keybinding :language
+                      `(,(append
+                          zezin-js-keybindings
+                          '(("a" web-beautify-js))))
+                      :map 'typescript-mode-map)
 
 (zezin-add-keybinding :language
                       zezin-js-keybindings
