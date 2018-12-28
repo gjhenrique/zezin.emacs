@@ -180,7 +180,7 @@
 (defun zezin-go-to-file-in-clipboard ()
   "Go to file in the clipboard"
   (interactive)
-  (let ((filename (string-trim (clipboard/get))))
+  (let ((filename (string-trim (zezin-clipboard/get))))
     (if (file-exists-p filename)
         (ffap filename)
       (message "File %s not exists" filename))))

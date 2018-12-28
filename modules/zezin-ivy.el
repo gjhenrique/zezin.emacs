@@ -5,15 +5,19 @@
            (region-beginning) (region-end))
         (thing-at-point 'symbol))))
 
+(use-package smex
+  :config
+  (smex-initialize))
+
 (use-package ivy
+  :after ido
   :init
   (setq ivy-use-virtual-buffers 1
         ivy-height 20)
   :config
   (progn
-    (with-eval-after-load 'ido
-      (ido-mode -1)
-      (ivy-mode 1))))
+    (ido-mode -1)
+    (ivy-mode 1)))
 
 (defun zezin-find-root-lib (folder lib-identifier)
   "Cut the folder of the last"

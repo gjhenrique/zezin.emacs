@@ -63,8 +63,6 @@
   (push 'company-robe company-backends)
   (push 'ruby-mode company-dabbrev-code-modes))
 
-
-
 (zezin-add-keybinding :language
                       `(;; rspec
                         ("p" rspec-verify-all)

@@ -45,11 +45,12 @@
   :mode "\\.hbs\\'")
 
 (use-package prettier-js
+  :disabled
   :hook (js2-mode prettier-js-mode)
   :init
-    (setq prettier-js-args '(
-                             "--trailing-comma" "es5"
-                             "--single-quote" "true")))
+  (setq prettier-js-args '(
+                           "--trailing-comma" "es5"
+                           "--single-quote" "true")))
 
 (defun setup-tide-mode ()
   (interactive)
