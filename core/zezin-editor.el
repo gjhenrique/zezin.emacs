@@ -15,6 +15,8 @@
   (setq projectile-sort-order 'recentf
 	projectile-cache-file (concat zezin-cache-dir "projectile.cache")
 	projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld")
+        ;; Using .projectile file to remove files
+        projectile-indexing-method 'hybrid
 	projectile-completion-system 'ivy)
   :config
   (projectile-global-mode))
