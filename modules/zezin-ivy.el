@@ -31,7 +31,8 @@
 
 (defun zezin-find-lib-folder (folder)
   (cl-some
-   (lambda (lib) (zezin-find-root-lib folder lib)) zezin-lib-directories))
+   (lambda (lib) (zezin-find-root-lib folder lib))
+   zezin-lib-directories))
 
 (defun zezin-counsel-fzf-dir ()
   (or
