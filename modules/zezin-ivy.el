@@ -27,12 +27,11 @@
                          (+ (-elem-index lib-identifier directories) 2)
                          directories)))))
 
-;; TODO: Generalize this so we have a list instead of a function
+(defvar zezin-lib-directories '("gems" "elpa" "node_modules"))
+
 (defun zezin-find-lib-folder (folder)
-  (or
-   (zezin-find-root-lib default-directory "gems")
-   (zezin-find-root-lib default-directory "elpa")
-   (zezin-find-root-lib default-directory "node_modules")))
+  (cl-some
+   (lambda (lib) (zezin-find-root-lib folder lib)) zezin-lib-directories))
 
 (defun zezin-counsel-fzf-dir ()
   (or
