@@ -1,6 +1,9 @@
 (use-package magit
   :commands (magit-status magit-log-head magit-blame))
 
+(use-package forge
+  :after magit)
+
 (use-package git-link
   :commands git-link
   :init

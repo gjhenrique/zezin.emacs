@@ -55,6 +55,7 @@
 (defun setup-tide-mode ()
   (interactive)
   (eldoc-mode +1)
+  (tide-setup)
   (tide-hl-identifier-mode +1)
   (company-mode +1))
 
@@ -65,8 +66,7 @@
 
 (use-package tide
   :mode(("\\.ts\\'" . typescript-mode))
-  :hook ((typescript-mode . tide-setup)
-         (typescript-mode . setup-tide-mode)))
+  :hook (typescript-mode . setup-tide-mode))
 
 (use-package eslintd-fix
   :hook (js2-mode . eslintd-fix-mode))
