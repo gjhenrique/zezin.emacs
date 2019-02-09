@@ -10,6 +10,8 @@
 (setq column-number-mode t)
 (setq x-alt-keysym 'meta)
 
+(setq source-directory (substitute-in-file-name "$HOME/Projects/c/emacs/src"))
+
 ;;backups
 (setq backup-by-copying t
       version-control t
