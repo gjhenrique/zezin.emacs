@@ -89,10 +89,6 @@
                 (zezin-select-fonts-theme)))
   (zezin-select-fonts-theme))
 
-(defun am-i-working? ()
-  ;; configured in dotfiles
-  (getenv "WORKPC"))
-
 (defun sudo-save ()
   (interactive)
   (if (not buffer-file-name)
