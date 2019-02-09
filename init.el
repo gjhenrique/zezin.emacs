@@ -37,6 +37,7 @@
 
 (require 'zezin-git)
 (require 'zezin-org)
+(require 'zezin-blogging)
 (require 'zezin-emacs-lisp)
 (require 'zezin-ruby)
 (require 'zezin-c)
