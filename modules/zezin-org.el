@@ -19,6 +19,9 @@
   :after org
   :hook (org-mode . org-bullets-mode))
 
+(use-package anki-editor
+  :after org)
+
 (use-package htmlize
   :defer t)
 
