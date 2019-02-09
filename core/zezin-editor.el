@@ -187,6 +187,8 @@
         (ffap filename)
       (message "File %s not exists" filename))))
 
+(put 'dired-find-alternate-file 'disabled nil)
+
 (use-package dired-x
   :ensure f
   :after dired

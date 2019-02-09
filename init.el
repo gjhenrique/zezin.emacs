@@ -52,4 +52,3 @@
 
 (when (file-exists-p zezin-work-file)
   (load-file zezin-work-file))
-(put 'dired-find-alternate-file 'disabled nil)
