@@ -1,9 +1,16 @@
+(defun setup-org-capture ()
+  (setq org-capture-templates
+        '(("v" "Vocabulary" entry
+           (file+headline "/home/guilherme/Life/anki/vocabulary.org" "Vocabulary")
+           "\n** Item\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic (and reversed card)\n:ANKI_DECK: Vocabulary\n:END:\n%T\n*** Front\n %?\n\n*** Back\n %i\n "))))
+
 (use-package org
   :ensure org-plus-contrib
   :mode "\\.rb\\'"
   :interpreter ("org" . org-mode)
   :init
   (progn
+    (setup-org-capture)
     (setq org-startup-indented t
 	  org-log-done t
 	  org-imenu-depth 4
@@ -20,6 +27,8 @@
   :hook (org-mode . org-bullets-mode))
 
 (use-package anki-editor
+  :init
+  (setq anki-editor-create-decks t)
   :after org)
 
 (use-package htmlize
