@@ -1,9 +1,10 @@
 (use-package evil
   :init
-  (setq evil-want-C-u-scroll t)
+  (progn
+    (setq evil-want-C-u-scroll t)
+    (setq evil-want-C-i-jump nil))
   :config
-  (evil-mode 1)
-  :bind (("C-i" . evil-jump-forward)))
+  (evil-mode 1))
 
 (use-package evil-anzu
   :config

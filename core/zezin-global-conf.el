@@ -48,7 +48,9 @@
   (when (file-exists-p emacs-directory)
     (setq source-directory emacs-directory)))
 
-(unless global-mode-string (setq global-mode-string '("")))
+;; http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
+(global-set-key (kbd "TAB") (lambda () (insert "\t")))
+(setq-default tab-width 4)
 
 (use-package dash :defer t)
 
