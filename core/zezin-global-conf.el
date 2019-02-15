@@ -49,7 +49,7 @@
     (setq source-directory emacs-directory)))
 
 ;; http://ergoemacs.org/emacs/emacs_tabs_space_indentation_setup.html
-(global-set-key (kbd "TAB") (lambda () (insert "\t")))
+(global-set-key (kbd "TAB") (lambda () (interactive) (insert "\t")))
 (setq-default tab-width 4)
 
 (use-package dash :defer t)
