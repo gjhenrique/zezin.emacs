@@ -9,7 +9,9 @@
 (use-package cider
   :after clojure-mode
   :init
-  (setq cider-repl-pop-to-buffer-on-connect nil)
+  (progn
+    (setq nrepl-use-ssh-fallback-for-remote-hosts t)
+    (setq cider-repl-pop-to-buffer-on-connect nil))
   :config
   (add-hook 'cider-mode-hook 'eldoc-mode))
 

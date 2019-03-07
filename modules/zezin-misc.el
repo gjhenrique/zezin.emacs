@@ -95,7 +95,12 @@
   :commands tldr)
 
 (use-package groovy-mode
-  :mode ("\\.g\\(?:ant\\|roovy\\|radle\\)\\'" "Jenkinsfile"))
+  :mode ("\\.g\\(?:ant\\|roovy\\|radle\\)\\'" "Jenkinsfile")
+  :init
+  (setq groovy-indent-offset 2))
+
+(use-package terraform-mode
+  :mode "\\.tf\\(vars\\)?\\'")
 
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
