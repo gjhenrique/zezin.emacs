@@ -2,6 +2,7 @@
   :commands (magit-status magit-log-head magit-blame))
 
 (use-package forge
+  :disabled
   :after magit)
 
 (use-package git-link
