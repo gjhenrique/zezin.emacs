@@ -12,11 +12,13 @@
   (progn
     (setup-org-capture)
     (setq org-startup-indented t
-	  org-log-done t
-	  org-imenu-depth 4
-	  org-clock-clocked-in-display nil
-	  org-imenu-depth 8
-	  org-indent-mode t)))
+	      org-log-done t
+	      org-imenu-depth 4
+	      org-clock-clocked-in-display nil
+	      org-imenu-depth 8
+	      org-indent-mode t))
+  :config
+  (require 'org-agenda))
 
 (use-package evil-org
   :after (evil org)
