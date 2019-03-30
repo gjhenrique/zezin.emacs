@@ -6,14 +6,14 @@
   counsel-gtags-find-file)
 
 (zezin-add-keybinding :language
-                      `(("j" counsel-gtags-dwim)
+                      `(("f" counsel-gtags-dwim)
                         ("s" counsel-gtags-go-forward)
                         ("a" counsel-gtags-go-backward)
                         ("g" counsel-gtags-find-file))
                       :map 'c-mode-map)
 
 (zezin-add-keybinding :language
-                      `(("j" counsel-gtags-dwim)
+                      `(("f" counsel-gtags-dwim)
                         ("s" counsel-gtags-go-forward)
                         ("a" counsel-gtags-go-backward)
                         ("g" counsel-gtags-find-file))
