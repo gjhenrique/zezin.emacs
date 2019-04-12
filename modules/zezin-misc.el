@@ -105,6 +105,14 @@
 (use-package lua-mode
   :mode "\\.lua\\'")
 
+(use-package jenkins
+  :commands jenkins
+  :init
+  (progn
+    (setq jenkins-api-token (getenv "JENKINS_TOKEN"))
+    (setq jenkins-url (getenv "JENKINS_URL"))
+    (setq jenkins-username (getenv "JENKINS_USER"))))
+
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
   "Beautify SQL in region between beg and END."
