@@ -32,8 +32,8 @@
   :init
   (progn
     (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
-	  google-translate-show-phonetic t
-	  google-translate-pop-up-buffer-set-focus t)
+	      google-translate-show-phonetic t
+	      google-translate-pop-up-buffer-set-focus t)
     (cl-defun zezin-listen-german-word ()
       (interactive)
       (let ((text (or
@@ -42,6 +42,11 @@
         (google-translate-listen-translation "de" text))))
   :config
   (require 'google-translate-smooth-ui))
+
+
+;; Workaround for search failed. See https://github.com/atykhonov/google-translate/issues/52#issuecomment-481310626
+(with-eval-after-load "google-translate-tk"
+  (defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130)))
 
 (use-package php-mode
   :mode ("\\.php\\'" . php-mode))

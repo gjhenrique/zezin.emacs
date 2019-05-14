@@ -26,7 +26,7 @@
 (setq create-lockfiles nil)
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "chromium")
+      browse-url-generic-program "firefox")
 
 (tool-bar-mode -1)
 (menu-bar-mode -1)
