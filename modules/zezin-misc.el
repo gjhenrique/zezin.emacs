@@ -102,6 +102,9 @@
 (use-package terraform-mode
   :mode "\\.tf\\(vars\\)?\\'")
 
+(use-package lua-mode
+  :mode "\\.lua\\'")
+
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
   "Beautify SQL in region between beg and END."
