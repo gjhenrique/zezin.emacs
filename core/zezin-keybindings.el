@@ -3,14 +3,14 @@
 
 (defconst zezin-prefix-keys
   #s(hash-table data (:buffer "j"
-			      :ace "w"
+                              :ace "w"
                               :window "f"
                               :editor "g"
                               :projectile "h"
                               :search "d"
                               :git "s"
                               :language "k"
-			      :perspective "a")))
+                              :perspective "a")))
 
 (cl-defun zezin-add-keybinding (prefix keys &key
 				       (map 'global)
