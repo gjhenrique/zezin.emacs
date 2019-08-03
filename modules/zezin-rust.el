@@ -1,10 +1,15 @@
-(use-package racer
-  :hook (rust-mode . racer-mode))
-
 (use-package rust-mode
   :mode "\\.rs\\'"
   :init
   (setq rust-format-on-save t))
+
+(use-package racer
+  :hook (rust-mode . racer-mode))
+
+(use-package company-racer
+  :after (racer company)
+  :config
+  (add-to-list 'company-backends 'company-racer))
 
 (use-package cargo
   :after rust-mode
