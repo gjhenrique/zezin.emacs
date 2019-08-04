@@ -81,7 +81,6 @@
   (flycheck-pos-tip-mode))
 
 (use-package company
-  :defer 30
   :init
   (setq company-idle-delay 0.5
         company-tooltip-limit 10
@@ -107,6 +106,7 @@
       "http://stackoverflow.com/search?q=%s")))
 
 (use-package smart-mode-line
+  :defer t
   :init
   (progn
     (setq sml/no-confirm-load-theme t
