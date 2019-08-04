@@ -7,6 +7,7 @@
   (evil-mode 1))
 
 (use-package evil-anzu
+  :after evil
   :config
   (global-anzu-mode t))
 
@@ -24,6 +25,7 @@
   (global-evil-matchit-mode 1))
 
 (use-package evil-escape
+  :after evil
   :config
   (evil-escape-mode))
 

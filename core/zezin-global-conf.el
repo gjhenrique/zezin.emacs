@@ -1,5 +1,3 @@
-(setq gc-cons-threshold 50000000)
-
 (setq global-auto-revert-non-file-buffers t)
 (setq auto-revert-verbose nil)
 (setq inhibit-splash-screen t)
@@ -28,7 +26,8 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "firefox")
 
-(tool-bar-mode -1)
+;; tool-bar is being disabled in .XResources
+;; (tool-bar-mode -1)
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
@@ -59,6 +58,7 @@
   :commands auto-package-update-now)
 
 (use-package exec-path-from-shell
+  :defer 5
   :init
   (setq exec-path-from-shell-arguments (list "-l"))
   :config (when (memq window-system '(mac ns x nil))

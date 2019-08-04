@@ -93,17 +93,18 @@
 
 (zezin-add-keybinding :buffer
                       '(("f" counsel-find-file)
-			("j" ivy-switch-buffer)
-			("d" mode-line-other-buffer)
-			("k" kill-this-buffer)
-			("s" purpose-pop-buffer-same-window)))
+                        ("j" ivy-switch-buffer)
+                        ("d" mode-line-other-buffer)
+                        ("k" kill-this-buffer)
+                        ("s" purpose-pop-buffer-same-window)))
 
-(bind-keys :map company-active-map
-           ("<tab>" . company-complete-common-or-cycle)
-           ("<backtab>" . company-select-previous))
+(with-eval-after-load 'company
+  (bind-keys :map company-active-map
+             ("<tab>" . company-complete-common-or-cycle)
+             ("<backtab>" . company-select-previous)))
 
 (bind-keys ("M-o" . er/expand-region)
-	   ("M-x" . counsel-M-x))
+           ("M-x" . counsel-M-x))
 
 (provide 'zezin-keybindings)
 ;;; zezin-keybindings.el ends here

@@ -82,11 +82,11 @@
 (use-package company
   :defer 30
   :init
-  (progn
-    (setq company-idle-delay 0.5
-          company-tooltip-limit 10
-          company-minimum-prefix-length 2)
-    (global-company-mode)))
+  (setq company-idle-delay 0.5
+        company-tooltip-limit 10
+        company-minimum-prefix-length 2)
+  :config
+  (global-company-mode))
 
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))

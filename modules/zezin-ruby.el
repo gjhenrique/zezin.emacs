@@ -52,7 +52,7 @@
   :commands (minitest-verify-all minitest-verify minitest-verify-single minitest-rerun))
 
 (use-package projectile-rails
-  :after projectile
+  :after (projectile ruby-mode)
   :init
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
