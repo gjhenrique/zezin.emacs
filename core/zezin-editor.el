@@ -49,6 +49,7 @@
   :commands er/expand-region)
 
 (use-package smooth-scrolling
+  :defer 60
   :config
   (smooth-scrolling-mode 1))
 

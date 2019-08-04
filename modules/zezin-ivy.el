@@ -6,6 +6,7 @@
         (thing-at-point 'symbol))))
 
 (use-package smex
+  :commands (smex smex-major-mode-commands)
   :config
   (smex-initialize))
 

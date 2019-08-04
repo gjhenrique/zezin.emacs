@@ -1,5 +1,3 @@
-(setq gc-cons-threshold 50000000)
-
 (require 'package)
 
 (setq package--init-file-ensured t)

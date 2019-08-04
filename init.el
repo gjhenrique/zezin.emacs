@@ -6,7 +6,7 @@
 
 (setq load-prefer-newer t)
 
-(defvar zezin-dir (file-name-directory load-file-name))
+(defvar zezin-dir (file-name-directory "/home/guilherme/.emacs.d/"))
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
@@ -23,6 +23,13 @@
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
 (add-to-list 'load-path zezin-vendor-dir)
+
+(setq gc-cons-threshold 402653184
+      gc-cons-percentage 0.6)
+
+;; https://github.com/hlissner/doom-emacs/wiki/FAQ#how-is-dooms-startup-so-fast
+(defvar zezin--file-name-handler-alist file-name-handler-alist)
+(setq file-name-handler-alist nil)
 
 (require 'zezin-package)
 (require 'zezin-global-conf)
@@ -48,3 +55,10 @@
 (require 'zezin-python)
 (require 'zezin-ocaml)
 (require 'zezin-misc)
+
+(add-hook 'emacs-startup-hook
+          (setq gc-cons-threshold 16777216
+                gc-cons-percentage 0.1
+                file-name-handler-alist zezin--file-name-handler-alist))
+
+

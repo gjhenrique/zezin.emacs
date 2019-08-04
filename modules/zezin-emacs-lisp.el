@@ -1,4 +1,5 @@
-(use-package ielm)
+(use-package ielm
+  :commands ielm)
 
 (use-package elisp-slime-nav
   :hook ((emacs-lisp-mode . elisp-slime-nav-mode)
