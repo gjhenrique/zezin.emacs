@@ -89,7 +89,6 @@
                 (funcall start-fn frame)))))
 
 (use-package window-purpose
-  :defer 15
   :config
   (progn
     (setq purpose-x-magit-single-conf
