@@ -118,6 +118,13 @@
     (setq jenkins-url (getenv "JENKINS_URL"))
     (setq jenkins-username (getenv "JENKINS_USER"))))
 
+(use-package esup
+  :commands esup
+  :init
+  (progn
+    (setq esup-user-init-file (file-truename "~/.emacs.d/init.el"))
+    (setq esup-depth 1)))
+
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
   "Beautify SQL in region between beg and END."
