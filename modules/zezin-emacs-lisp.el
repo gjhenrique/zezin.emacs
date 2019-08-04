@@ -4,6 +4,10 @@
   :hook ((emacs-lisp-mode . elisp-slime-nav-mode)
          (ielm-mode . elisp-slime-nav-mode)))
 
+
+(use-package aggressive-indent
+  :hook (emacs-lisp-mode . aggressive-indent-mode))
+
 (use-package eldoc
   :hook (emacs-lisp-mode-hook . eldoc-mode))
 

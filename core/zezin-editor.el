@@ -1,14 +1,12 @@
 (use-package recentf
+  :defer 30
   :init
   (progn
     (add-hook 'find-file-hook (lambda () (unless recentf-mode
-					   (recentf-mode)
-					   (recentf-track-opened-file))))
+                                           (recentf-mode)
+                                           (recentf-track-opened-file))))
     (setq recentf-save-file (concat zezin-cache-dir "recentf")
-	  recentf-max-saved-items 1000)))
-
-(use-package aggressive-indent
-  :hook (emacs-lisp-mode . aggressive-indent-mode))
+          recentf-max-saved-items 1000)))
 
 (use-package projectile
   :init
@@ -43,6 +41,7 @@
   (global-undo-tree-mode))
 
 (use-package which-key
+  :defer 15
   :config
   (which-key-mode))
 
@@ -61,6 +60,7 @@
     (show-smartparens-global-mode +1)))
 
 (use-package beacon
+  :defer 60
   :config
   (beacon-mode 1))
 
@@ -80,11 +80,12 @@
   (flycheck-pos-tip-mode))
 
 (use-package company
+  :defer 30
   :init
   (progn
     (setq company-idle-delay 0.5
-	  company-tooltip-limit 10
-	  company-minimum-prefix-length 2)
+          company-tooltip-limit 10
+          company-minimum-prefix-length 2)
     (global-company-mode)))
 
 (use-package rainbow-delimiters
@@ -105,23 +106,24 @@
       "http://stackoverflow.com/search?q=%s")))
 
 (use-package smart-mode-line
+  :defer 5
   :init
   (progn
     (setq sml/no-confirm-load-theme t
-	  sml/theme 'respectful
-	  rm-whitelist '("")))
+          sml/theme 'respectful
+          rm-whitelist '("")))
   :config
   (progn
     ;; Changing the order of mode-line-misc-info (global-mode-string) with mode-line-format
     (require 'cl)
     (require 'dash)
     (let ((misc-position (position 'mode-line-misc-info mode-line-format))
-	  (mode-line-position (position 'mode-line-modes mode-line-format)))
+          (mode-line-position (position 'mode-line-modes mode-line-format)))
       (when (> misc-position mode-line-position)
-	(setq mode-line-format
-	      (-insert-at mode-line-position
-			  'mode-line-misc-info
-			  (-remove-at misc-position mode-line-format)))))
+        (setq mode-line-format
+              (-insert-at mode-line-position
+                          'mode-line-misc-info
+                          (-remove-at misc-position mode-line-format)))))
     (sml/setup)))
 
 (use-package yasnippet

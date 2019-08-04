@@ -52,16 +52,17 @@
 (global-set-key (kbd "TAB") (lambda () (interactive) (insert "\t")))
 (setq-default tab-width 4)
 
-(use-package dash :defer t)
+(use-package dash)
+(use-package pcre2el :defer t)
+
+(use-package auto-package-update
+  :commands auto-package-update-now)
 
 (use-package exec-path-from-shell
   :init
   (setq exec-path-from-shell-arguments (list "-l"))
   :config (when (memq window-system '(mac ns x nil))
             (exec-path-from-shell-initialize)))
-
-(use-package auto-package-update :defer t)
-(use-package pcre2el :defer t)
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
