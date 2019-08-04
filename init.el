@@ -51,6 +51,7 @@
 (require 'zezin-javascript)
 (require 'zezin-elixir)
 (require 'zezin-go)
+(require 'zezin-rust)
 (require 'zezin-clojure)
 (require 'zezin-python)
 (require 'zezin-ocaml)
