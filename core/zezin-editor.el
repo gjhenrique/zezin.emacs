@@ -1,19 +1,21 @@
 (use-package recentf
+  :after ivy
   :hook (find-file . (lambda () (unless recentf-mode
                                   (recentf-mode)
                                   (recentf-track-opened-file))))
   :init
-  (setq recentf-save-file (concat zezin-cache-dir "recentf")
-        recentf-max-saved-items 1000))
+  (progn
+    (setq recentf-save-file (concat zezin-cache-dir "recentf")
+          recentf-max-saved-items 1000)))
 
 (use-package projectile
   :init
   (setq projectile-sort-order 'recentf
-	    projectile-cache-file (concat zezin-cache-dir "projectile.cache")
-	    projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld")
+        projectile-cache-file (concat zezin-cache-dir "projectile.cache")
+        projectile-known-projects-file (concat zezin-cache-dir "projectile-bookmarks.eld")
         ;; Using .projectile file to remove files
         projectile-indexing-method 'hybrid
-	    projectile-completion-system 'ivy)
+        projectile-completion-system 'ivy)
   :config
   (progn
     (projectile-mode)
@@ -155,8 +157,8 @@
 
 ;; custom modifications
 (dolist (hook '(text-mode-hook
-		org-mode-hook
-		markdown-mode))
+                org-mode-hook
+                markdown-mode))
   (add-hook hook 'turn-on-flyspell))
 
 ;; http://stackoverflow.com/questions/13981899/how-can-i-kill-all-buffers-in-my-emacs

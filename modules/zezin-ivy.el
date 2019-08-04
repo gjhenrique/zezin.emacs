@@ -11,12 +11,12 @@
   (smex-initialize))
 
 (use-package ivy
-  :after ido
   :init
   (setq ivy-use-virtual-buffers t
         ivy-height 20)
   :config
   (progn
+    (require 'ido)
     (ido-mode -1)
     (ivy-mode 1)))
 
