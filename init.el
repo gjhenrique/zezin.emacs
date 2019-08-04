@@ -6,7 +6,7 @@
 
 (setq load-prefer-newer t)
 
-(defvar zezin-dir (file-name-directory "/home/guilherme/.emacs.d/"))
+(defvar zezin-dir (file-name-directory "/$HOME/.emacs.d/"))
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
@@ -56,9 +56,11 @@
 (require 'zezin-ocaml)
 (require 'zezin-misc)
 
-(add-hook 'emacs-startup-hook
-          (setq gc-cons-threshold 16777216
-                gc-cons-percentage 0.1
-                file-name-handler-alist zezin--file-name-handler-alist))
+(defun zezin-define-startup-values ()
+  (setq gc-cons-threshold 16777216
+        gc-cons-percentage 0.1
+        file-name-handler-alist zezin--file-name-handler-alist))
+
+(add-hook 'emacs-startup-hook #'zezin-define-startup-values)
 
 
