@@ -1,12 +1,10 @@
 (use-package recentf
-  :defer 30
+  :hook (find-file . (lambda () (unless recentf-mode
+                                  (recentf-mode)
+                                  (recentf-track-opened-file))))
   :init
-  (progn
-    (add-hook 'find-file-hook (lambda () (unless recentf-mode
-                                           (recentf-mode)
-                                           (recentf-track-opened-file))))
-    (setq recentf-save-file (concat zezin-cache-dir "recentf")
-          recentf-max-saved-items 1000)))
+  (setq recentf-save-file (concat zezin-cache-dir "recentf")
+        recentf-max-saved-items 1000))
 
 (use-package projectile
   :init
@@ -36,7 +34,7 @@
   :commands undo-tree-visualize
   :init
   (setq undo-tree-visualizer-timestamps t
-	undo-tree-visualizer-diff t)
+        undo-tree-visualizer-diff t)
   :config
   (global-undo-tree-mode))
 
@@ -107,7 +105,6 @@
       "http://stackoverflow.com/search?q=%s")))
 
 (use-package smart-mode-line
-  :defer 5
   :init
   (progn
     (setq sml/no-confirm-load-theme t

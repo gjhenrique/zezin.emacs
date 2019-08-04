@@ -13,7 +13,7 @@
 (use-package ivy
   :after ido
   :init
-  (setq ivy-use-virtual-buffers 1
+  (setq ivy-use-virtual-buffers t
         ivy-height 20)
   :config
   (progn
