@@ -58,7 +58,7 @@
   :commands auto-package-update-now)
 
 (use-package exec-path-from-shell
-  :defer 5
+  :defer 2
   :init
   (setq exec-path-from-shell-arguments (list "-l"))
   :config (when (memq window-system '(mac ns x nil))

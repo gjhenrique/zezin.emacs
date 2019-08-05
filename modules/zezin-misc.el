@@ -133,6 +133,13 @@
            :fetcher github
            :repo "SavchenkoValeriy/memrise.el"))
 
+(use-package emms
+  :after memrise
+  :init
+  (setq emms-player-list '(emms-player-mpv))
+  :config
+  (require 'emms-player-mpv))
+
 (use-package all-the-icons
   :defer t)
 
