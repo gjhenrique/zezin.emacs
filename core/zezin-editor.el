@@ -41,7 +41,7 @@
   (global-undo-tree-mode))
 
 (use-package which-key
-  :defer 15
+  :defer 5
   :config
   (which-key-mode))
 
@@ -49,7 +49,7 @@
   :commands er/expand-region)
 
 (use-package smooth-scrolling
-  :defer 60
+  :defer 10
   :config
   (smooth-scrolling-mode 1))
 
@@ -61,7 +61,7 @@
     (show-smartparens-global-mode +1)))
 
 (use-package beacon
-  :defer 60
+  :defer 20
   :config
   (beacon-mode 1))
 
@@ -81,6 +81,7 @@
   (flycheck-pos-tip-mode))
 
 (use-package company
+  :defer 15
   :init
   (setq company-idle-delay 0.5
         company-tooltip-limit 10
@@ -106,6 +107,7 @@
       "http://stackoverflow.com/search?q=%s")))
 
 (use-package smart-mode-line
+  :defer 3
   :init
   (progn
     (setq sml/no-confirm-load-theme t

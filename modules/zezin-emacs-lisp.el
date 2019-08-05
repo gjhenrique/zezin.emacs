@@ -13,7 +13,7 @@
   :hook (emacs-lisp-mode-hook . eldoc-mode))
 
 (use-package auto-compile
-  :defer 20
+  :defer 10
   :init
   (setq auto-compile-display-buffer nil)
   :config
