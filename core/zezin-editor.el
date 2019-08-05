@@ -106,7 +106,6 @@
       "http://stackoverflow.com/search?q=%s")))
 
 (use-package smart-mode-line
-  :defer t
   :init
   (progn
     (setq sml/no-confirm-load-theme t
