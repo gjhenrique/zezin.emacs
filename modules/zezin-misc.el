@@ -12,8 +12,8 @@
   :mode ("\\.http\\'" . restclient-mode)
   :config
   (zezin-add-keybinding :language
-			'(("f" restclient-http-send-current))
-			:map 'restclient-mode-map))
+            '(("f" restclient-http-send-current))
+            :map 'restclient-mode-map))
 
 (use-package company-restclient
   :after restclient
@@ -32,8 +32,8 @@
   :init
   (progn
     (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
-	      google-translate-show-phonetic t
-	      google-translate-pop-up-buffer-set-focus t)
+          google-translate-show-phonetic t
+          google-translate-pop-up-buffer-set-focus t)
     (cl-defun zezin-listen-german-word ()
       (interactive)
       (let ((text (or
@@ -69,8 +69,8 @@
 (use-package elfeed
   :commands bjm/elfeed-load-db-and-open
   :bind (:map elfeed-search-mode-map
-	      ("q" . bjm/elfeed-save-db-and-bury))
-  ;; elfeed-db-directory 
+          ("q" . bjm/elfeed-save-db-and-bury))
+  ;; elfeed-db-directory
   :init
   (setq-default elfeed-search-filter "@1-week-ago +unread +mustread")
   (defun bjm/elfeed-load-db-and-open ()
@@ -124,6 +124,17 @@
   (progn
     (setq esup-user-init-file (file-truename "~/.emacs.d/init.el"))
     (setq esup-depth 1)))
+
+
+(use-package memrise
+  :ensure nil
+  :commands memrise-dashboard
+  :quelpa (memrise
+           :fetcher github
+           :repo "SavchenkoValeriy/memrise.el"))
+
+(use-package all-the-icons
+  :defer t)
 
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)

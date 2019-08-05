@@ -17,5 +17,16 @@
 
 (require 'use-package)
 
+(use-package quelpa
+  :init
+  (setq quelpa-update-melpa-p nil)
+  :config
+  (progn
+    (quelpa
+     '(quelpa-use-package
+       :fetcher git
+       :url "https://framagit.org/steckerhalter/quelpa-use-package.git"))
+    (require 'quelpa-use-package)))
+
 (provide 'zezin-package)
 ;;; zezin-package.el ends here

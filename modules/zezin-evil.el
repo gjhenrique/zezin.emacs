@@ -19,7 +19,7 @@
   (evil-multiedit-default-keybinds))
 
 (use-package evil-matchit
-  :defer 4
+  :defer t
   :after evil
   :config
   (global-evil-matchit-mode 1))
