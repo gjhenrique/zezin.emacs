@@ -125,8 +125,7 @@
     (setq esup-user-init-file (file-truename "~/.emacs.d/init.el"))
     (setq esup-depth 1)))
 
-
-(use-package memrise
+(use-package memrise-dashboard
   :ensure nil
   :commands memrise-dashboard
   :quelpa (memrise
@@ -134,7 +133,7 @@
            :repo "SavchenkoValeriy/memrise.el"))
 
 (use-package emms
-  :after memrise
+  :after memrise-dashboard
   :init
   (setq emms-player-list '(emms-player-mpv))
   :config
