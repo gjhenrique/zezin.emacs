@@ -57,7 +57,9 @@
   (add-hook 'projectile-mode-hook 'projectile-rails-on))
 
 (with-eval-after-load 'flycheck
-  (push 'ruby-mode flycheck-global-modes))
+  (push 'ruby-mode flycheck-global-modes)
+  (add-hook 'ruby-mode-hook
+            (lambda () (flycheck-disable-checker #'ruby-reek))))
 
 (with-eval-after-load 'company
   (push 'company-robe company-backends)

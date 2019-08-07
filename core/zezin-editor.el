@@ -71,9 +71,7 @@
   (set-face-attribute 'hl-paren-face nil :weight 'extra-bold))
 
 (use-package flycheck
-  :hook (prog-mode . flycheck-mode)
-  :config
-  (add-hook 'ruby-mode-hook (lambda () (flycheck-disable-checker #'ruby-reek))))
+  :hook (prog-mode . flycheck-mode))
 
 (use-package flycheck-pos-tip
   :after flycheck
