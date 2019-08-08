@@ -24,7 +24,7 @@
 (use-package avy
   ;; evil-integration loads it
   :after evil
-  :defer t
+  :defer 5
   :config
   ;; spacemacs
   (defun zezin-avy-goto-url ()
