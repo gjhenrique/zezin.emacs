@@ -33,6 +33,7 @@
   (progn
     (setq google-translate-translation-directions-alist '(("de" . "en") ("en" . "pt") ("pt" . "en") ("en" . "de"))
           google-translate-show-phonetic t
+          google-translate-backend-method 'curl
           google-translate-pop-up-buffer-set-focus t)
     (cl-defun zezin-listen-german-word ()
       (interactive)
