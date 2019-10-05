@@ -143,6 +143,9 @@
 (use-package all-the-icons
   :defer t)
 
+(use-package strace-mode
+  :mode "\\.strace\\'")
+
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
   "Beautify SQL in region between beg and END."
