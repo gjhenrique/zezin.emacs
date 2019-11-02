@@ -27,7 +27,9 @@
       browse-url-generic-program "firefox")
 
 ;; tool-bar is being disabled in .XResources
-;; (tool-bar-mode -1)
+(if (eq system-type 'darwin)
+    (tool-bar-mode -1))
+
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)
