@@ -12,6 +12,10 @@
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
 (defvar zezin-backup-dir (expand-file-name ".backups/" zezin-dir))
 (defvar zezin-vendor-dir (expand-file-name "vendor/" zezin-dir))
+(defvar zezin-work-script (expand-file-name "Life/work.el" (substitute-in-file-name "$HOME")))
+
+(when (file-exists-p zezin-work-script)
+  (load zezin-work-script))
 
 (defun zezin-create-inexistent-folder (folder-name)
   (unless (file-exists-p folder-name)
