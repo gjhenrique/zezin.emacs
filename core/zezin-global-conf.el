@@ -24,7 +24,9 @@
 (setq create-lockfiles nil)
 
 (setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+      browse-url-generic-program (if (eq system-type 'darwin)
+                                     "/Applications/Firefox Developer Edition.app/Contents/MacOS/firefox"
+                                   "firefox"))
 
 ;; tool-bar is being disabled in .XResources
 (if (eq system-type 'darwin)
