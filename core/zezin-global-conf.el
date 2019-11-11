@@ -19,6 +19,8 @@
       backup-directory-alist `((".*" . ,zezin-backup-dir))
       auto-save-file-name-transforms `((".*" ,zezin-backup-dir t)))
 
+(setq frame-title-format "%b")
+
 ;; Interlocking
 ;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Interlocking.html
 (setq create-lockfiles nil)
