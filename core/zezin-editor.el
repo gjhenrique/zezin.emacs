@@ -113,17 +113,11 @@
           rm-whitelist '("")))
   :config
   (progn
-    ;; Changing the order of mode-line-misc-info (global-mode-string) with mode-line-format
-    (require 'cl)
-    (require 'dash)
-    (let ((misc-position (position 'mode-line-misc-info mode-line-format))
-          (mode-line-position (position 'mode-line-modes mode-line-format)))
-      (when (> misc-position mode-line-position)
-        (setq mode-line-format
-              (-insert-at mode-line-position
-                          'mode-line-misc-info
-                          (-remove-at misc-position mode-line-format)))))
-    (sml/setup)))
+    (set-face-attribute 'sml/time nil :foreground "ForestGreen")
+    (sml/setup)
+    (setq display-time-default-load-average nil)
+    (setq display-time-24hr-format t)
+    (display-time)))
 
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode)
