@@ -3,6 +3,9 @@
   :config
   (add-hook 'java-mode-hook #'lsp))
 
+(use-package scala-mode
+  :mode ("\\.scala\\'" . scala-mode))
+
 ;; (USE-package meghanada
 ;;   :init
 ;;   (setq meghanada-debug t)
