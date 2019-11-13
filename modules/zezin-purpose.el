@@ -1,9 +1,9 @@
 (setq zezin-frames
-      '(((title . "Emacs - Primary"))
-        ((title . "Emacs - Secondary"))
-        ((title . "Emacs - Notes") (start-fn . zezin-start-notes-frame))
-        ((title . "Emacs - Git") (start-fn . zezin-start-magit-frame))
-        ((title . "Emacs - Compilation") (start-fn . zezin-start-compilation-frame))))
+      '(((title . "EmacsPrimary"))
+        ((title . "EmacsSecondary"))
+        ((title . "EmacsNotes") (start-fn . zezin-start-notes-frame))
+        ((title . "EmacsGit") (start-fn . zezin-start-magit-frame))
+        ((title . "EmacsCompilation") (start-fn . zezin-start-compilation-frame))))
 
 (setq zezin-work-file "$HOME/Life/xing.org")
 
