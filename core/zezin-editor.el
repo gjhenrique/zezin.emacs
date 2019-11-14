@@ -113,7 +113,7 @@
           rm-whitelist '("")))
   :config
   (progn
-    (set-face-attribute 'sml/time nil :foreground "ForestGreen")
+    (set-face-attribute 'sml/time nil :foreground "ForestGreen" :weight 'bold)
     (sml/setup)
     (setq display-time-default-load-average nil)
     (setq display-time-24hr-format t)

@@ -105,7 +105,12 @@
     (zezin-add-purposes)
     (zezin-disable-purpose-with-dired)
 
-    (add-to-list 'global-mode-string '(:eval (purpose--modeline-string)))
+    (require 'dash)
+    (let ((modes-position (position 'mode-line-modes mode-line-format)))
+      (setq-default mode-line-format
+                    (-insert-at modes-position '(:eval (concat (purpose--modeline-string) " ")) mode-line-format)))
+
+    ;; (push '(:eval (purpose--modeline-string)) mode-line-format)
     (purpose-compile-user-configuration)))
 
 (provide 'zezin-purpose)
