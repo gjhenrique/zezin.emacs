@@ -1,5 +1,5 @@
 (use-package yaml-mode
-  :mode ("\\.yml\\'" "\\.yaml\\'" "\\.yml.example\\'"))
+  :mode ("\\.yml\\'" "\\.yaml\\'" "\\.yml.example\\'" "\\.yml.erb\\'"))
 
 (use-package markdown-mode
   :mode (("\\.markdown$" . markdown-mode)
