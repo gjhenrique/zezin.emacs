@@ -34,6 +34,9 @@
 (if (eq system-type 'darwin)
     (tool-bar-mode -1))
 
+(if (eq system-type 'darwin)
+    (setq mac-command-modifier 'meta))
+
 (menu-bar-mode -1)
 (tooltip-mode -1)
 (scroll-bar-mode -1)

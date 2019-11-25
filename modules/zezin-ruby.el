@@ -45,6 +45,8 @@
 (use-package rspec-mode
   :hook ((ruby-mode . rspec-enable-appropriate-mode)
          (after-init . inf-ruby-switch-setup))
+  :init
+  (setq rspec-use-spring-when-possible nil)
   :config
   (rspec-install-snippets))
 

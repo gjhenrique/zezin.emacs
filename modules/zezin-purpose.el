@@ -97,7 +97,6 @@
                         :regexp-purposes '(("^magit" . magit))))
 
     (purpose-mode)
-    (purpose-x-golden-ratio-setup)
     (purpose-x-kill-setup)
 
     (zezin-add-reusable-buffers "\\**compilation\\*")

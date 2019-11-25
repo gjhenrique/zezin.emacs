@@ -79,14 +79,12 @@
 (defun split-window-below-and-focus ()
   (interactive)
   (split-window-below)
-  (windmove-down)
-  (golden-ratio))
+  (windmove-down))
 
 (defun split-window-right-and-focus ()
   (interactive)
   (split-window-right)
-  (windmove-right)
-  (golden-ratio))
+  (windmove-right))
 
 (provide 'zezin-window)
 ;;; zezin-window.el ends here

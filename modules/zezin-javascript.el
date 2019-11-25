@@ -31,6 +31,9 @@
   :bind (:map rjsx-mode-map
               ("TAB" . rjsx-delete-creates-full-tag)))
 
+(use-package jest
+  :after j2-mode)
+
 (use-package indium
   :after js2-mode)
 
@@ -45,12 +48,12 @@
   :mode "\\.hbs\\'")
 
 (use-package prettier-js
-  :disabled
-  :hook (js2-mode prettier-js-mode)
+  :hook ((js2-mode . prettier-js-mode)
+         (rjsx-mode . prettier-js-mode))
   :init
   (setq prettier-js-args '(
                            "--trailing-comma" "es5"
-                           "--single-quote" "true")))
+                           "--single-quote" "false")))
 
 (defun setup-tide-mode ()
   (interactive)
