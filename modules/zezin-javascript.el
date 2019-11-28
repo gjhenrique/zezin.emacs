@@ -47,13 +47,7 @@
 (use-package handlebars-mode
   :mode "\\.hbs\\'")
 
-(use-package prettier-js
-  :hook ((js2-mode . prettier-js-mode)
-         (rjsx-mode . prettier-js-mode))
-  :init
-  (setq prettier-js-args '(
-                           "--trailing-comma" "es5"
-                           "--single-quote" "false")))
+(use-package prettier-js)
 
 (defun setup-tide-mode ()
   (interactive)
