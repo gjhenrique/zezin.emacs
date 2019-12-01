@@ -106,8 +106,8 @@
 
     (require 'dash)
     (let ((modes-position (position 'mode-line-modes mode-line-format)))
-      (setq-default mode-line-format
-                    (-insert-at modes-position '(:eval (concat (purpose--modeline-string) " ")) mode-line-format)))
+      (setq mode-line-format
+            (-insert-at modes-position '(:eval (concat (purpose--modeline-string) " ")) mode-line-format)))
 
     ;; (push '(:eval (purpose--modeline-string)) mode-line-format)
     (purpose-compile-user-configuration)))
