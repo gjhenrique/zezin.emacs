@@ -14,6 +14,8 @@
 (defvar zezin-vendor-dir (expand-file-name "vendor/" zezin-dir))
 (defvar zezin-work-script (expand-file-name "Life/work.el" (substitute-in-file-name "$HOME")))
 
+(setq zezin-is-work-computer nil)
+
 (when (file-exists-p zezin-work-script)
   (load zezin-work-script))
 

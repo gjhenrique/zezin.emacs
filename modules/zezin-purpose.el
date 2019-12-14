@@ -6,6 +6,7 @@
         ((title . "EmacsCompilation") (start-fn . zezin-start-compilation-frame))))
 
 (setq zezin-work-file "$HOME/Life/xing.org")
+(setq zezin-sideprojects-file "$HOME/Life/SideProjects.org")
 
 (defun zezin-add-purposes ()
   (add-to-list 'purpose-user-mode-purposes '(ruby-mode . ruby))
@@ -65,7 +66,9 @@
                zezin-frames))))
 
 (defun zezin-find-note-file ()
-  zezin-work-file)
+  (if zezin-is-work-computer
+      zezin-is-work-file
+    zezin-sideprojects-file))
 
 (defun zezin-start-notes-frame (frame)
   (find-file (substitute-in-file-name (zezin-find-note-file)))
