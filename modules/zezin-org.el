@@ -37,8 +37,8 @@
   :defer t)
 
 (zezin-add-keybinding :language
-		      '(("i" org-agenda-open-link))
-		      :map 'org-mode-map)
+                      '(("i" org-agenda-open-link))
+                      :map 'org-mode-map)
 
 
 (provide 'zezin-org)

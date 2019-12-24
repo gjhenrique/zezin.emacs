@@ -31,12 +31,6 @@
   :bind (:map rjsx-mode-map
               ("TAB" . rjsx-delete-creates-full-tag)))
 
-(use-package jest
-  :after j2-mode)
-
-(use-package indium
-  :after js2-mode)
-
 (use-package json-mode
   :commands json-mode
   :mode "\\.json\\'")
@@ -47,50 +41,34 @@
 (use-package handlebars-mode
   :mode "\\.hbs\\'")
 
-(use-package prettier-js)
+(use-package prettier-js
+  :after js2-mode)
 
 (defun setup-tide-mode ()
   (interactive)
   (eldoc-mode +1)
   (tide-setup)
+  (flycheck-mode +1)
+  (flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
   (tide-hl-identifier-mode +1)
   (company-mode +1))
+
+(use-package tide
+  :mode(("\\.ts\\'" . typescript-mode))
+  :hook (typescript-mode . setup-tide-mode))
+
+(use-package add-node-modules-path
+  :hook ((js2-mode . add-node-modules-path)
+         (rjsx-mode . add-node-modules-path)
+         (typescript-mode . add-node-modules-path)))
 
 (use-package typescript-mode
   :mode "\\.ts\\'"
   :init
   (setq typescript-indent-level 2))
 
-(use-package tide
-  :mode(("\\.ts\\'" . typescript-mode))
-  :hook (typescript-mode . setup-tide-mode))
-
 (use-package eslintd-fix
   :hook (js2-mode . eslintd-fix-mode))
-
-;; npm install -g eslint babel-eslint eslint-plugin-react
-(with-eval-after-load 'flycheck
-  (push 'js2-mode flycheck-global-modes)
-  (push 'json-mode flycheck-global-modes)
-  (push 'rjsx-mode flycheck-global-modes)
-
-  (dolist (checker '(javascript-eslint javascript-standard))
-    (flycheck-add-mode checker 'rjsx-mode)
-    (flycheck-add-mode checker 'js2-mode))
-
-  (defun zezin-use-eslint-from-node-modules ()
-    (let* ((root (locate-dominating-file
-                  (or (buffer-file-name) default-directory)
-                  "node_modules"))
-           (global-eslint (executable-find "eslint"))
-           (local-eslint (expand-file-name "node_modules/.bin/eslint"
-                                           root))
-           (eslint (if (file-executable-p local-eslint)
-                       local-eslint
-                     global-eslint)))
-      (setq-local flycheck-javascript-eslint-executable eslint)))
-  (add-hook #'rjsx-mode-hook #'zezin-use-eslint-from-node-modules)
-  (add-hook #'js2-mode-hook #'zezin-use-eslint-from-node-modules))
 
 (defvar zezin-js-keybindings
   '(("f" tide-jump-to-definition)
