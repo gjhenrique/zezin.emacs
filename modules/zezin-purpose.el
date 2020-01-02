@@ -67,7 +67,7 @@
 
 (defun zezin-find-note-file ()
   (if zezin-is-work-computer
-      zezin-is-work-file
+      zezin-work-file
     zezin-sideprojects-file))
 
 (defun zezin-start-notes-frame (frame)

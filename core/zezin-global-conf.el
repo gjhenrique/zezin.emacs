@@ -73,12 +73,14 @@
   :config (when (memq window-system '(mac ns x nil))
             (exec-path-from-shell-initialize)))
 
+(setq zezin-font-size (if zezin-4k-display 14 12))
+
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
   (interactive)
   (zezin-load-theme)
   (if (and window-system (x-list-fonts "Source Code Pro"))
-      (set-frame-font "Source Code Pro 12")
+      (set-frame-font (concat "Source Code Pro " (number-to-string zezin-font-size)))
     (message "Source Code Pro is not installed")))
 
 (defun zezin-load-light-theme ()
