@@ -1,8 +1,8 @@
 (defun setup-org-capture ()
   (setq org-capture-templates
-        '(("v" "Vocabulary" entry
-           (file+headline "/home/guilherme/Life/anki/vocabulary.org" "Vocabulary")
-           "\n** Item\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic (and reversed card)\n:ANKI_DECK: Vocabulary\n:END:\n%T\n*** Front\n %?\n\n*** Back\n %i\n "))))
+        '(("d" "Day2Day - Deutsch" entry
+           (file+headline "~/Life/anki/day2day.org" "Idiom")
+           "\n** Item\n:PROPERTIES:\n:ANKI_NOTE_TYPE: Basic (and reversed card)\n:END:\n%T\n*** Front\n %?\n\n*** Back\n %i\n "))))
 
 (use-package org
   :ensure org-plus-contrib
@@ -39,7 +39,6 @@
 (zezin-add-keybinding :language
                       '(("i" org-agenda-open-link))
                       :map 'org-mode-map)
-
 
 (provide 'zezin-org)
 ;;; zezin-org ends here
