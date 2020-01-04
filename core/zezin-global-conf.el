@@ -73,7 +73,7 @@
   :config (when (memq window-system '(mac ns x nil))
             (exec-path-from-shell-initialize)))
 
-(setq zezin-font-size (if zezin-4k-display 14 12))
+(setq zezin-font-size (if zezin-4k-display 14 11))
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
