@@ -63,12 +63,14 @@
          (typescript-mode . add-node-modules-path)))
 
 (use-package typescript-mode
-  :mode "\\.ts\\'"
+  :mode
+  (("\\.ts\\'" . typescript-mode)
+   ("\\.tsx\\'" . typescript-mode))
   :init
   (setq typescript-indent-level 2))
 
 (use-package eslintd-fix
-  :hook (js2-mode . eslintd-fix-mode))
+:hook (js2-mode . eslintd-fix-mode))
 
 (defvar zezin-js-keybindings
   '(("f" tide-jump-to-definition)
