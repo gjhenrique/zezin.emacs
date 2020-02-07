@@ -17,12 +17,5 @@
 
 (require 'use-package)
 
-(use-package quelpa
-  :init
-  (setq quelpa-update-melpa-p nil))
-
-(use-package quelpa-use-package
-  :after quelpa)
-
 (provide 'zezin-package)
 ;;; zezin-package.el ends here
