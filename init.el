@@ -48,6 +48,9 @@
 
 (require 'zezin-keybindings)
 
+(if (eq system-type 'darwin)
+    (require 'zezin-mac))
+
 (require 'zezin-git)
 (require 'zezin-org)
 (require 'zezin-blogging)
@@ -70,5 +73,3 @@
         file-name-handler-alist zezin--file-name-handler-alist))
 
 (add-hook 'emacs-startup-hook #'zezin-define-startup-values)
-
-
