@@ -107,17 +107,11 @@
 (use-package smart-mode-line
   :defer 3
   :init
-  (progn
-    (setq sml/no-confirm-load-theme t
-          sml/theme 'respectful
-          rm-whitelist '("")))
+  (setq sml/no-confirm-load-theme t
+        sml/theme 'respectful
+        rm-whitelist '(""))
   :config
-  (progn
-    (set-face-attribute 'sml/time nil :foreground "ForestGreen" :weight 'bold)
-    (sml/setup)
-    (setq display-time-default-load-average nil)
-    (setq display-time-24hr-format t)
-    (display-time)))
+  (sml/setup))
 
 (use-package yasnippet
   :hook (prog-mode . yas-minor-mode)
