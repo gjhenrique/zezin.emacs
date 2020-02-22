@@ -19,6 +19,9 @@
 (use-package go-guru
   :after go-mode)
 
+(use-package go-dlv
+  :after go-mode)
+
 (use-package go-eldoc
   :hook (go-mode . go-eldoc-setup))
 
