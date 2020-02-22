@@ -1,6 +1,3 @@
-;; tool-bar is disabled in .XResources for Linux
-(tool-bar-mode -1)
-
 (setq mac-option-modifier 'super)
 (setq mac-control-modifier 'meta)
 (setq mac-command-modifier 'ctrl)
