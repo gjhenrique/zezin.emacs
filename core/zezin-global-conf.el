@@ -66,14 +66,14 @@
   :config (when (memq window-system '(mac ns x nil))
             (exec-path-from-shell-initialize)))
 
-(setq zezin-font-size (if zezin-4k-display 14 11))
+(setq zezin-font-size (if zezin-4k-display 12 11))
 
 ;; Loading themes and fonts
 (defun zezin-select-fonts-theme ()
   (interactive)
   (zezin-load-theme)
   (if (and window-system (x-list-fonts "Source Code Pro"))
-      (set-frame-font (concat "Source Code Pro " (number-to-string zezin-font-size)))
+      (set-frame-font (concat "Source Code Pro " "12")) 
     (message "Source Code Pro is not installed")))
 
 (defun zezin-load-light-theme ()
@@ -101,6 +101,21 @@
   (if (not buffer-file-name)
       (write-file (concat "/sudo:root@localhost:" (ido-read-file-name "File:")))
     (write-file (concat "/sudo:root@localhost:" buffer-file-name))))
+
+;; Font size adjustment
+;; (defun hoagie-adjust-font-size (frame)
+;;   "Inspired by https://emacs.stackexchange.com/a/44930/17066. FRAME is ignored.
+;; If I let Windows handle DPI everything looks blurry."
+;;   ;; Using display names is unreliable...switched to checking the resolution
+;;   (let* ((attrs (frame-monitor-attributes)) ;; gets attribs for current frame
+;;          (width-px (fourth (second attrs)))
+;;          (size 14))
+;;     (when (eq width-px 3840) ;; laptop screen
+;;       (setq size 18))
+;;     (message (format "Source Code Pro %s" size))
+;;     (set-frame-font (format "Source Code Pro %s" size))))
+
+;; (add-hook 'window-size-change-functions #'hoagie-adjust-font-size)
 
 (provide 'zezin-global-conf)
 ;;; zezin-global-conf.el ends here
