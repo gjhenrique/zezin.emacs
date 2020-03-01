@@ -74,7 +74,7 @@
   (interactive)
   (zezin-load-theme)
   (if (and window-system (x-list-fonts "Source Code Pro"))
-      (set-frame-font (concat "Source Code Pro " zezin-font-size))
+      (set-frame-font (format "Source Code Pro %s" zezin-font-size))
     (message "Source Code Pro is not installed")))
 
 (defun zezin-load-light-theme ()
