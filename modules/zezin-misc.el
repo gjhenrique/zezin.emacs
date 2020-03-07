@@ -44,7 +44,6 @@
   :config
   (require 'google-translate-smooth-ui))
 
-
 ;; Workaround for search failed. See https://github.com/atykhonov/google-translate/issues/52#issuecomment-481310626
 (with-eval-after-load "google-translate-tk"
   (defun google-translate--search-tkk () "Search TKK." (list 430675 2721866130)))
@@ -131,6 +130,9 @@
 
 (use-package strace-mode
   :mode "\\.strace\\'")
+
+(use-package olivetti
+  :commands olivetti-mode)
 
 ;; https://www.emacswiki.org/emacs/SqlBeautify
 (defun sql-beautify-region (beg end)
