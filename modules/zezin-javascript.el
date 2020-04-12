@@ -41,8 +41,15 @@
 (use-package handlebars-mode
   :mode "\\.hbs\\'")
 
+(defun maybe-use-prettier ()
+  "Enable prettier-js-mode if an rc file is located."
+  (if (locate-dominating-file default-directory ".prettierrc")
+      (progn
+        (prettier-js-mode +1))))
+
 (use-package prettier-js
-  :after js2-mode)
+  :hook ((typescript-mode . maybe-user-prettier)
+         (js2-mode . maybe-user-prettier)))
 
 (defun setup-tide-mode ()
   (interactive)
