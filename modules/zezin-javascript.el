@@ -10,6 +10,9 @@
     (setq-default js-switch-indent-offset 2)
     (add-hook 'js2-mode-hook 'js2-imenu-extras-mode)))
 
+(use-package flow-minor-mode
+  :hook (js2-mode . flow-minor-enable-automatically))
+
 (use-package coffee-mode
   :mode ("\\.coffee" . coffee-mode)
   :config
