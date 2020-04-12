@@ -79,12 +79,15 @@
 
 (defun zezin-load-light-theme ()
   (interactive)
-  (load-theme 'doom-one-light))
+  (load-theme 'doom-one-light)
+  (setq zezin-theme-variation "light"))
 
 (defun zezin-load-dark-theme ()
   (interactive)
-  (load-theme 'doom-vibrant))
+  (load-theme 'doom-vibrant)
+  (setq zezin-theme-variation "dark"))
 
+(setq zezin-theme-variation "dark")
 (defun zezin-load-theme ()
   (use-package doom-themes
     :config
