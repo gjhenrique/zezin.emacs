@@ -51,8 +51,8 @@
         (prettier-js-mode +1))))
 
 (use-package prettier-js
-  :hook ((typescript-mode . maybe-user-prettier)
-         (js2-mode . maybe-user-prettier)))
+  :hook ((typescript-mode . maybe-use-prettier)
+         (js2-mode . maybe-use-prettier)))
 
 (defun setup-tide-mode ()
   (interactive)
