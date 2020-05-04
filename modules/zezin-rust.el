@@ -11,10 +11,6 @@
   :config
   (add-to-list 'company-backends 'company-racer))
 
-(use-package cargo
-  :after rust-mode
-  :hook (rust-mode . cargo-minor-mode))
-
 (use-package flycheck-rust
   :commands flycheck-rust-setup
   :after (flycheck rust-mode)
