@@ -22,15 +22,5 @@
 (use-package smeargle
   :commands smeargle smeargle-clear)
 
-(zezin-add-keybinding :git
-                      '(("f" magit-status)
-                        ("j" magit-log-head)
-                        ("k" magit-blame-addition)
-                        ("d" git-timemachine)
-                        ("l" git-messenger:popup-message)
-                        ("p" smeargle)
-                        ("q" smeargle-clear)
-                        ("s" git-link)))
-
 (provide 'zezin-git)
 ;;; zezin-git.el ends here

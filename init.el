@@ -6,7 +6,7 @@
 
 (setq load-prefer-newer t)
 
-(defvar zezin-dir (file-name-directory (substitute-in-file-name "$HOME/.emacs.d/")))
+(defvar zezin-dir (file-name-directory (substitute-in-file-name "$HOME/Projects/mine/zezin.emacs/")))
 (defvar zezin-cache-dir (expand-file-name ".cache/" zezin-dir))
 (defvar zezin-core-dir (expand-file-name "core" zezin-dir))
 (defvar zezin-modules-dir (expand-file-name "modules" zezin-dir))
@@ -27,6 +27,7 @@
 (zezin-create-inexistent-folder zezin-cache-dir)
 (zezin-create-inexistent-folder zezin-backup-dir)
 
+(message zezin-core-dir)
 (add-to-list 'load-path zezin-core-dir)
 (add-to-list 'load-path zezin-modules-dir)
 (add-to-list 'load-path zezin-vendor-dir)

@@ -98,6 +98,16 @@
                         ("k" kill-this-buffer)
                         ("s" purpose-pop-buffer-same-window)))
 
+(zezin-add-keybinding :git
+                      '(("f" magit-status)
+                        ("j" magit-log-head)
+                        ("k" magit-blame-addition)
+                        ("d" git-timemachine)
+                        ("l" git-messenger:popup-message)
+                        ("p" smeargle)
+                        ("q" smeargle-clear)
+                        ("s" git-link)))
+
 (with-eval-after-load 'company
   (bind-keys :map company-active-map
              ("<tab>" . company-complete-common-or-cycle)
