@@ -46,42 +46,42 @@
   (setq counsel-fzf-dir-function 'zezin-counsel-fzf-dir)
   :config
   (progn
-    (cl-defun counsel-ag-directory (dir &optional initial-text)
+    (cl-defun counsel-rg-directory (dir &optional initial-text)
       (interactive)
       (let ((res (zezin-region-or-symbol initial-text)))
-        (counsel-ag res dir "--hidden")))
+        (counsel-rg res dir "--hidden")))
 
-    (defun counsel-ag-region-or-symbol-projectile ()
+    (defun counsel-rg-region-or-symbol-projectile ()
       (interactive)
-      (counsel-ag-directory (projectile-project-root)))
+      (counsel-rg-directory (projectile-project-root)))
 
-    (defun counsel-ag-region-or-symbol-current-dir ()
+    (defun counsel-rg-region-or-symbol-current-dir ()
       (interactive)
-      (counsel-ag-directory default-directory))
+      (counsel-rg-directory default-directory))
 
-    (defun counsel-ag-use-package ()
+    (defun counsel-rg-use-package ()
       (interactive)
-      (counsel-ag-directory zezin-dir "use-package "))
+      (counsel-rg-directory zezin-dir "use-package "))
 
-    (defun counsel-ag-read-dir ()
+    (defun counsel-rg-read-dir ()
       (interactive)
       (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
-        (counsel-ag nil folder)))
+        (counsel-rg nil folder)))
 
-    (defun counsel-ag-read-lib ()
+    (defun counsel-rg-read-lib ()
       (interactive)
       (let ((folder (zezin-find-lib-folder default-directory)))
-        (counsel-ag-directory folder)))
+        (counsel-rg-directory folder)))
 
-    (defun counsel-ag-read-gem (gem-name)
+    (defun counsel-rg-read-gem (gem-name)
       (interactive (list (completing-read "Bundled gem: " (bundle-list-gems-cached))))
       (let ((gem-location (bundle-gem-location gem-name)))
-        (counsel-ag-directory gem-location)))
+        (counsel-rg-directory gem-location)))
 
-    (defun counsel-ag-region-or-symbol-read-dir ()
+    (defun counsel-rg-region-or-symbol-read-dir ()
       (interactive)
       (let ((folder (file-name-directory (read-file-name "ag in directory: "))))
-        (counsel-ag-directory folder)))
+        (counsel-rg-directory folder)))
 
     (defun counsel-fzf-read-dir ()
       (interactive)

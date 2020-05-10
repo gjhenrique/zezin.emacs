@@ -17,6 +17,7 @@
       kept-new-versions 6
       kept-old-versions 2
       backup-directory-alist `((".*" . ,zezin-backup-dir))
+      auto-save-list-file-prefix (concat zezin-dir "autosave/")
       auto-save-file-name-transforms `((".*" ,zezin-backup-dir t)))
 
 (setq frame-title-format "%b")
