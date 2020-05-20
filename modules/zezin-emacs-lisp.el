@@ -7,6 +7,7 @@
 
 
 (use-package aggressive-indent
+  :disabled
   :hook (emacs-lisp-mode . aggressive-indent-mode))
 
 (use-package eldoc
